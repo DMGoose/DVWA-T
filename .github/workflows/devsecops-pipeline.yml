@@ -107,35 +107,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
+      - name: Run Snyk container test
+        uses: snyk/actions/docker@master
         with:
-          php-version: '8.1'
-          
-      - name: Install Composer
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y unzip curl php-cli php-mbstring git
-          curl -sS https://getcomposer.org/installer | php
-          sudo mv composer.phar /usr/local/bin/composer
-
-      - name: Install project dependencies (if any)
-        run: |
-          if [ -f "composer.json" ]; then
-            composer install --no-scripts --no-progress || true
-          fi
-
-      - name: Install Snyk CLI
-        run: |
-          curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          npm install -g snyk
-
-      - name: Run Snyk test
-        run: |
-          snyk test --severity-threshold=high --json-file-output=snyk-report.json
+          image: ghcr.io/digininja/dvwa:latest
+          args: test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      
           
       # - name: Upload Snyk Report
       #   uses: actions/upload-artifact@v3
