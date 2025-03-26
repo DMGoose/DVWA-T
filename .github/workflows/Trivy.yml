@@ -1,32 +1,34 @@
-name: "Trivy.yml"
+name: Trivy CI/CD Universal Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-20.04
+  build-and-scan:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
-        
-      - name: Build an image from Dockerfile
-        run: docker build -t docker.io/my-organization/my-app:${{ github.sha }} .
-        
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.28.0
+
+      - name: Build Docker Image from Current App
+        run: docker build -t my-app:${{ github.sha }} .
+
+      - name: Run Trivy on Built Image
+        uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
+          image-ref: 'my-app:${{ github.sha }}'
           format: json
           output: trivy-report.json
 
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v3
+      - name: Upload Trivy Report
+        uses: actions/upload-artifact@v3
         with:
-          sarif_file: 'trivy-results.sarif'
+          name: trivy-scan-report
+          path: trivy-report.json
+
   
   
