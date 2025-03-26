@@ -99,26 +99,3 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
 
-# 第二个job, Snyk 依赖扫描!!
-  synk-scan:
-    name: synk Scan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Run Snyk for PHP
-        uses: snyk/actions/php@master
-        with:
-          args: monitor --severity-threshold=high
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      
-          
-      # - name: Upload Snyk Report
-      #   uses: actions/upload-artifact@v3
-      #   continue-on-error: true
-      #   with:
-      #     name: snyk-report
-      #     path: snyk-report.json
-
