@@ -99,7 +99,7 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
 
-# 第二个job, Snyk 依赖扫描!!!
+# 第二个job, Snyk 依赖扫描!!
   synk-scan:
     name: synk Scan
     runs-on: ubuntu-latest
