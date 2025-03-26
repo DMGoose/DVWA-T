@@ -13,11 +13,22 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # 这是fs 的扫描,目录 SCA, 未构建镜像时提前发现问题
+      - name: Trivy FS scan
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-fs-results.sarif'
+
+      # 构建容器
       - name: Build Docker Image from Current App
         run: docker build -t my-app:${{ github.sha }} .
 
+      # 这是 docker image 的 扫描, 扫描 docker image 中的漏洞
       - name: Run Trivy on Built Image
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'my-app:${{ github.sha }}'
           format: 'sarif'
