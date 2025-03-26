@@ -1,0 +1,24 @@
+name: "synk.yml"
+
+on:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+  # schedule:
+  #   - cron: '22 7 * * 2'
+
+jobs:
+  synk-scan:
+    name: synk Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run Snyk for PHP
+        uses: snyk/actions/php@master
+        with:
+          args: monitor --severity-threshold=high
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
