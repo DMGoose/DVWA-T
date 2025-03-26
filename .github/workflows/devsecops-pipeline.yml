@@ -101,17 +101,16 @@ jobs:
 
 # 第二个job, Snyk 依赖扫描!!!
   synk-scan:
-    name: Snyk Scan (Fast Mode)
+    name: synk Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Run Snyk container test
-        uses: snyk/actions/docker@master
+      - name: Run Snyk for PHP
+        uses: snyk/actions/php@master
         with:
-          image: ghcr.io/digininja/dvwa:latest
-          args: test --severity-threshold=high
+          args: monitor --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       
