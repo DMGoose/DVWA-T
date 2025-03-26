@@ -2,9 +2,9 @@ name: "synk.yml"
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   schedule:
     - cron: '22 7 * * 2'
 
@@ -16,9 +16,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Run Snyk for PHP
-        uses: snyk/actions/php@master
+      - name: Run Snyk container test
+        uses: snyk/actions/docker@master
         with:
-          args: monitor --severity-threshold=high
+          image: ghcr.io/digininja/dvwa:latest
+          args: test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
