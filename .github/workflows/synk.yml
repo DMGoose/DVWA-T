@@ -1,12 +1,12 @@
 name: "synk.yml"
 
 on:
-  # push:
-  #   branches: [ "main" ]
-  # pull_request:
-  #   branches: [ "main" ]
-  # schedule:
-  #   - cron: '22 7 * * 2'
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '22 7 * * 2'
 
 jobs:
   synk-scan:
