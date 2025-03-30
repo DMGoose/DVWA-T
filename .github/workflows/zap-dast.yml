@@ -20,6 +20,10 @@ jobs:
       - name: List Running Containers (Debug)
         run: docker ps
 
+      # 提前拉取镜像
+      - name: Pull ZAP Docker image explicitly
+        run: docker pull owasp/zap2docker-stable
+
       - name: Run ZAP Baseline Scan
         run: |
           docker run --network host -v ${{ github.workspace }}:/zap/wrk -t owasp/zap2docker-stable zap-baseline.py \
