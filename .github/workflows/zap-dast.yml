@@ -1,0 +1,31 @@
+name: DAST Scan with ZAP
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  deploy-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Start DVWA with Docker Compose
+        run: |
+          docker compose up -d
+          sleep 15  # 给 DVWA 启动一些时间
+
+      - name: List Running Containers (Debug)
+        run: docker ps
+
+      - name: Run ZAP Baseline Scan
+        run: |
+          docker run --network host -v ${{ github.workspace }}:/zap/wrk -t owasp/zap2docker-stable zap-baseline.py \
+            -t http://localhost:4280 -r zap-report.html || true
+
+      # - name: Upload ZAP Report to GitHub Security tab
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     sarif_file: 'trivy-results.sarif'
