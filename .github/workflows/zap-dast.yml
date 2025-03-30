@@ -20,13 +20,13 @@ jobs:
       - name: List Running Containers (Debug)
         run: docker ps
 
-      # 提前拉取镜像
-      - name: Pull ZAP Docker image explicitly
-        run: docker pull owasp/zap2docker-stable
+      # # 提前拉取镜像
+      # - name: Pull ZAP Docker image explicitly
+      #   run: docker pull owasp/zap2docker-stable
 
       - name: Run ZAP Baseline Scan
         run: |
-          docker run --network host -v ${{ github.workspace }}:/zap/wrk -t owasp/zap2docker-stable zap-baseline.py \
+          docker run --network host -v ${{ github.workspace }}:/zap/wrk ghcr.io/zaproxy/zap-baseline \
             -t http://localhost:4280 -r zap-report.html || true
 
       # - name: Upload ZAP Report to GitHub Security tab
