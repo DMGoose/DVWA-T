@@ -25,11 +25,9 @@ jobs:
       #   run: docker pull owasp/zap2docker-stable
 
       - name: ZAP Baseline Scan
-        uses: zaproxy/action-baseline@v0.12.0
+        uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'http://localhost:4280'
-          artifact_name: 'zapbaselinereport'
-          upload_artifact: false
 
       # - name: Upload ZAP Report to GitHub Security tab
       #   uses: actions/upload-artifact@v3
