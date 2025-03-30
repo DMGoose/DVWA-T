@@ -24,10 +24,10 @@ jobs:
       # - name: Pull ZAP Docker image explicitly
       #   run: docker pull owasp/zap2docker-stable
 
-      - name: Run ZAP Baseline Scan
-        run: |
-          docker run --network host -v ${{ github.workspace }}:/zap/wrk ghcr.io/zaproxy/zap-baseline \
-            -t http://localhost:4280 -r zap-report.html || true
+      - name: ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'http://localhost:4280'
 
       # - name: Upload ZAP Report to GitHub Security tab
       #   uses: actions/upload-artifact@v3
