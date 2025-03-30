@@ -59,6 +59,12 @@ jobs:
     - name: Perform CodeQL Analysis (SAST)
       uses: github/codeql-action/analyze@v3
 
+    - name: Upload CodeQL SARIF
+      uses: actions/upload-artifact@v4
+      with:
+        name: codeql-report
+        path: codeql-results.sarif  # 你需要先保存这个文件（如果没自动生成）
+
   sca:
     needs: sast
     runs-on: ubuntu-latest
@@ -88,18 +94,32 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
 
-      # 上传结果
-      - name: Upload Trivy FS scan results
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: 'trivy-fs-results.sarif'
-          category: 'trivy-fs'
+      # 上传结果到security hub
+      # - name: Upload Trivy FS scan results
+      #   uses: github/codeql-action/upload-sarif@v3
+      #   with:
+      #     sarif_file: 'trivy-fs-results.sarif'
+      #     category: 'trivy-fs'
       
-      - name: Upload Trivy Docker scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v3
+      # - name: Upload Trivy Docker scan results to GitHub Security tab
+      #   uses: github/codeql-action/upload-sarif@v3
+      #   with:
+      #     sarif_file: 'trivy-results.sarif'
+      #     category: 'trivy-image'
+
+      # 上传结果到artifact
+      - name: Upload Trivy FS scan results (artifact)
+        uses: actions/upload-artifact@v4
         with:
-          sarif_file: 'trivy-results.sarif'
-          category: 'trivy-image'
+          name: trivy-fs-report
+          path: trivy-fs-results.sarif
+
+      - name: Upload Trivy Image scan results (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-image-report
+          path: trivy-results.sarif
+
 
   dast:
     needs: sca
