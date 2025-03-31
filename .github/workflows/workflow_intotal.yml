@@ -171,6 +171,10 @@ jobs:
             name: zap_scan
             path: .
 
+      # 解压一下
+      - name: Unzip ZAP Report
+        run: unzip zap_scan.zip
+
       - name: Parse all the Results
         run: |
           python scripts/parse_reports.py
