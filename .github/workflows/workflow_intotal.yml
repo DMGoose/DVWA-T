@@ -165,18 +165,20 @@ jobs:
           name: trivy-image-report
           path: .
 
+      - name: Download ZAP results
+        uses: actions/download-artifact@v4
+        with:
+            name: zap_scan
+            path: .
+
       - name: Parse Trivy Results
         run: |
-          python scripts/parse_trivy.py
+          python scripts/parse_reports.py
 
-      - name: Print merged Trivy JSON
-        run: |
-          cat merged-trivy.json
-
-      - name: Upload Merged Trivy Report
+      - name: Upload Merged Report
         uses: actions/upload-artifact@v4
         with:
-          name: merged-trivy
-          path: merged-trivy.json
+          name: merged-reports
+          path: merged-reports.json
 
       
