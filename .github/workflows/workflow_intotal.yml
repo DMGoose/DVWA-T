@@ -59,11 +59,12 @@ jobs:
     - name: Perform CodeQL Analysis (SAST)
       uses: github/codeql-action/analyze@v3
 
-    - name: Upload CodeQL SARIF
-      uses: actions/upload-artifact@v4
-      with:
-        name: codeql-report
-        path: codeql-results.sarif  # 你需要先保存这个文件（如果没自动生成）
+    # 下面这个没用
+    # - name: Upload CodeQL SARIF
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: codeql-report
+    #     path: codeql-results.sarif  # 你需要先保存这个文件（如果没自动生成）
 
   sca:
     needs: sast
@@ -141,11 +142,23 @@ jobs:
         uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'http://localhost:4280'
+          
+          # 上面这个自动会上传到artifact, 所以不用手动上传
 
-      # - name: Upload ZAP Report to GitHub Security tab
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: zap-report
-      #     path: zap-report.html
+  report-merge:
+    needs: [sast, sca, dast]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Parse Trivy Results
+        run: |
+          python scripts/parse_trivy.py
+
+      - name: Print merged Trivy JSON
+        run: |
+          cat merged-trivy.json
 
       
