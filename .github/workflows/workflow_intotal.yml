@@ -156,13 +156,13 @@ jobs:
       - name: Download Trivy FS results
         uses: actions/download-artifact@v4
         with:
-          name: trivy-fs-results
+          name: trivy-fs-report
           path: .
 
       - name: Download Trivy Image results
         uses: actions/download-artifact@v4
         with:
-          name: trivy-image-results
+          name: trivy-image-report
           path: .
 
       - name: Parse Trivy Results
