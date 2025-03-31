@@ -65,6 +65,6 @@ image_results = extract_trivy_results(image_sarif_path, "sca-image")
 merged = [fs_results, image_results]
 
 with open("merged-trivy.json", "w") as outfile:
-    json.dump(merged, out_file, indent=2)
+    json.dump(merged, outfile, indent=2)
 
 print("✅ Merged Trivy results saved to merged-trivy.json")
