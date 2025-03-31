@@ -64,7 +64,7 @@ image_results = extract_trivy_results(image_sarif_path, "sca-image")
 # Combine and save
 merged = [fs_results, image_results]
 
-with open(output_path, "w", encoding="utf-8") as out_file:
-    json.dump(merged, out_file, indent=2)
+with open("merged-trivy.json", "w") as outfile:
+    json.dump(vulnerabilities, outfile, indent=2)
 
-import ace_tools as tools; tools.display_dataframe_to_user(name="Trivy Scan Results (Parsed)", dataframe=None)
+print("✅ Merged Trivy results saved to merged-trivy.json")
