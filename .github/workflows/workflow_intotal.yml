@@ -171,14 +171,14 @@ jobs:
             name: zap_scan
             path: .
 
-      - name: Parse Trivy Results
+      - name: Parse all the Results
         run: |
           python scripts/parse_reports.py
 
       - name: Upload Merged Report
         uses: actions/upload-artifact@v4
         with:
-          name: merged-reports
-          path: merged-reports.json
+          name: merged-security-reports
+          path: merged-security-reports.json
 
       
