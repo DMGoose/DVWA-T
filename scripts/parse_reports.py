@@ -87,13 +87,13 @@ def parse_zap_results(zap_file_path):
 
 # ==== 主程序入口 ====
 if __name__ == "__main__":
-    merged-security-reports = []
+    merged_results = []
 
-    merged-security-reports.append(parse_trivy_results("trivy-fs-results.sarif", scan_type="sca-fs"))
-    merged-security-reports.append(parse_trivy_results("trivy-results.sarif", scan_type="sca-image"))
-    merged-security-reports.append(parse_zap_results("report_json.json"))
+    merged_results.append(parse_trivy_results("trivy-fs-results.sarif", scan_type="sca-fs"))
+    merged_results.append(parse_trivy_results("trivy-results.sarif", scan_type="sca-image"))
+    merged_results.append(parse_zap_results("zap-report.json"))
 
     with open("merged-security-reports.json", "w") as f:
-        json.dump(merged-security-reports, f, indent=2)
+        json.dump(merged_results, f, indent=2)
 
     print("✅ Merged report written to merged-security-reports.json")
