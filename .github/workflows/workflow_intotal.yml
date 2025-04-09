@@ -67,7 +67,6 @@ jobs:
     #     path: codeql-results.sarif  # 你需要先保存这个文件（如果没自动生成）
 
   sca:
-    needs: sast
     runs-on: ubuntu-latest
     
     steps:
@@ -190,8 +189,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: download merged-security-reports
+        uses: actions/download-artifact@v4
+        with:
+          name: merged-security-reports
 
       # - name: Generate timestamp for report
       #   id: timestamp
