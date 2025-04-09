@@ -185,10 +185,38 @@ jobs:
           name: merged-security-reports
           path: merged-security-reports.json
 
+  upload-report:
+    needs: [report-merge]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # - name: Generate timestamp for report
+      #   id: timestamp
+      #   run: echo "ts=$(date +'%Y%m%d_%H%M')" >> $GITHUB_OUTPUT
+
+      - name: create a folder and move report into the folder
+        run: |
+          mkdir -p report-template/public/data
+          mv merged-security-reports.json report-template/public/data/merged-security-reports.json
+
+      - name: Commit ZAP report to repo
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Add latest merged report"
+          add: "report-template/public/data/merged-security-reports.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
       # 把 JSON 拷贝到 该拷贝的地方
        # 没有文件夹就自动创建
-      - name: Ensure data folder exists
-        run: mkdir -p report-template/public/data
-       # 然后把文件放进去
-      - name: Copy merged report to dashboard data folder
-        run: cp merged-security-reports.json report-template/public/data/merged.json
+      # - name: Ensure data folder exists
+      #   run: mkdir -p report-template/public/data
+      #  # 然后把文件放进去
+      # - name: Copy merged report to dashboard data folder
+      #   run: cp merged-security-reports.json report-template/public/data/merged.json
+
+
+        
