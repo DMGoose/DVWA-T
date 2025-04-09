@@ -1,0 +1,5 @@
+{
+    "tool": "Trivy",
+    "type": "sca-fs",
+    "results": []
+  }
