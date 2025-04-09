@@ -185,4 +185,10 @@ jobs:
           name: merged-security-reports
           path: merged-security-reports.json
 
-      
+      # 把 JSON 拷贝到 该拷贝的地方
+       # 没有文件夹就自动创建
+      - name: Ensure data folder exists
+        run: mkdir -p report-template/public/data
+       # 然后把文件放进去
+      - name: Copy merged report to dashboard data folder
+        run: cp merged-security-reports.json report-template/public/data/merged.json
