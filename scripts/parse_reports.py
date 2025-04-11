@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 def parse_trivy_results(file_path, scan_type):
     if not os.path.exists(file_path):
@@ -9,7 +9,7 @@ def parse_trivy_results(file_path, scan_type):
             "type": scan_type,
             "results": [],
             "note": f"File {file_path} not found.",
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "target": "N/A"
         }
 
@@ -52,19 +52,20 @@ def parse_trivy_results(file_path, scan_type):
     return {
         "tool": "Trivy",
         "type": scan_type,
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "target": target,
         "results": results
     }
 
 def parse_zap_results(zap_file_path):
+    target = "N/A"
     if not os.path.exists(zap_file_path):
         return {
             "tool": "OWASP ZAP",
             "type": "dast",
             "results": [],
             "note": f"File {zap_file_path} not found.",
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "target": "N/A"
         }
 
@@ -92,7 +93,7 @@ def parse_zap_results(zap_file_path):
     return {
         "tool": "OWASP ZAP",
         "type": "dast",
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "target": target,
         "results": results
     }
