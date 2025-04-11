@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 def parse_trivy_results(file_path, scan_type):
     if not os.path.exists(file_path):
@@ -7,7 +8,9 @@ def parse_trivy_results(file_path, scan_type):
             "tool": "Trivy",
             "type": scan_type,
             "results": [],
-            "note": f"File {file_path} not found."
+            "note": f"File {file_path} not found.",
+            "timestamp": datetime.utcnow().isoformat(),
+            "target": "N/A"
         }
 
     with open(file_path, 'r') as f:
@@ -15,6 +18,9 @@ def parse_trivy_results(file_path, scan_type):
 
     results = []
     rules_map = {}
+
+    # 尝试获取扫描目标
+    target = sarif.get("runs", [{}])[0].get("originalUriBaseIds", {}).get("ROOTPATH", {}).get("uri", "Unknown")
 
     for run in sarif.get("runs", []):
         driver = run.get("tool", {}).get("driver", {})
@@ -46,6 +52,8 @@ def parse_trivy_results(file_path, scan_type):
     return {
         "tool": "Trivy",
         "type": scan_type,
+        "timestamp": datetime.utcnow().isoformat(),
+        "target": target,
         "results": results
     }
 
@@ -55,7 +63,9 @@ def parse_zap_results(zap_file_path):
             "tool": "OWASP ZAP",
             "type": "dast",
             "results": [],
-            "note": f"File {zap_file_path} not found."
+            "note": f"File {zap_file_path} not found.",
+            "timestamp": datetime.utcnow().isoformat(),
+            "target": "N/A"
         }
 
     with open(zap_file_path, 'r') as f:
@@ -82,6 +92,8 @@ def parse_zap_results(zap_file_path):
     return {
         "tool": "OWASP ZAP",
         "type": "dast",
+        "timestamp": datetime.utcnow().isoformat(),
+        "target": target,
         "results": results
     }
 
