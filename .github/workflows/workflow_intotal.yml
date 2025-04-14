@@ -67,6 +67,7 @@ jobs:
     #     path: codeql-results.sarif  # 你需要先保存这个文件（如果没自动生成）
 
   sca:
+    needs: sast
     runs-on: ubuntu-latest
     
     steps:
@@ -121,15 +122,32 @@ jobs:
           path: trivy-results.sarif
 
 
-  dast-call_dast_file:
+  dast:
     needs: sca
-    uses: ./.github/workflows/dast_file.yml
-    with: 
-      docker_instructions: docker compose up -d  #you need to change this # you need to change this based on your web
-      target_url:  http://localhost:4280 # you need to change this based on your web
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+	
+	# # 这里要注意的是, 每个app的启动方法不一样, 所以这个可能需要改, 我用的是docker
+      - name: Start DVWA with Docker Compose
+        run: |
+          docker compose up -d
+          sleep 15  # 给 DVWA 启动一些时间
+
+      - name: List Running Containers (Debug)
+        run: docker ps
+
+      - name: ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: 'http://localhost:4280'
+          
+          # 上面这个自动会上传到artifact, 所以不用手动上传
 
   report-merge:
-    needs: [sast, sca, dast-call_dast_file]
+    needs: [sast, sca, dast]
     runs-on: ubuntu-latest
 
     steps:
@@ -168,44 +186,4 @@ jobs:
           name: merged-security-reports
           path: merged-security-reports.json
 
-  upload-report:
-    needs: [report-merge]
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        
-      - name: download merged-security-reports
-        uses: actions/download-artifact@v4
-        with:
-          name: merged-security-reports
-
-      # - name: Generate timestamp for report
-      #   id: timestamp
-      #   run: echo "ts=$(date +'%Y%m%d_%H%M')" >> $GITHUB_OUTPUT
-
-      - name: create a folder and move report into the folder
-        run: |
-          mkdir -p report-template/public/data
-          mv merged-security-reports.json report-template/public/data/merged-security-reports.json
-
-      - name: Commit ZAP report to repo
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: "Add latest merged report"
-          add: "report-template/public/data/merged-security-reports.json"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-      # 把 JSON 拷贝到 该拷贝的地方
-       # 没有文件夹就自动创建
-      # - name: Ensure data folder exists
-      #   run: mkdir -p report-template/public/data
-      #  # 然后把文件放进去
-      # - name: Copy merged report to dashboard data folder
-      #   run: cp merged-security-reports.json report-template/public/data/merged.json
-
-
-        
+      
