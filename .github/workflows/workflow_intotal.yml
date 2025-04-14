@@ -28,13 +28,17 @@ jobs:
       matrix:
         include:
           - language: javascript-typescript
-            globs: "**/*.js **/*.jsx **/*.ts **/*.tsx"
+            file_globs: '**/*.js **/*.ts **/*.jsx **/*.tsx'
+            build_mode: none
           - language: python
-            globs: "**/*.py"
+            file_globs: '**/*.py'
+            build_mode: none
           - language: java
-            globs: "**/*.java"
+            file_globs: '**/*.java'
+            build_mode: manual
           - language: go
-            globs: "**/*.go"
+            file_globs: '**/*.go'
+            build_mode: manual
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift'
     steps:
     - name: Checkout repository
@@ -70,7 +74,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        build-mode:  manual
+        build-mode:  ${{ matrix.build_mode }}
         
     # - if: matrix.build-mode == 'manual'
     #   shell: bash
