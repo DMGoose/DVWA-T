@@ -27,36 +27,42 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - language: javascript-typescript
-          build-mode: none
-        - language: python
-          build-mode: none
-        - language: java
-          build-mode: manual
+          - language: javascript-typescript
+            file_glob: '**/*.js'
+          - language: python
+            file_glob: '**/*.py'
+          - language: java
+            file_glob: '**/*.java'
+          - language: go
+            file_glob: '**/*.go'
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift'
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # java用的   
-    - name: Set up JDK 23
-      if: matrix.language == 'java' && hashFiles('pom.xml') != ''
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '23'
+      # 检测是否有对应语言的源文件
+    - name: Check for ${{ matrix.language }} files
+      id: lang-check
+      run: |
+        echo "Checking for files matching: ${{ matrix.file_glob }}"
+        found=$(find . -type f -name "${{ matrix.file_glob }}" | wc -l)
+        echo "Found $found files"
+        if [ "$found" -gt 0 ]; then
+          echo "found=true" >> $GITHUB_OUTPUT
+        else
+          echo "found=false" >> $GITHUB_OUTPUT
+        fi
 
-
-    # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
+      if: steps.lang-check.outputs.found == 'true'
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        build-mode: ${{ matrix.build-mode }}
+        build-mode: manual
 
-    # 还是java用的
-    - name: Manual Build for Java
-      if: matrix.language == 'java' && hashFiles('pom.xml') != '' 
+      # Java/Golang 项目可能需要构建
+    - name: Build for CodeQL (only for Java/Go)
+      if: steps.lang-check.outputs.found == 'true' && matrix.language == 'java'
       run: mvn clean package -DskipTests
         
     # - if: matrix.build-mode == 'manual'
@@ -70,7 +76,7 @@ jobs:
     #     exit 1
         
     - name: Perform CodeQL Analysis (SAST)
-      if: matrix.language != 'java' || steps.java-check.outputs.found == 'true'
+      if: steps.lang-check.outputs.found == 'true'
       uses: github/codeql-action/analyze@v3
       with:
         output: codeql-results.sarif
