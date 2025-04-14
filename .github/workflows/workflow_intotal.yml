@@ -28,13 +28,13 @@ jobs:
       matrix:
         include:
           - language: javascript-typescript
-            file_glob: '"**/*.js" "**/*.jsx" "**/*.ts" "**/*.tsx"'
+            globs: "**/*.js **/*.jsx **/*.ts **/*.tsx"
           - language: python
-            file_glob: '**/*.py'
+            globs: "**/*.py"
           - language: java
-            file_glob: '**/*.java'
+            globs: "**/*.java"
           - language: go
-            file_glob: '**/*.go'
+            globs: "**/*.go"
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift'
     steps:
     - name: Checkout repository
@@ -44,15 +44,15 @@ jobs:
     - name: Check for ${{ matrix.language }} files
       id: check
       run: |
-        echo "Checking for files matching: ${{ matrix.file_glob }}"
-        files=$(find . -type f \( $(echo ${{ matrix.globs }} | xargs -n1 echo -o -name | sed 's/^/-name /' | sed '$s/ -o$//') \))
-        echo "Matched files:"
-        echo "$files"
-        if [ -n "$files" ]; then
-          echo "found=true" >> $GITHUB_OUTPUT
-        else
-          echo "found=false" >> $GITHUB_OUTPUT
-        fi
+        found=false
+        for pattern in ${{ matrix.globs }}; do
+          echo "Checking pattern: $pattern"
+          if ls $pattern 2>/dev/null | grep . > /dev/null; then
+            found=true
+            break
+          fi
+        done
+        echo "found=$found" >> $GITHUB_OUTPUT
 
     - name: Set up Java (for Java builds only)
       if: matrix.language == 'java' && steps.check.outputs.found == 'true'
