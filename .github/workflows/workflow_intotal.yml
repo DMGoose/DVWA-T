@@ -55,7 +55,6 @@ jobs:
         echo '  make bootstrap'
         echo '  make release'
         exit 1
-
     - name: Perform CodeQL Analysis (SAST)
       uses: github/codeql-action/analyze@v3
 
@@ -122,7 +121,7 @@ jobs:
 
 
   dast:
-    needs: [sca,sast]
+    needs: sca
     runs-on: ubuntu-latest
     
     steps:
@@ -133,7 +132,6 @@ jobs:
         run: |
           docker compose up -d
           sleep 15  # 给 DVWA 启动一些时间
-
       - name: List Running Containers (Debug)
         run: docker ps
 
@@ -141,9 +139,11 @@ jobs:
         uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'http://localhost:4280'
+          
+          # 上面这个自动会上传到artifact, 所以不用手动上传
 
   report-merge:
-    needs: dast
+    needs: [sast, sca, dast]
     runs-on: ubuntu-latest
 
     steps:
@@ -175,9 +175,46 @@ jobs:
       - name: Parse all the Results
         run: |
           python scripts/parse_reports.py
-
       - name: Upload Merged Report
         uses: actions/upload-artifact@v4
         with:
           name: merged-security-reports
           path: merged-security-reports.json
+
+  upload-report:
+    needs: [report-merge]
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
+      - name: download merged-security-reports
+        uses: actions/download-artifact@v4
+        with:
+          name: merged-security-reports
+
+      # - name: Generate timestamp for report
+      #   id: timestamp
+      #   run: echo "ts=$(date +'%Y%m%d_%H%M')" >> $GITHUB_OUTPUT
+
+      - name: create a folder and move report into the folder
+        run: |
+          mkdir -p report-template/public/data
+          mv merged-security-reports.json report-template/public/data/merged-security-reports.json
+      - name: Commit ZAP report to repo
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Add latest merged report"
+          add: "report-template/public/data/merged-security-reports.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+      # 把 JSON 拷贝到 该拷贝的地方
+       # 没有文件夹就自动创建
+      # - name: Ensure data folder exists
+      #   run: mkdir -p report-template/public/data
+      #  # 然后把文件放进去
+      # - name: Copy merged report to dashboard data folder
+      #   run: cp merged-security-reports.json report-template/public/data/merged.json
