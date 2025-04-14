@@ -198,7 +198,7 @@ jobs:
   
 
   report-merge:
-    needs: [sca,dast]
+    needs: [sca,dast,codeql-python,codeql-js,codeql-java]
     runs-on: ubuntu-latest
 
     steps:
