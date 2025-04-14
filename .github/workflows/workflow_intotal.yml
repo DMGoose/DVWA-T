@@ -38,18 +38,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # java用的
-    - name: Check for Java source code
-      id: java-check
-      run: |
-        if find . -name "*.java" | grep .; then
-          echo "found=true" >> $GITHUB_OUTPUT
-        else
-          echo "found=false" >> $GITHUB_OUTPUT
-        fi
-        
+    # java用的   
     - name: Set up JDK 23
-      if: matrix.language == 'java' && hashFiles('pom.xml') != '' && steps.java-check.outputs.found == 'true'
+      if: matrix.language == 'java' && hashFiles('pom.xml') != ''
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
@@ -65,7 +56,7 @@ jobs:
 
     # 还是java用的
     - name: Manual Build for Java
-      if: matrix.language == 'java' && hashFiles('pom.xml') != '' && steps.java-check.outputs.found == 'true'
+      if: matrix.language == 'java' && hashFiles('pom.xml') != '' 
       run: mvn clean package -DskipTests
         
     # - if: matrix.build-mode == 'manual'
@@ -79,6 +70,7 @@ jobs:
     #     exit 1
         
     - name: Perform CodeQL Analysis (SAST)
+      if: matrix.language != 'java' || steps.java-check.outputs.found == 'true'
       uses: github/codeql-action/analyze@v3
       with:
         output: codeql-results.sarif
