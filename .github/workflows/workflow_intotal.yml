@@ -9,75 +9,84 @@ on:
     - cron: '22 7 * * 2'
 
 jobs:
+  detect-languages:
+    runs-on: ubuntu-latest
+    outputs:
+      has_python: ${{ steps.check.outputs.has_python }}
+      has_js: ${{ steps.check.outputs.has_js }}
+      has_java: ${{ steps.check.outputs.has_java }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect Languages
+        id: check
+        run: |
+          echo "has_python=${{ !!(ls **/*.py 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
+          echo "has_js=${{ !!(ls **/*.js **/*.ts **/*.jsx **/*.tsx 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
+          echo "has_java=${{ !!(ls **/*.java 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
+
   codeql-python:
-    if: ${{ hashFiles('**/*.py') != '' }}
+    needs: detect-languages
+    if: needs.detect-languages.outputs.has_python == 'true'
     runs-on: ubuntu-latest
     name: CodeQL (Python)
     steps:
       - uses: actions/checkout@v4
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v3
         with:
           languages: python
           build-mode: none
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v3
         with:
           output: codeql-results.sarif
-      - name: Upload SARIF
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: codeql-report-python
           path: codeql-results.sarif
 
   codeql-js:
-    if: ${{ hashFiles('**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx') != '' }}
+    needs: detect-languages
+    if: needs.detect-languages.outputs.has_js == 'true'
     runs-on: ubuntu-latest
     name: CodeQL (JS/TS)
     steps:
       - uses: actions/checkout@v4
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v3
         with:
           languages: javascript
           build-mode: none
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v3
         with:
           output: codeql-results.sarif
-      - name: Upload SARIF
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: codeql-report-javascript
           path: codeql-results.sarif
 
   codeql-java:
-    if: ${{ hashFiles('**/*.java') != '' }}
+    needs: detect-languages
+    if: needs.detect-languages.outputs.has_java == 'true'
     runs-on: ubuntu-latest
     name: CodeQL (Java)
     steps:
       - uses: actions/checkout@v4
-      - name: Setup JDK 23
-        uses: actions/setup-java@v3
+      - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '23'
       - name: Build Java App
         run: mvn clean package -DskipTests
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v3
         with:
           languages: java
           build-mode: manual
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v3
         with:
           output: codeql-results.sarif
-      - name: Upload SARIF
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: codeql-report-java
-          path: codeql-results.sarif 
+          path: codeql-results.sarif
 
 
   sca:
