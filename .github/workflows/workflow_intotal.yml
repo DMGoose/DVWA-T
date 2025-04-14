@@ -144,6 +144,8 @@ jobs:
           
           # 上面这个自动会上传到artifact, 所以不用手动上传
 
+  
+
   report-merge:
     needs: [sast, sca, dast]
     runs-on: ubuntu-latest
@@ -152,6 +154,34 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Install GitHub CLI & jq
+        run: |
+          sudo apt update
+          sudo apt install -y gh jq
+      
+      - name: Authenticate GitHub CLI
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+      
+      - name: List all artifacts
+        id: list-artifacts
+        run: |
+          gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts > artifacts.json
+          cat artifacts.json
+      
+      - name: Download all CodeQL artifacts
+        run: |
+          mkdir -p codeql
+          jq -r '.artifacts[] | select(.name | startswith("codeql-report-")) | [.id, .name] | @tsv' artifacts.json |
+          while IFS=$'\t' read -r id name; do
+            echo "Downloading $name..."
+            gh api -H "Accept: application/vnd.github.v3+json" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -X GET \
+              -H "Accept: application/zip" \
+              "/repos/${{ github.repository }}/actions/artifacts/$id/zip" > "$name.zip"
+            unzip -o "$name.zip" -d codeql/
+          done
+        
       - name: Download Trivy FS results
         uses: actions/download-artifact@v4
         with:
@@ -170,10 +200,6 @@ jobs:
             name: zap_scan
             path: .
 
-      # # 解压一下
-      # - name: Unzip ZAP Report
-      #   run: unzip zap_scan.zip
-
       - name: Parse all the Results
         run: |
           python scripts/parse_reports.py
@@ -188,7 +214,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v4
         
