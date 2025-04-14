@@ -58,7 +58,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        build-mode: none
+        build-mode:  ${{ matrix.language == 'java' && 'manual' || 'none' }}
 
       # Java/Golang 项目可能需要构建
     - name: Build for CodeQL (only for Java/Go)
