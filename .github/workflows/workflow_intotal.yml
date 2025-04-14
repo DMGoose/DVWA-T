@@ -28,7 +28,7 @@ jobs:
       matrix:
         include:
           - language: javascript-typescript
-            file_glob: '**/*.js'
+            file_glob: '"**/*.js" "**/*.jsx" "**/*.ts" "**/*.tsx"'
           - language: python
             file_glob: '**/*.py'
           - language: java
@@ -42,28 +42,35 @@ jobs:
 
       # 检测是否有对应语言的源文件
     - name: Check for ${{ matrix.language }} files
-      id: lang-check
+      id: check
       run: |
         echo "Checking for files matching: ${{ matrix.file_glob }}"
-        found=$(find . -type f -name "${{ matrix.file_glob }}" | wc -l)
-        echo "Found $found files"
-        if [ "$found" -gt 0 ]; then
+        files=$(find . -type f \( $(echo ${{ matrix.globs }} | xargs -n1 echo -o -name | sed 's/^/-name /' | sed '$s/ -o$//') \))
+        echo "Matched files:"
+        echo "$files"
+        if [ -n "$files" ]; then
           echo "found=true" >> $GITHUB_OUTPUT
         else
           echo "found=false" >> $GITHUB_OUTPUT
         fi
+
+    - name: Set up Java (for Java builds only)
+      if: matrix.language == 'java' && steps.check.outputs.found == 'true'
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '23'
+        
+    - name: Build Java (if needed)
+      if: matrix.language == 'java' && steps.check.outputs.found == 'true'
+      run: mvn clean package -DskipTests
 
     - name: Initialize CodeQL
       if: steps.lang-check.outputs.found == 'true'
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        build-mode:  ${{ matrix.language == 'java' && 'manual' || 'none' }}
-
-      # Java/Golang 项目可能需要构建
-    - name: Build for CodeQL (only for Java/Go)
-      if: steps.lang-check.outputs.found == 'true' && matrix.language == 'java'
-      run: mvn clean package -DskipTests
+        build-mode:  manual
         
     # - if: matrix.build-mode == 'manual'
     #   shell: bash
@@ -76,7 +83,7 @@ jobs:
     #     exit 1
         
     - name: Perform CodeQL Analysis (SAST)
-      if: steps.lang-check.outputs.found == 'true'
+      if: steps.check.outputs.found == 'true'
       uses: github/codeql-action/analyze@v3
       with:
         output: codeql-results.sarif
