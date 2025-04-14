@@ -74,6 +74,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+        
+
       # 这是fs 的扫描,目录 SCA, 未构建镜像时提前发现问题
       - name: Trivy FS scan
         uses: aquasecurity/trivy-action@0.28.0
@@ -82,6 +84,20 @@ jobs:
           scan-ref: '.'
           format: 'sarif'
           output: 'trivy-fs-results.sarif'
+
+      # Java用的
+      # ✅ 如果是 Java 项目，则设置 JDK 23（避免“release 23 not supported”）
+      - name: Set up JDK 23
+        if: hashFiles('pom.xml') != ''
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '23'
+      
+      - name: Build Java Project (Only if pom.xml exists)
+        if: hashFiles('pom.xml') != ''
+        run: mvn clean package -DskipTests
+
 
       # 构建容器
       - name: Build Docker Image from Current App
