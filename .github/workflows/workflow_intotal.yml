@@ -28,7 +28,7 @@ jobs:
       matrix:
         include:
           - language: javascript-typescript
-            file_globs: '**/*.js **/*.ts **/*.jsx **/*.tsx'
+            file_globs: '**/*.{js,ts,jsx,tsx}'
             build_mode: none
           - language: python
             file_globs: '**/*.py'
@@ -40,6 +40,7 @@ jobs:
             file_globs: '**/*.go'
             build_mode: manual
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift'
+   
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -48,15 +49,13 @@ jobs:
     - name: Check for ${{ matrix.language }} files
       id: check
       run: |
-        found=false
-        for pattern in ${{ matrix.globs }}; do
-          echo "Checking pattern: $pattern"
-          if ls $pattern 2>/dev/null | grep . > /dev/null; then
-            found=true
-            break
+          files=$(find . -type f \( -name ${{ matrix.file_globs }} \) | wc -l)
+          echo "Found $files matching files"
+          if [ "$files" -gt 0 ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
           fi
-        done
-        echo "found=$found" >> $GITHUB_OUTPUT
 
     - name: Set up Java (for Java builds only)
       if: matrix.language == 'java' && steps.check.outputs.found == 'true'
@@ -93,6 +92,7 @@ jobs:
         output: codeql-results.sarif
 
     - name: Upload CodeQL SARIF
+      if: steps.check.outputs.found == 'true'
       uses: actions/upload-artifact@v4
       with:
         name: codeql-report-${{ matrix.language }}
