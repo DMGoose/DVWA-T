@@ -198,7 +198,7 @@ jobs:
   
 
   report-merge:
-    needs: [sast, sca, dast]
+    needs: [sca,dast]
     runs-on: ubuntu-latest
 
     steps:
