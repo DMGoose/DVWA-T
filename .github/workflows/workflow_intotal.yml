@@ -185,5 +185,3 @@ jobs:
         with:
           name: merged-security-reports
           path: merged-security-reports.json
-
-      
