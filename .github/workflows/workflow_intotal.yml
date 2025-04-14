@@ -18,12 +18,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect Languages
+
+      - name: Check for source files
         id: check
         run: |
-          echo "has_python=${{ !!(ls **/*.py 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
-          echo "has_js=${{ !!(ls **/*.js **/*.ts **/*.jsx **/*.tsx 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
-          echo "has_java=${{ !!(ls **/*.java 2>/dev/null | wc -l) }}" >> $GITHUB_OUTPUT
+          if compgen -G "**/*.py" > /dev/null; then
+            echo "has_python=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_python=false" >> $GITHUB_OUTPUT
+          fi
+
+          if compgen -G "**/*.js" "**/*.ts" "**/*.jsx" "**/*.tsx" > /dev/null; then
+            echo "has_js=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_js=false" >> $GITHUB_OUTPUT
+          fi
+
+          if compgen -G "**/*.java" > /dev/null; then
+            echo "has_java=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_java=false" >> $GITHUB_OUTPUT
+          fi
 
   codeql-python:
     needs: detect-languages
