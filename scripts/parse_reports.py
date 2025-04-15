@@ -10,8 +10,18 @@ def parse_codeql_sarif(sarif_path):
     results = []
 
     for run in sarif.get("runs", []):
+        tool = run.get("tool", {})
         tool_info = run.get("tool", {}).get("driver", {}).get("name", "CodeQL")
-        rules_map = {rule.get("id"): rule for rule in run.get("tool", {}).get("driver", {}).get("rules", [])}
+        rules_map = {}
+
+        # 1. 加载 driver 中的规则
+        for rule in tool.get("driver", {}).get("rules", []):
+            rules_map[rule.get("id")] = rule
+
+        # 2. 加载 extensions 中的规则
+        for ext in tool.get("extensions", []):
+            for rule in ext.get("rules", []):
+                rules_map[rule.get("id")] = rule  # 覆盖或新增
 
         for result in run.get("results", []):
             rule_id = result.get("ruleId", "")
@@ -25,9 +35,11 @@ def parse_codeql_sarif(sarif_path):
             help_markdown = rule.get("help", {}).get("markdown", "")
             help_uri = rule.get("helpUri", "")
 
+            language_prefix = rule_id.split('/')[0] if '/' in rule_id else 'unknown'
+
             results.append({
                 "tool": tool_info,
-                "type": "SAST",
+                "type": f"SAST-{language_prefix}",
                 "rule_id": rule_id,
                 "message": message,
                 "short_description": short_desc,
