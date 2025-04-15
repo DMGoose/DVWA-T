@@ -27,7 +27,7 @@ def parse_codeql_sarif(sarif_path):
 
             results.append({
                 "tool": tool_info,
-                "type": "sast",
+                "type": "SAST",
                 "rule_id": rule_id,
                 "message": message,
                 "short_description": short_desc,
@@ -42,7 +42,7 @@ def parse_codeql_sarif(sarif_path):
 
     return {
         "tool": tool_name,
-        "type": "sast",
+        "type": "SAST",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "target": "source-code",
         "results": results
@@ -118,7 +118,7 @@ def parse_zap_results(zap_file_path):
     if not os.path.exists(zap_file_path):
         return {
             "tool": "OWASP ZAP",
-            "type": "dast",
+            "type": "DAST",
             "results": [],
             "note": f"File {zap_file_path} not found.",
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -136,7 +136,7 @@ def parse_zap_results(zap_file_path):
             for instance in alert.get("instances", []):
                 results.append({
                     "tool": "OWASP ZAP",
-                    "type": "dast",
+                    "type": "DAST",
                     "name": alert.get("name"),
                     "risk": alert.get("riskdesc"),
                     "description": alert.get("desc"),
@@ -148,7 +148,7 @@ def parse_zap_results(zap_file_path):
 
     return {
         "tool": "OWASP ZAP",
-        "type": "dast",
+        "type": "DAST",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "target": target,
         "results": results
@@ -159,8 +159,8 @@ if __name__ == "__main__":
     merged_results = []
 
     merged_results.extend(codeql_reports)
-    merged_results.append(parse_trivy_results("trivy-fs-results.sarif", scan_type="sca-fs"))
-    merged_results.append(parse_trivy_results("trivy-results.sarif", scan_type="sca-image"))
+    merged_results.append(parse_trivy_results("trivy-fs-results.sarif", scan_type="File Scan"))
+    merged_results.append(parse_trivy_results("trivy-results.sarif", scan_type="Image Scan"))
     merged_results.append(parse_zap_results("report_json.json"))
 
     with open("merged-security-reports.json", "w") as f:
