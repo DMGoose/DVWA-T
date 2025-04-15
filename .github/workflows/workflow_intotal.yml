@@ -219,7 +219,8 @@ jobs:
   
 
   report-merge:
-    needs: [sca,dast]
+    needs: [sca,dast,codeql-python, codeql-js,codeql-java]
+    if: ${{ always() }}
     runs-on: ubuntu-latest
 
     steps:
