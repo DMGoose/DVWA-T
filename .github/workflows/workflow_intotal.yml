@@ -1,3 +1,4 @@
+
 name: "workflow_intotal"
 
 on:
@@ -45,7 +46,7 @@ jobs:
     permissions:
       actions: read
       contents: read
-      security-events: write  # ✅ 必须加上这个
+      security-events: write  
     needs: detect-languages
     if: needs.detect-languages.outputs.has_python == 'true'
     runs-on: ubuntu-latest
@@ -69,7 +70,7 @@ jobs:
     permissions:
       actions: read
       contents: read
-      security-events: write  # ✅ 必须加上这个
+      security-events: write  
     if: needs.detect-languages.outputs.has_js == 'true'
     runs-on: ubuntu-latest
     name: CodeQL (JS/TS)
@@ -92,7 +93,7 @@ jobs:
     permissions:
       actions: read
       contents: read
-      security-events: write  # ✅ 必须加上这个
+      security-events: write 
     if: needs.detect-languages.outputs.has_java == 'true'
     runs-on: ubuntu-latest
     name: CodeQL (Java)
@@ -142,7 +143,7 @@ jobs:
           output: 'trivy-fs-results.sarif'
 
       # Java用的
-      # ✅ 如果是 Java 项目，则设置 JDK 23（避免“release 23 not supported”）
+      # 如果是 Java 项目，则设置 JDK 23（避免“release 23 not supported”）
       - name: Set up JDK 23
         if: hashFiles('pom.xml') != ''
         uses: actions/setup-java@v3
@@ -154,7 +155,6 @@ jobs:
         if: hashFiles('pom.xml') != ''
         run: mvn clean package -DskipTests
 
-
       # 构建容器
       - name: Build Docker Image from Current App
         run: docker build -t my-app:${{ github.sha }} .
@@ -162,23 +162,13 @@ jobs:
       # 这是 docker image 的 扫描, 扫描 docker image 中的漏洞
       - name: Run Trivy on Built Image
         uses: aquasecurity/trivy-action@0.28.0
+        env:
+          TRIVY_TIMEOUT: 15m # 加到15分钟
         with:
           image-ref: 'my-app:${{ github.sha }}'
           format: 'sarif'
           output: 'trivy-results.sarif'
-
-     # # 上传结果到security hub
-     #  - name: Upload Trivy FS scan results
-     #    uses: github/codeql-action/upload-sarif@v3
-     #    with:
-     #      sarif_file: 'trivy-fs-results.sarif'
-     #      category: 'trivy-fs'
-      
-     #  - name: Upload Trivy Docker scan results to GitHub Security tab
-     #    uses: github/codeql-action/upload-sarif@v3
-     #    with:
-     #      sarif_file: 'trivy-results.sarif'
-     #      category: 'trivy-image'
+          scanners: 'vuln' # 只启用漏洞扫描，禁用 secret 扫描
 
       # 上传结果到artifact
       - name: Upload Trivy FS scan results (artifact)
@@ -197,6 +187,8 @@ jobs:
   dast:
     needs: sca
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     
     steps:
       - name: Checkout Repository
@@ -204,7 +196,7 @@ jobs:
 
       - name: Start DVWA with Docker Compose
         run: |
-          docker compose up -d
+          docker compose up -d  # 🛑需要修改
           sleep 15  # 给 DVWA 启动一些时间
       - name: List Running Containers (Debug)
         run: docker ps
@@ -212,11 +204,9 @@ jobs:
       - name: ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.14.0
         with:
-          target: 'http://localhost:4280'
-          
-          # 上面这个自动会上传到artifact, 所以不用手动上传
-
-  
+          target: 'http://localhost:4280'   # 🛑需要修改
+          # allow_issue_writing: false
+          # fail_action: false
 
   report-merge:
     needs: [sca,dast,codeql-python, codeql-js,codeql-java]
@@ -284,7 +274,6 @@ jobs:
 
   upload-report:
     needs: [report-merge]
-    if: ${{ always() }}
     runs-on: ubuntu-latest
 
     steps:
