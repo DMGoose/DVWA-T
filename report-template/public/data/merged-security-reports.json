@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2025-04-22T07:35:06.482086+00:00",
+    "timestamp": "2025-04-22T18:58:06.421281+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2025-04-22T07:35:06.509888+00:00",
+    "timestamp": "2025-04-22T18:58:06.448762+00:00",
     "target": "file:///",
     "results": [
       {
@@ -10937,7 +10937,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2025-04-22T07:35:06.511251+00:00",
+    "timestamp": "2025-04-22T18:58:06.449899+00:00",
     "target": "N/A",
     "results": [
       {
@@ -11012,6 +11012,17 @@
         "name": "Application Error Disclosure",
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+        "uri": "http://localhost:4280/README.es.md",
+        "evidence": "Can't connect to local",
+        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+        "cwe": "550"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Application Error Disclosure",
+        "risk": "Medium (Medium)",
+        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.fa.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
@@ -11046,17 +11057,6 @@
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.pt.md",
-        "evidence": "Can't connect to local",
-        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-        "cwe": "550"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Application Error Disclosure",
-        "risk": "Medium (Medium)",
-        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-        "uri": "http://localhost:4280/README.tr.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -11192,6 +11192,17 @@
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Missing Anti-clickjacking Header",
+        "risk": "Medium (Medium)",
+        "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
+        "uri": "http://localhost:4280",
+        "evidence": "",
+        "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
+        "cwe": "1021"
       },
       {
         "tool": "OWASP ZAP",
@@ -11529,17 +11540,6 @@
         "name": "In Page Banner Information Leak",
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
-        "uri": "http://localhost:4280/var/www/html,",
-        "evidence": "Apache/2.4.62",
-        "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "In Page Banner Information Leak",
-        "risk": "Low (High)",
-        "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/var/www/html.",
         "evidence": "Apache/2.4.62",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
@@ -11760,7 +11760,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/dvwa/js/add_event_listeners.js",
+        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -11925,7 +11925,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/instructions.php?doc=readme",
+        "uri": "http://localhost:4280/instructions.php?doc=PDF",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -12046,7 +12046,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/instructions.php?doc=readme",
+        "uri": "http://localhost:4280/instructions.php?doc=PDF",
         "evidence": "X-Powered-By: PHP/8.4.5",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -12267,6 +12267,28 @@
         "risk": "Low (Medium)",
         "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
         "uri": "http://localhost:4280/dvwa/images/login_logo.png",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "X-Content-Type-Options Header Missing",
+        "risk": "Low (Medium)",
+        "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+        "uri": "http://localhost:4280/dvwa/images/logo.png",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "X-Content-Type-Options Header Missing",
+        "risk": "Low (Medium)",
+        "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+        "uri": "http://localhost:4280/dvwa/images/spanner.png",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
         "cwe": "693"
@@ -12498,7 +12520,7 @@
         "risk": "Informational (Medium)",
         "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "d7d907f1765feeb2c443d3c6926fbd04",
+        "evidence": "340fa4f3e51a6727de14dcf46e5001e4",
         "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
         "cwe": "-1"
       },
@@ -12531,17 +12553,6 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
         "uri": "http://localhost:4280/dvwa/images/login_logo.png",
-        "evidence": "",
-        "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable and Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/js/add_event_listeners.js",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
         "cwe": "524"
