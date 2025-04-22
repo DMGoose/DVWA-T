@@ -274,6 +274,7 @@ jobs:
 
   upload-report:
     needs: [report-merge]
+    if: ${{ always() }}
     runs-on: ubuntu-latest
 
     steps:
@@ -300,11 +301,3 @@ jobs:
           add: "report-template/public/data/merged-security-reports.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-      # 把 JSON 拷贝到 该拷贝的地方
-       # 没有文件夹就自动创建
-      # - name: Ensure data folder exists
-      #   run: mkdir -p report-template/public/data
-      #  # 然后把文件放进去
-      # - name: Copy merged report to dashboard data folder
-      #   run: cp merged-security-reports.json report-template/public/data/merged.json
