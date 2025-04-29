@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2025-04-22T18:58:06.421281+00:00",
+    "timestamp": "2025-04-29T07:35:49.957889+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2025-04-22T18:58:06.448762+00:00",
+    "timestamp": "2025-04-29T07:35:49.979947+00:00",
     "target": "file:///",
     "results": [
       {
@@ -3195,16 +3195,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-56406",
-        "component": "perl-modules-5.36",
-        "severity": "8.0",
-        "description": "perl: Perl 5.34, 5.36, 5.38 and 5.40 are vulnerable to a heap buffer overflow when transliterating non-ASCII bytes",
-        "remediation": "It is believed that this vulnerability can enable Denial of Service and possibly Code Execution attacks on platforms that lack sufficient defenses.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-56406"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -3545,6 +3535,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-32414",
+        "component": "libxml2",
+        "severity": "7.5",
+        "description": "libxml2: Out-of-Bounds Read in libxml2",
+        "remediation": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds memory access can occur in the Python API (Python bindings) because of an incorrect return value. This occurs in xmlPythonFileRead and xmlPythonFileReadRaw because of a difference between bytes and characters.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-32414"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-32415",
+        "component": "libxml2",
+        "severity": "7.5",
+        "description": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
+        "remediation": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-32415"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2022-49043",
         "component": "libxml2",
         "severity": "5.5",
@@ -3575,32 +3585,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-32414",
-        "component": "libxml2",
-        "severity": "5.5",
-        "description": "libxml2: Out-of-Bounds Read in libxml2",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-32414"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-34459",
         "component": "libxml2",
         "severity": "2.0",
         "description": "libxml2: buffer over-read in xmlHTMLPrintFileContext in xmllint.c",
         "remediation": "An issue was discovered in xmllint (from libxml2) before 2.11.8 and 2.12.x before 2.12.7. Formatting error messages with xmllint --htmlout can result in a buffer over-read in xmlHTMLPrintFileContext in xmllint.c.",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-34459"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-32415",
-        "component": "libxml2",
-        "severity": "2.0",
-        "description": "libxml2: Out-of-bounds Read in xmlSchemaIDCFillNodeTables",
-        "remediation": "In libxml2 before 2.13.8 and 2.14.x before 2.14.2, xmlSchemaIDCFillNodeTables in xmlschemas.c has a heap-based buffer under-read. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-32415"
       },
       {
         "tool": "Trivy",
@@ -3785,32 +3775,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-26982",
-        "component": "linux-libc-dev",
-        "severity": "7.1",
-        "description": "kernel: Squashfs: check the inode number is not the invalid value of zero",
-        "remediation": "[phillip@squashfs.org.uk: whitespace fix]",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-26982"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-27042",
         "component": "linux-libc-dev",
         "severity": "7.8",
         "description": "kernel: drm/amdgpu: Fix potential out-of-bounds access in &amp;#39;amdgpu_discovery_reg_base_init()&amp;#39;",
         "remediation": "drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c:1289 amdgpu_discovery_reg_base_init() error: testing array offset 'adev->vcn.num_vcn_inst' after use.",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-27042"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-35866",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: smb: client: fix potential UAF in cifs_dump_full_key()",
-        "remediation": "avoid UAF.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-35866"
       },
       {
         "tool": "Trivy",
@@ -3945,16 +3915,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-46774",
-        "component": "linux-libc-dev",
-        "severity": "7.1",
-        "description": "kernel: powerpc/rtas: Prevent Spectre v1 gadget construction in sys_rtas()",
-        "remediation": "for speculative execution.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46774"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-46786",
         "component": "linux-libc-dev",
         "severity": "7.8",
@@ -4015,16 +3975,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-50063",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: bpf: Prevent tail call between progs attached to different hooks",
-        "remediation": "This patch adds restriction for tail call to prevent such bypasses.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-50063"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-50112",
         "component": "linux-libc-dev",
         "severity": "7.8",
@@ -4055,16 +4005,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-50246",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: fs/ntfs3: Add rough attr alloc_size check",
-        "remediation": "fs/ntfs3: Add rough attr alloc_size check",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-50246"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-53068",
         "component": "linux-libc-dev",
         "severity": "7.8",
@@ -4091,16 +4031,6 @@
         "description": "kernel: drm/amd/display: Handle dml allocation failure to avoid crash",
         "remediation": "(cherry picked from commit bcafdc61529a48f6f06355d78eb41b3aeda5296c)",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-53133"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-53166",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: block, bfq: fix bfqq uaf in bfq_limit_depth()",
-        "remediation": "Fix the problem by protecting bic_to_bfqq() with bfqd->lock.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-53166"
       },
       {
         "tool": "Trivy",
@@ -4205,92 +4135,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-58002",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: media: uvcvideo: Remove dangling pointers",
-        "remediation": "that it is properly handled.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-58002"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21702",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: pfifo_tail_enqueue: Drop new packet when sch-&gt;limit == 0",
-        "remediation": "Bug impact: This issue can be used for user->kernel privilege escalation when it is reachable.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21702"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21855",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: ibmvnic: Don&#39;t reference skb after sending to VIOS",
-        "remediation": "==================================================================",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21855"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21858",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: geneve: Fix use-after-free in geneve_find_dev().",
-        "remediation": "---truncated---",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21858"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21863",
         "component": "linux-libc-dev",
         "severity": "7.8",
         "description": "kernel: io_uring: prevent opcode speculation",
         "remediation": "against speculations.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21863"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21905",
-        "component": "linux-libc-dev",
-        "severity": "7.1",
-        "description": "kernel: wifi: iwlwifi: limit printed string from FW file",
-        "remediation": "buffer we have.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21905"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21919",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: sched/fair: Fix potential memory corruption in child_cfs_rq_on_list",
-        "remediation": "behavior when the layout changes.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21919"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21920",
-        "component": "linux-libc-dev",
-        "severity": "7.1",
-        "description": "kernel: vlan: enforce underlying device type",
-        "remediation": "device initialization.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21920"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21926",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net: gso: fix ownership in __udp_gso_segment",
-        "remediation": "__udp_gso_segment.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21926"
       },
       {
         "tool": "Trivy",
@@ -4305,52 +4155,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21928",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: HID: intel-ish-hid: Fix use-after-free issue in ishtp_hid_remove()",
-        "remediation": "`driver_data` after the device is destroyed.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21928"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21934",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: rapidio: fix an API misues when rio_add_net() fails",
-        "remediation": "\"mport->net = NULL;\" to avoid a use after free issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21934"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21945",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: ksmbd: fix use-after-free in smb2_lock",
-        "remediation": "routine.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21945"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21967",
         "component": "linux-libc-dev",
         "severity": "7.8",
         "description": "kernel: ksmbd: fix use-after-free in ksmbd_free_work_struct",
         "remediation": "immediately sent whenever a oplock break wait is needed.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21967"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21968",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: drm/amd/display: Fix slab-use-after-free on hdcp_work",
-        "remediation": "(cherry picked from commit 725a04ba5a95e89c89633d4322430cfbca7ce128)",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21968"
       },
       {
         "tool": "Trivy",
@@ -4365,32 +4175,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21979",
+        "cve": "CVE-2025-40014",
         "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: wifi: cfg80211: cancel wiphy_work before freeing wiphy",
-        "remediation": "Fix this by canceling the work before freeing the wiphy.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21979"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21991",
-        "component": "linux-libc-dev",
-        "severity": "7.8",
-        "description": "kernel: x86/microcode/AMD: Fix out-of-bounds on systems with CPU-less NUMA nodes",
-        "remediation": "[ bp: Massage commit message, fix typo. ]",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21991"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21993",
-        "component": "linux-libc-dev",
-        "severity": "7.1",
-        "description": "kernel: iscsi_ibft: Fix UBSAN shift-out-of-bounds warning in ibft_attr_show_nic()",
-        "remediation": "apply to IPv6, the value is set to ~0 to suppress the warning message.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21993"
+        "severity": "8.0",
+        "description": "kernel: objtool, spi: amd: Fix out-of-bounds stack access in amd_set_spi_freq()",
+        "remediation": "drivers/spi/spi-amd.o: error: objtool: amd_set_spi_freq() falls through to next function amd_spi_set_opcode()",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40014"
       },
       {
         "tool": "Trivy",
@@ -4695,16 +4485,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2023-52857",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/mediatek: Fix coverity issue with unintentional integer overflow",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2023-52857"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2023-52888",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -4721,26 +4501,6 @@
         "description": "kernel: bpf: support non-r10 register spill/fill to/from stack in precision tracking",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-52920"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2023-52927",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: netfilter: allow exp not to be removed in nf_ct_find_expectation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2023-52927"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2023-53034",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ntb_hw_switchtec: Fix shift-out-of-bounds in switchtec_ntb_mw_set_trans",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2023-53034"
       },
       {
         "tool": "Trivy",
@@ -4771,16 +4531,6 @@
         "description": "hw: Spectre-SRC that is Speculative Race Conditions (SRCs) for synchronization primitives similar like Spectre V1 with possibility to bypass software features (e.g., IPIs, high-precision timers, etc)",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-2193"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-24855",
-        "component": "linux-libc-dev",
-        "severity": "4.7",
-        "description": "kernel: Race condition in lpfc_unregister_fcf_rescan() in scsi/lpfc/lpfc_hbadisc.c",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-24855"
       },
       {
         "tool": "Trivy",
@@ -4831,16 +4581,6 @@
         "description": "kernel: NULL check in edp_setup_replay()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-26648"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-26656",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amdgpu: use-after-free vulnerability",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-26656"
       },
       {
         "tool": "Trivy",
@@ -4951,16 +4691,6 @@
         "description": "kernel: md: Don&#39;t ignore suspended array in md_check_recovery()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-26758"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-26767",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: fixed integer types and null check locations",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-26767"
       },
       {
         "tool": "Trivy",
@@ -5171,16 +4901,6 @@
         "description": "kernel: drm/amd/display: fix NULL checks for adev-&amp;gt;dm.dc in amdgpu_dm_fini()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-27041"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-27056",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: iwlwifi: mvm: ensure offloading TID queue exists",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-27056"
       },
       {
         "tool": "Trivy",
@@ -5465,16 +5185,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-36908",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: blk-iocost: do not WARN if iocg was already offlined",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-36908"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-36911",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5595,16 +5305,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-38611",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: i2c: et8ek8: Don&amp;#39;t strip remove function when driver is builtin",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-38611"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-38620",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5651,16 +5351,6 @@
         "description": "kernel: f2fs: don&#39;t set RO when shutting down f2fs",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-40969"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-40973",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: mtk-vcodec: potential null pointer deference in SCP",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-40973"
       },
       {
         "tool": "Trivy",
@@ -5835,16 +5525,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-42129",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: leds: mlxreg: Use devm_mutex_init() for mutex initialization",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-42129"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-42135",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5951,16 +5631,6 @@
         "description": "kernel: PCI: endpoint: pci-epf-test: Make use of cached &amp;#39;epc_features&amp;#39; in pci_epf_test_core_init()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-43824"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-43831",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: mediatek: vcodec: Handle invalid decoder vsi",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-43831"
       },
       {
         "tool": "Trivy",
@@ -6165,26 +5835,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-46733",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: btrfs: fix qgroup reserve leaks in cow_file_range",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46733"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-46742",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb/server: fix potential null-ptr-deref of lease_ctx_info in smb2_open()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46742"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-46748",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6201,16 +5851,6 @@
         "description": "kernel: btrfs: don&amp;#39;t BUG_ON() when 0 reference count at btrfs_lookup_extent_info()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-46751"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-46753",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: btrfs: handle errors from btrfs_dec_ref() properly",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46753"
       },
       {
         "tool": "Trivy",
@@ -6251,16 +5891,6 @@
         "description": "kernel: ice: protect XDP configuration with a mutex",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-46765"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-46772",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: Check denominator crb_pipes before used",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46772"
       },
       {
         "tool": "Trivy",
@@ -6321,26 +5951,6 @@
         "description": "kernel: drm/amd/display: Add missing NULL pointer check within dpcd_extend_address_range",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-46808"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-46816",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: Stop amdgpu_dm initialize when link nums greater than max_links",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46816"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-46823",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: kunit/overflow: Fix UB in overflow_allocation_test",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-46823"
       },
       {
         "tool": "Trivy",
@@ -6501,26 +6111,6 @@
         "description": "kernel: media: mediatek: vcodec: Fix H264 stateless decoder smatch warning",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-47752"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-47753",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: mediatek: vcodec: Fix VP8 stateless decoder smatch warning",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-47753"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-47754",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: mediatek: vcodec: Fix H264 multi stateless decoder smatch warning",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-47754"
       },
       {
         "tool": "Trivy",
@@ -6851,16 +6441,6 @@
         "description": "kernel: rcu/nocb: Fix rcuog wake-up from offline softirq",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-50032"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-50056",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usb: gadget: uvc: Fix ERR_PTR dereference in uvc_v4l2.c",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-50056"
       },
       {
         "tool": "Trivy",
@@ -7615,32 +7195,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-57977",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: memcg: fix soft lockup in the OOM process",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-57977"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-57999",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: powerpc/pseries/iommu: IOMMU incorrectly marks MMIO range in DDW",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-57999"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-58005",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: tpm: Change to kvalloc() in eventlog/acpi.c",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-58005"
       },
       {
         "tool": "Trivy",
@@ -7675,32 +7235,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-58079",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: uvcvideo: Fix crash during unbind if gpio unit is in use",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-58079"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2024-58089",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: btrfs: fix double accounting race when btrfs_run_delalloc_range() failed",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-58089"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-58090",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: sched/core: Prevent rescheduling when interrupts are disabled",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-58090"
       },
       {
         "tool": "Trivy",
@@ -7875,32 +7415,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21712",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: md/md-bitmap: Synchronize bitmap_get_stats() with bitmap lifetime",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21712"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21714",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: RDMA/mlx5: Fix implicit ODP use after free",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21714"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21721",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nilfs2: handle errors that nilfs_prepare_chunk() may return",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21721"
       },
       {
         "tool": "Trivy",
@@ -7951,16 +7471,6 @@
         "description": "kernel: net/mlx5: HWS, change error flow on matcher disconnect",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21751"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21756",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: vsock: Keep the binding until socket destruction",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21756"
       },
       {
         "tool": "Trivy",
@@ -8045,72 +7555,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21838",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usb: gadget: core: flush gadget workqueue after device removal",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21838"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21839",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: KVM: x86: Load DR6 with guest value only before entering .vcpu_run() loop",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21839"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21844",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb: client: Add check for next_buffer in receive_encrypted_standard()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21844"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21846",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: acct: perform last write from workqueue",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21846"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21848",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nfp: bpf: Add check for nfp_app_ctrl_msg_alloc()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21848"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21853",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: bpf: avoid holding freeze_mutex during mmap operation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21853"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21859",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: USB: gadget: f_midi: f_midi_complete to call queue_work",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21859"
       },
       {
         "tool": "Trivy",
@@ -8125,72 +7575,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21862",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drop_monitor: fix incorrect initialization order",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21862"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21864",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: tcp: drop secpath at the same time as we currently drop dst",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21864"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21865",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: gtp: Suppress list corruption splat in gtp_net_exit_batch_rtnl().",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21865"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21866",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: powerpc/code-patching: Fix KASAN hit by not flagging text patching area as VM_ALLOC",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21866"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21867",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: bpf, test_run: Fix use-after-free issue in eth_skb_pkt_type()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21867"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21870",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ASoC: SOF: ipc4-topology: Harden loops for looking up ALH copiers",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21870"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21871",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: tee: optee: Fix supplicant wait loop",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21871"
       },
       {
         "tool": "Trivy",
@@ -8205,46 +7595,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21875",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mptcp: always handle address removal under msk socket lock",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21875"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21877",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usbnet: gl620a: fix endpoint checking in genelink_bind()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21877"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21878",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: i2c: npcm: disable interrupt enable bit before devm_request_irq",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21878"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21881",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: uprobes: Reject the shared zeropage in uprobe_write_opcode()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21881"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21885",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8255,32 +7605,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21887",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ovl: fix UAF in ovl_dentry_update_reval by moving dput() in ovl_link_up",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21887"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21888",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: RDMA/mlx5: Fix a WARN during dereg_mr for DM type",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21888"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21891",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ipvlan: ensure network headers are in skb linear part",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21891"
       },
       {
         "tool": "Trivy",
@@ -8305,152 +7635,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21898",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ftrace: Avoid potential division by zero in function_stat_show()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21898"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21899",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: tracing: Fix bad hist from corrupting named_triggers list",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21899"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21904",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: caif_virtio: fix wrong pointer check in cfv_probe()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21904"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21907",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: mm: memory-failure: update ttu flag inside unmap_poisoned_folio",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21907"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21909",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: nl80211: reject cooked mode if it is set along with other flags",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21909"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21910",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: cfg80211: regulatory: improve invalid hints checking",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21910"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21912",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: gpio: rcar: Use raw_spinlock to protect register access",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21912"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21913",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: x86/amd_nb: Use rdmsr_safe() in amd_get_mmconfig_range()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21913"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21914",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: slimbus: messaging: Free transaction ID in delayed interrupt scenario",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21914"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21916",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usb: atm: cxacru: fix a flaw in existing endpoint checks",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21916"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21917",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usb: renesas_usbhs: Flush the notify_hotplug_work",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21917"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21918",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usb: typec: ucsi: Fix NULL pointer access",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21918"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21922",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ppp: Fix KMSAN uninit-value warning with bpf",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21922"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21924",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: hns3: make sure ptp clock is unregister and freed if hclge_ptp_get_cycle returns an error",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21924"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21925",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: llc: do not use skb_get() before dev_queue_xmit()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21925"
       },
       {
         "tool": "Trivy",
@@ -8465,102 +7655,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21935",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: rapidio: add check for rio_add_net() in rio_scan_alloc_net()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21935"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21936",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Bluetooth: Add check for mgmt_alloc_skb() in mgmt_device_connected()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21936"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21937",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Bluetooth: Add check for mgmt_alloc_skb() in mgmt_remote_name()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21937"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21938",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mptcp: fix &#39;scheduling while atomic&#39; in mptcp_pm_nl_append_new_local_addr",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21938"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21941",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: Fix null check for pipe_ctx-&gt;plane_state in resource_build_scaling_params",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21941"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21943",
-        "component": "linux-libc-dev",
-        "severity": "4.7",
-        "description": "kernel: gpio: aggregator: protect driver attr handlers against module unload",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21943"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21944",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: fix bug on trap in smb2_lock",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21944"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21946",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ksmbd: fix out-of-bounds in parse_sec_desc()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21946"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21947",
-        "component": "linux-libc-dev",
-        "severity": "4.7",
-        "description": "kernel: ksmbd: fix type confusion via race condition when using ipc_msg_send_request",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21947"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21948",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: HID: appleir: Fix potential NULL dereference at raw event handle",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21948"
       },
       {
         "tool": "Trivy",
@@ -8575,72 +7675,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21950",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drivers: virt: acrn: hsm: Use kzalloc to avoid info leak in pmcmd_ioctl",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21950"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21951",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: bus: mhi: host: pci_generic: Use pci_try_reset_function() to avoid deadlock",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21951"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21955",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ksmbd: prevent connection release during oplock break notification",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21955"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21956",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: Assign normalized_pix_clk when color depth = 14",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21956"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21957",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: scsi: qla1280: Fix kernel oops when debug level &gt; 2",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21957"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21959",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: netfilter: nf_conncount: Fully initialize struct nf_conncount_tuple in insert_tree()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21959"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21960",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: eth: bnxt: do not update checksum in bnxt_xdp_build_skb()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21960"
       },
       {
         "tool": "Trivy",
@@ -8655,72 +7695,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21962",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: cifs: Fix integer overflow while processing closetimeo mount option",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21962"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21963",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: cifs: Fix integer overflow while processing acdirmax mount option",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21963"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21964",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: cifs: Fix integer overflow while processing acregmax mount option",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21964"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21970",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net/mlx5: Bridge, fix the crash caused by LAG state check",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21970"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21971",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net_sched: Prevent creation of classes with TC_H_ROOT",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21971"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21972",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: net: mctp: unshare packets when reassembling",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21972"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21975",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net/mlx5: handle errors in mlx5_chains_create_table()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21975"
       },
       {
         "tool": "Trivy",
@@ -8735,172 +7715,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-21978",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/hyperv: Fix address space leak when Hyper-V DRM device is removed",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21978"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21980",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: sched: address a potential NULL pointer dereference in the GRED scheduler.",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21980"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21981",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ice: fix memory leak in aRFS after reset",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21981"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-21985",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: drm/amd/display: Fix out-of-bound accesses",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-21985"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21986",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: switchdev: Convert blocking notification chain to a raw one",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21986"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21992",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: HID: ignore non-functional sensor in HP 5MP Camera",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21992"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21994",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: fix incorrect validation for num_aces field of smb_acl",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21994"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21996",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/radeon: fix uninitialized size issue in radeon_vce_cs_parse()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21996"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21997",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: xsk: fix an integer overflow in xp_create_and_assign_umem()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21997"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-21999",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: proc: fix UAF in proc_get_inode()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-21999"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22004",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: atm: fix use after free in lec_send()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22004"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22005",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ipv6: Fix memleak of nhc_pcpu_rth_output in fib_check_nh_v6_gw().",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22005"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22007",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Bluetooth: Fix error code in chan_alloc_skb_cb()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22007"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22008",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: regulator: check that dummy regulator has been probed before using it",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22008"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22010",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: RDMA/hns: Fix soft lockup during bt pages loop",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22010"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22014",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: soc: qcom: pdr: Fix the potential deadlock",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22014"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22015",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mm/migrate: fix shmem xarray update during migration",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22015"
       },
       {
         "tool": "Trivy",
@@ -8955,32 +7775,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22025",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nfsd: put dl_stid if fail to queue dl_recall",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22025"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22026",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: nfsd: don&#39;t ignore the return code of svc_proc_register()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22026"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22027",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: media: streamzap: fix race between device disconnection and urb callback",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22027"
       },
       {
         "tool": "Trivy",
@@ -9005,42 +7805,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22033",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: arm64: Don&#39;t call NULL in do_compat_alignment_fixup()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22033"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22035",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: tracing: Fix use-after-free in print_graph_function_flags during tracer switching",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22035"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22037",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ksmbd: fix null pointer dereference in alloc_preauth_hash()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22037"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22038",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: validate zero num_subauth before sub_auth is accessed",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22038"
       },
       {
         "tool": "Trivy",
@@ -9055,62 +7825,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22040",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: fix session use-after-free in multichannel connection",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22040"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22041",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: fix use-after-free in ksmbd_sessions_deregister()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22041"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22042",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: add bounds check for create lease context",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22042"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22043",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ksmbd: add bounds check for durable handle context",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22043"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22044",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: acpi: nfit: fix narrowing conversion in acpi_nfit_ctl",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22044"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22045",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: x86/mm: Fix flush_tlb_range() when used for zapping normal PMDs",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22045"
       },
       {
         "tool": "Trivy",
@@ -9125,62 +7845,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22049",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: LoongArch: Increase ARCH_DMA_MINALIGN up to 16",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22049"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22050",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: usbnet:fix NPE during rx_complete",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22050"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22053",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: net: ibmveth: make veth_pool_store stop hanging",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22053"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22054",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: arcnet: Add NULL check in com20020pci_probe()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22054"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22055",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: fix geneve_opt length integer overflow",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22055"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22056",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: netfilter: nft_tunnel: fix geneve_opt type confusion addition",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22056"
       },
       {
         "tool": "Trivy",
@@ -9195,52 +7865,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22058",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: udp: Fix memory accounting leak.",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22058"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22060",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: mvpp2: Prevent parser TCAM memory corruption",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22060"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22062",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: sctp: add mutual exclusion in proc_sctp_do_udp_port()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22062"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22063",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: netlabel: Fix NULL pointer exception caused by CALIPSO on IPv4 sockets",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22063"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22066",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ASoC: imx-card: Add NULL check in imx_card_probe()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22066"
       },
       {
         "tool": "Trivy",
@@ -9255,66 +7885,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22071",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: spufs: fix a leak in spufs_create_context()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22071"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22072",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: spufs: fix gang directory lifetimes",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22072"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22073",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: spufs: fix a leak on spufs_new_file() failure",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22073"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22075",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: rtnetlink: Allocate vfinfo size for VF GUIDs when supported",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22075"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22079",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ocfs2: validate l_tree_depth to avoid out-of-bounds access",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22079"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22081",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: fs/ntfs3: Fix a couple integer overflows on 32bit systems",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22081"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22083",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -9325,72 +7895,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22086",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: RDMA/mlx5: Fix mlx5_poll_one() cur_qp update flow",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22086"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22088",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: RDMA/erdma: Prevent use-after-free in erdma_accept_newconn()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22088"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22089",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: RDMA/core: Don&#39;t expose hw_counters outside of init net namespace",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22089"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22090",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: x86/mm/pat: Fix VM_PAT handling when fork() fails in copy_page_range()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22090"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22093",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/display: avoid NPD when ASIC does not support DMUB",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22093"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22095",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: PCI: brcmstb: Fix error path after a call to regulator_bulk_get()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22095"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22097",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/vkms: Fix use after free and double free on init error",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22097"
       },
       {
         "tool": "Trivy",
@@ -9505,16 +8015,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22126",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: md: fix mddev uaf while iterating all_mddevs list",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22126"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22127",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -9575,46 +8075,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-23136",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: thermal: int340x: Add NULL check for adev",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-23136"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-23138",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: watch_queue: fix pipe accounting mismatch",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-23138"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-37785",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ext4: fix OOB read when checking dotdot dir",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-37785"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-37838",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: HSI: ssi_protocol: Fix use after free vulnerability in ssi_protocol Driver Due to Race Condition",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-37838"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-37860",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -9655,82 +8115,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-38152",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: remoteproc: core: Clear table_sz when rproc_shutdown",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38152"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-38575",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: use aead_request_free to match aead_request_alloc",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38575"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-38637",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net_sched: skbprio: Remove overly strict queue assertions",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38637"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-39728",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: clk: samsung: Fix UBSAN panic in samsung_clk_init()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39728"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-39735",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: jfs: fix slab-out-of-bounds read in ea_get()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39735"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-39989",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: x86/mce: use is_copy_from_user() to determine copy-from-user context",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-39989"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40014",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: objtool, spi: amd: Fix out-of-bounds stack access in amd_set_spi_freq()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40014"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40325",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: md/raid10: wait barrier before returning discard request with REQ_NOWAIT",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40325"
       },
       {
         "tool": "Trivy",
@@ -10415,6 +8805,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40325",
+        "component": "linux-libc-dev",
+        "severity": "2.0",
+        "description": "kernel: md/raid10: wait barrier before returning discard request with REQ_NOWAIT",
+        "remediation": "dmesg and reports error if dmesg has warning/error calltrace.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40325"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "TEMP-0000000-F7A20F",
         "component": "linux-libc-dev",
         "severity": "2.0",
@@ -10735,16 +9135,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-56406",
-        "component": "perl-modules-5.36",
-        "severity": "8.0",
-        "description": "perl: Perl 5.34, 5.36, 5.38 and 5.40 are vulnerable to a heap buffer overflow when transliterating non-ASCII bytes",
-        "remediation": "It is believed that this vulnerability can enable Denial of Service and possibly Code Execution attacks on platforms that lack sufficient defenses.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-56406"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -10775,16 +9165,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2024-56406",
-        "component": "perl-modules-5.36",
-        "severity": "8.0",
-        "description": "perl: Perl 5.34, 5.36, 5.38 and 5.40 are vulnerable to a heap buffer overflow when transliterating non-ASCII bytes",
-        "remediation": "It is believed that this vulnerability can enable Denial of Service and possibly Code Execution attacks on platforms that lack sufficient defenses.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-56406"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -10811,16 +9191,6 @@
         "description": "perl: CPAN.pm does not verify TLS certificates when downloading distributions over HTTPS",
         "remediation": "CPAN.pm before 2.35 does not verify TLS certificates when downloading distributions over HTTPS.",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-31484"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-56406",
-        "component": "perl-modules-5.36",
-        "severity": "8.0",
-        "description": "perl: Perl 5.34, 5.36, 5.38 and 5.40 are vulnerable to a heap buffer overflow when transliterating non-ASCII bytes",
-        "remediation": "It is believed that this vulnerability can enable Denial of Service and possibly Code Execution attacks on platforms that lack sufficient defenses.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-56406"
       },
       {
         "tool": "Trivy",
@@ -10937,7 +9307,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2025-04-22T18:58:06.449899+00:00",
+    "timestamp": "2025-04-29T07:35:49.980889+00:00",
     "target": "N/A",
     "results": [
       {
@@ -11012,17 +9382,6 @@
         "name": "Application Error Disclosure",
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-        "uri": "http://localhost:4280/README.es.md",
-        "evidence": "Can't connect to local",
-        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-        "cwe": "550"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Application Error Disclosure",
-        "risk": "Medium (Medium)",
-        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.fa.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
@@ -11057,6 +9416,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.pt.md",
+        "evidence": "Can't connect to local",
+        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+        "cwe": "550"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Application Error Disclosure",
+        "risk": "Medium (Medium)",
+        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+        "uri": "http://localhost:4280/README.vi.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -11188,7 +9558,7 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/var/www/html/config/config.inc.php",
+        "uri": "http://localhost:4280/sitemap.xml",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
@@ -11196,13 +9566,13 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
-        "name": "Missing Anti-clickjacking Header",
-        "risk": "Medium (Medium)",
-        "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
-        "uri": "http://localhost:4280",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/var/www/html/config/config.inc.php",
         "evidence": "",
-        "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
-        "cwe": "1021"
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
       },
       {
         "tool": "OWASP ZAP",
@@ -11342,17 +9712,6 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
-        "uri": "http://localhost:4280/README.es.md",
-        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
-        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
-        "cwe": "540"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Source Code Disclosure - SQL",
-        "risk": "Medium (Medium)",
-        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.fa.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -11365,6 +9724,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.fr.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.id.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -11409,6 +9779,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.tr.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.vi.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -11485,17 +9866,6 @@
         "name": "In Page Banner Information Leak",
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
-        "uri": "http://localhost:4280/etc/mysql/mysql.conf.d/mysqld.cnf",
-        "evidence": "Apache/2.4.62",
-        "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "In Page Banner Information Leak",
-        "risk": "Low (High)",
-        "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/etc/php/x.x/apache2/php.ini.",
         "evidence": "Apache/2.4.62",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
@@ -11518,6 +9888,17 @@
         "name": "In Page Banner Information Leak",
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
+        "uri": "http://localhost:4280/Install-DVWA.sh",
+        "evidence": "Apache/2.4.62",
+        "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
+        "cwe": "497"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "In Page Banner Information Leak",
+        "risk": "Low (High)",
+        "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/sitemap.xml",
         "evidence": "Apache/2.4.62",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
@@ -11530,6 +9911,17 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/var/log/apache2/",
+        "evidence": "Apache/2.4.62",
+        "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
+        "cwe": "497"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "In Page Banner Information Leak",
+        "risk": "Low (High)",
+        "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
+        "uri": "http://localhost:4280/var/www/html,",
         "evidence": "Apache/2.4.62",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
@@ -11617,17 +10009,6 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.es.md",
-        "evidence": "Access denied for user",
-        "solution": "<p>Disable debugging messages before pushing to production.</p>",
-        "cwe": "1295"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Information Disclosure - Debug Error Messages",
-        "risk": "Low (Medium)",
-        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.fa.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -11696,6 +10077,17 @@
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.tr.md",
         "evidence": "for user 'notdvwa'@'lo",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
       },
@@ -12233,17 +10625,6 @@
         "name": "X-Content-Type-Options Header Missing",
         "risk": "Low (Medium)",
         "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
-        "uri": "http://localhost:4280/about.php",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "X-Content-Type-Options Header Missing",
-        "risk": "Low (Medium)",
-        "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
         "uri": "http://localhost:4280/dvwa/css/login.css",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
@@ -12278,17 +10659,6 @@
         "risk": "Low (Medium)",
         "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
         "uri": "http://localhost:4280/dvwa/images/logo.png",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "X-Content-Type-Options Header Missing",
-        "risk": "Low (Medium)",
-        "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
-        "uri": "http://localhost:4280/dvwa/images/spanner.png",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
         "cwe": "693"
@@ -12520,7 +10890,7 @@
         "risk": "Informational (Medium)",
         "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "340fa4f3e51a6727de14dcf46e5001e4",
+        "evidence": "80f2ffe16e332656e980fbf3a9e0fb4d",
         "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
         "cwe": "-1"
       },
