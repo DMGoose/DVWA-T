@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2025-05-27T07:36:18.096513+00:00",
+    "timestamp": "2025-06-03T07:37:52.361955+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2025-05-27T07:36:18.121667+00:00",
+    "timestamp": "2025-06-03T07:37:52.387999+00:00",
     "target": "file:///",
     "results": [
       {
@@ -585,232 +585,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2017-13716",
+        "cve": "CVE-2025-5244",
         "component": "libgprofng0",
         "severity": "2.0",
-        "description": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
-        "remediation": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
-        "reference": "https://avd.aquasec.com/nvd/cve-2017-13716"
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2018-20673",
+        "cve": "CVE-2025-5245",
         "component": "libgprofng0",
         "severity": "2.0",
-        "description": "libiberty: Integer overflow in demangle_template() function",
-        "remediation": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, contains an integer overflow vulnerability (for \"Create an array for saving the template argument values\") that can trigger a heap-based buffer overflow, as demonstrated by nm.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2018-20673"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2018-20712",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "libiberty: heap-based buffer over-read in d_expression_1",
-        "remediation": "A heap-based buffer over-read exists in the function d_expression_1 in cp-demangle.c in GNU libiberty, as distributed in GNU Binutils 2.31.1. A crafted input can cause segmentation faults, leading to denial-of-service, as demonstrated by c++filt.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2018-20712"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2018-9996",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: Stack-overflow in libiberty/cplus-dem.c causes crash",
-        "remediation": "An issue was discovered in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.30. Stack Exhaustion occurs in the C++ demangling functions provided by libiberty, and there are recursive stack frames: demangle_template_value_parm, demangle_integral_value, and demangle_expression.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2018-9996"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2021-32256",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: stack-overflow issue in demangle_type in rust-demangle.c.",
-        "remediation": "An issue was discovered in GNU libiberty, as distributed in GNU Binutils 2.36. It is a stack-overflow issue in demangle_type in rust-demangle.c.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2021-32256"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2023-1972",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: Illegal memory access when accessing a zer0-lengthverdef table",
-        "remediation": "A potential heap based buffer overflow was found in _bfd_elf_slurp_version_tables() in bfd/elf.c. This may lead to loss of availability.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2023-1972"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-53589",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: objdump: buffer Overflow in the BFD library&#39;s handling of tekhex format files",
-        "remediation": "GNU objdump 2.43 is vulnerable to Buffer Overflow in the BFD (Binary File Descriptor) library's handling of tekhex format files.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-53589"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2024-57360",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: nm: potential segmentation fault when displaying symbols without version info",
-        "remediation": "https://www.gnu.org/software/binutils/ nm >=2.43 is affected by: Incorrect Access Control. The type of exploitation is: local. The component is: `nm --without-symbol-version` function.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2024-57360"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-0840",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils objdump.c disassemble_bytes stack-based overflow",
-        "remediation": "A vulnerability, which was classified as problematic, was found in GNU Binutils up to 2.43. This affects the function disassemble_bytes of the file binutils/objdump.c. The manipulation of the argument buf leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 2.44 is able to address this issue. The identifier of the patch is baac6c221e9d69335bf41366a1c7d87d8ab2f893. It is recommended to upgrade the affected component.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-0840"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1147",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils nm nm.c internal_strlen buffer overflow",
-        "remediation": "A vulnerability has been found in GNU Binutils 2.43 and classified as problematic. Affected by this vulnerability is the function __sanitizer::internal_strlen of the file binutils/nm.c of the component nm. The manipulation of the argument const leads to buffer overflow. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1147"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1148",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld ldelfgen.c link_order_scan memory leak",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43 and classified as problematic. Affected by this issue is the function link_order_scan of the file ld/ldelfgen.c of the component ld. The manipulation leads to memory leak. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1148"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1149",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld xmalloc.c xstrdup memory leak",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been classified as problematic. This affects the function xstrdup of the file libiberty/xmalloc.c of the component ld. The manipulation leads to memory leak. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1149"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1150",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld libbfd.c bfd_malloc memory leak",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been declared as problematic. This vulnerability affects the function bfd_malloc of the file libbfd.c of the component ld. The manipulation leads to memory leak. The attack can be initiated remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1150"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1151",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld xmemdup.c xmemdup memory leak",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been rated as problematic. This issue affects the function xmemdup of the file xmemdup.c of the component ld. The manipulation leads to memory leak. The attack may be initiated remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1151"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1152",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld xstrdup.c xstrdup memory leak",
-        "remediation": "A vulnerability classified as problematic has been found in GNU Binutils 2.43. Affected is the function xstrdup of the file xstrdup.c of the component ld. The manipulation leads to memory leak. It is possible to launch the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1152"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1153",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils format.c bfd_set_format memory corruption",
-        "remediation": "A vulnerability classified as problematic was found in GNU Binutils 2.43/2.44. Affected by this vulnerability is the function bfd_set_format of the file format.c. The manipulation leads to memory corruption. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. Upgrading to version 2.45 is able to address this issue. The identifier of the patch is 8d97c1a53f3dc9fd8e1ccdb039b8a33d50133150. It is recommended to upgrade the affected component.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1153"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1176",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld elflink.c _bfd_elf_gc_mark_rsec heap-based overflow",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43 and classified as critical. This issue affects the function _bfd_elf_gc_mark_rsec of the file elflink.c of the component ld. The manipulation leads to heap-based buffer overflow. The attack may be initiated remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. The patch is named f9978defb6fab0bd8583942d97c112b0932ac814. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1176"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1178",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld libbfd.c bfd_putl64 memory corruption",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been declared as problematic. Affected by this vulnerability is the function bfd_putl64 of the file libbfd.c of the component ld. The manipulation leads to memory corruption. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The identifier of the patch is 75086e9de1707281172cc77f178e7949a4414ed0. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1178"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1179",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld libbfd.c bfd_putl64 memory corruption",
-        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been rated as critical. Affected by this issue is the function bfd_putl64 of the file bfd/libbfd.c of the component ld. The manipulation leads to memory corruption. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 2.44 is able to address this issue. It is recommended to upgrade the affected component. The code maintainer explains, that \"[t]his bug has been fixed at some point between the 2.43 and 2.44 releases\".",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1179"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1180",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld elf-eh-frame.c _bfd_elf_write_section_eh_frame memory corruption",
-        "remediation": "A vulnerability classified as problematic has been found in GNU Binutils 2.43. This affects the function _bfd_elf_write_section_eh_frame of the file bfd/elf-eh-frame.c of the component ld. The manipulation leads to memory corruption. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1180"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1181",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld elflink.c _bfd_elf_gc_mark_rsec memory corruption",
-        "remediation": "A vulnerability classified as critical was found in GNU Binutils 2.43. This vulnerability affects the function _bfd_elf_gc_mark_rsec of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. The attack can be initiated remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The name of the patch is 931494c9a89558acb36a03a340c01726545eef24. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1181"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-1182",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils ld elflink.c bfd_elf_reloc_symbol_deleted_p memory corruption",
-        "remediation": "A vulnerability, which was classified as critical, was found in GNU Binutils 2.43. Affected is the function bfd_elf_reloc_symbol_deleted_p of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. It is possible to launch the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. The patch is identified as b425859021d17adf62f06fb904797cf8642986ad. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-1182"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-3198",
-        "component": "libgprofng0",
-        "severity": "2.0",
-        "description": "binutils: GNU Binutils objdump bucomm.c display_info memory leak",
-        "remediation": "A vulnerability has been found in GNU Binutils 2.43/2.44 and classified as problematic. Affected by this vulnerability is the function display_info of the file binutils/bucomm.c of the component objdump. The manipulation leads to memory leak. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The patch is named ba6ad3a18cb26b79e0e3b84c39f707535bbc344d. It is recommended to apply a patch to fix this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-3198"
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
       },
       {
         "tool": "Trivy",
@@ -1041,6 +831,276 @@
         "description": "binutils: GNU Binutils objdump bucomm.c display_info memory leak",
         "remediation": "A vulnerability has been found in GNU Binutils 2.43/2.44 and classified as problematic. Affected by this vulnerability is the function display_info of the file binutils/bucomm.c of the component objdump. The manipulation leads to memory leak. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The patch is named ba6ad3a18cb26b79e0e3b84c39f707535bbc344d. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-3198"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2017-13716",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: Memory leak with the C++ symbol demangler routine in libiberty",
+        "remediation": "The C++ symbol demangler routine in cplus-dem.c in libiberty, as distributed in GNU Binutils 2.29, allows remote attackers to cause a denial of service (excessive memory allocation and application crash) via a crafted file, as demonstrated by a call from the Binary File Descriptor (BFD) library (aka libbfd).",
+        "reference": "https://avd.aquasec.com/nvd/cve-2017-13716"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2018-20673",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "libiberty: Integer overflow in demangle_template() function",
+        "remediation": "The demangle_template function in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.31.1, contains an integer overflow vulnerability (for \"Create an array for saving the template argument values\") that can trigger a heap-based buffer overflow, as demonstrated by nm.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2018-20673"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2018-20712",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "libiberty: heap-based buffer over-read in d_expression_1",
+        "remediation": "A heap-based buffer over-read exists in the function d_expression_1 in cp-demangle.c in GNU libiberty, as distributed in GNU Binutils 2.31.1. A crafted input can cause segmentation faults, leading to denial-of-service, as demonstrated by c++filt.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2018-20712"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2018-9996",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: Stack-overflow in libiberty/cplus-dem.c causes crash",
+        "remediation": "An issue was discovered in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.30. Stack Exhaustion occurs in the C++ demangling functions provided by libiberty, and there are recursive stack frames: demangle_template_value_parm, demangle_integral_value, and demangle_expression.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2018-9996"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2021-32256",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: stack-overflow issue in demangle_type in rust-demangle.c.",
+        "remediation": "An issue was discovered in GNU libiberty, as distributed in GNU Binutils 2.36. It is a stack-overflow issue in demangle_type in rust-demangle.c.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2021-32256"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2023-1972",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: Illegal memory access when accessing a zer0-lengthverdef table",
+        "remediation": "A potential heap based buffer overflow was found in _bfd_elf_slurp_version_tables() in bfd/elf.c. This may lead to loss of availability.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2023-1972"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2024-53589",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: objdump: buffer Overflow in the BFD library&#39;s handling of tekhex format files",
+        "remediation": "GNU objdump 2.43 is vulnerable to Buffer Overflow in the BFD (Binary File Descriptor) library's handling of tekhex format files.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2024-53589"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2024-57360",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: nm: potential segmentation fault when displaying symbols without version info",
+        "remediation": "https://www.gnu.org/software/binutils/ nm >=2.43 is affected by: Incorrect Access Control. The type of exploitation is: local. The component is: `nm --without-symbol-version` function.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2024-57360"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-0840",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump.c disassemble_bytes stack-based overflow",
+        "remediation": "A vulnerability, which was classified as problematic, was found in GNU Binutils up to 2.43. This affects the function disassemble_bytes of the file binutils/objdump.c. The manipulation of the argument buf leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 2.44 is able to address this issue. The identifier of the patch is baac6c221e9d69335bf41366a1c7d87d8ab2f893. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-0840"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1147",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils nm nm.c internal_strlen buffer overflow",
+        "remediation": "A vulnerability has been found in GNU Binutils 2.43 and classified as problematic. Affected by this vulnerability is the function __sanitizer::internal_strlen of the file binutils/nm.c of the component nm. The manipulation of the argument const leads to buffer overflow. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1147"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1148",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld ldelfgen.c link_order_scan memory leak",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43 and classified as problematic. Affected by this issue is the function link_order_scan of the file ld/ldelfgen.c of the component ld. The manipulation leads to memory leak. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1148"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1149",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld xmalloc.c xstrdup memory leak",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been classified as problematic. This affects the function xstrdup of the file libiberty/xmalloc.c of the component ld. The manipulation leads to memory leak. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1149"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1150",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld libbfd.c bfd_malloc memory leak",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been declared as problematic. This vulnerability affects the function bfd_malloc of the file libbfd.c of the component ld. The manipulation leads to memory leak. The attack can be initiated remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1150"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1151",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld xmemdup.c xmemdup memory leak",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been rated as problematic. This issue affects the function xmemdup of the file xmemdup.c of the component ld. The manipulation leads to memory leak. The attack may be initiated remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1151"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1152",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld xstrdup.c xstrdup memory leak",
+        "remediation": "A vulnerability classified as problematic has been found in GNU Binutils 2.43. Affected is the function xstrdup of the file xstrdup.c of the component ld. The manipulation leads to memory leak. It is possible to launch the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue. The code maintainer explains: \"I'm not going to commit some of the leak fixes I've been working on to the 2.44 branch due to concern that would destabilise ld. All of the reported leaks in this bugzilla have been fixed on binutils master.\"",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1152"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1153",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils format.c bfd_set_format memory corruption",
+        "remediation": "A vulnerability classified as problematic was found in GNU Binutils 2.43/2.44. Affected by this vulnerability is the function bfd_set_format of the file format.c. The manipulation leads to memory corruption. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. Upgrading to version 2.45 is able to address this issue. The identifier of the patch is 8d97c1a53f3dc9fd8e1ccdb039b8a33d50133150. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1153"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1176",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c _bfd_elf_gc_mark_rsec heap-based overflow",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43 and classified as critical. This issue affects the function _bfd_elf_gc_mark_rsec of the file elflink.c of the component ld. The manipulation leads to heap-based buffer overflow. The attack may be initiated remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. The patch is named f9978defb6fab0bd8583942d97c112b0932ac814. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1176"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1178",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld libbfd.c bfd_putl64 memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been declared as problematic. Affected by this vulnerability is the function bfd_putl64 of the file libbfd.c of the component ld. The manipulation leads to memory corruption. The attack can be launched remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The identifier of the patch is 75086e9de1707281172cc77f178e7949a4414ed0. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1178"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1179",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld libbfd.c bfd_putl64 memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils 2.43. It has been rated as critical. Affected by this issue is the function bfd_putl64 of the file bfd/libbfd.c of the component ld. The manipulation leads to memory corruption. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 2.44 is able to address this issue. It is recommended to upgrade the affected component. The code maintainer explains, that \"[t]his bug has been fixed at some point between the 2.43 and 2.44 releases\".",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1179"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1180",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elf-eh-frame.c _bfd_elf_write_section_eh_frame memory corruption",
+        "remediation": "A vulnerability classified as problematic has been found in GNU Binutils 2.43. This affects the function _bfd_elf_write_section_eh_frame of the file bfd/elf-eh-frame.c of the component ld. The manipulation leads to memory corruption. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1180"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1181",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c _bfd_elf_gc_mark_rsec memory corruption",
+        "remediation": "A vulnerability classified as critical was found in GNU Binutils 2.43. This vulnerability affects the function _bfd_elf_gc_mark_rsec of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. The attack can be initiated remotely. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The name of the patch is 931494c9a89558acb36a03a340c01726545eef24. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1181"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-1182",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c bfd_elf_reloc_symbol_deleted_p memory corruption",
+        "remediation": "A vulnerability, which was classified as critical, was found in GNU Binutils 2.43. Affected is the function bfd_elf_reloc_symbol_deleted_p of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. It is possible to launch the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. The patch is identified as b425859021d17adf62f06fb904797cf8642986ad. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-1182"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-3198",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump bucomm.c display_info memory leak",
+        "remediation": "A vulnerability has been found in GNU Binutils 2.43/2.44 and classified as problematic. Affected by this vulnerability is the function display_info of the file binutils/bucomm.c of the component objdump. The manipulation leads to memory leak. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The patch is named ba6ad3a18cb26b79e0e3b84c39f707535bbc344d. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-3198"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
       },
       {
         "tool": "Trivy",
@@ -1071,6 +1131,16 @@
         "description": "coreutils: race condition vulnerability in chown and chgrp",
         "remediation": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
         "reference": "https://avd.aquasec.com/nvd/cve-2017-18018"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5278",
+        "component": "coreutils",
+        "severity": "2.0",
+        "description": "coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification",
+        "remediation": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5278"
       },
       {
         "tool": "Trivy",
@@ -1485,6 +1555,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux-extra",
         "severity": "2.0",
@@ -2055,6 +2145,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2017-13716",
         "component": "libgprofng0",
         "severity": "2.0",
@@ -2281,6 +2391,26 @@
         "description": "binutils: GNU Binutils objdump bucomm.c display_info memory leak",
         "remediation": "A vulnerability has been found in GNU Binutils 2.43/2.44 and classified as problematic. Affected by this vulnerability is the function display_info of the file binutils/bucomm.c of the component objdump. The manipulation leads to memory leak. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The patch is named ba6ad3a18cb26b79e0e3b84c39f707535bbc344d. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-3198"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
       },
       {
         "tool": "Trivy",
@@ -2665,6 +2795,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-5244",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils ld elflink.c elf_gc_sweep memory corruption",
+        "remediation": "A vulnerability was found in GNU Binutils up to 2.44. It has been rated as critical. Affected by this issue is the function elf_gc_sweep of the file bfd/elflink.c of the component ld. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. Upgrading to version 2.45 is able to address this issue. It is recommended to upgrade the affected component.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5244"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5245",
+        "component": "libgprofng0",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils objdump debug.c debug_type_samep memory corruption",
+        "remediation": "A vulnerability classified as critical has been found in GNU Binutils up to 2.44. This affects the function debug_type_samep of the file /binutils/debug.c of the component objdump. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. It is recommended to apply a patch to fix this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5245"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-3576",
         "component": "libkrb5support0",
         "severity": "5.5",
@@ -2701,6 +2851,16 @@
         "description": "krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c",
         "remediation": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak vulnerability in /krb5/src/lib/gssapi/krb5/k5sealv3.c.",
         "reference": "https://avd.aquasec.com/nvd/cve-2024-26461"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-5222",
+        "component": "libicu72",
+        "severity": "8.0",
+        "description": "icu: Stack buffer overflow in the SRBRoot::addTag function",
+        "remediation": "A stack buffer overflow was found in Internationl components for unicode (ICU ). While running the genrb binary, the 'subtag' struct overflowed at the SRBRoot::addTag function. This issue may lead to memory corruption and local arbitrary code execution.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-5222"
       },
       {
         "tool": "Trivy",
@@ -3015,6 +3175,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40909",
+        "component": "perl-modules-5.36",
+        "severity": "5.5",
+        "description": "perl: Perl threads have a working directory race condition where file operations may target unintended paths",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -3031,16 +3201,6 @@
         "description": "http-tiny: insecure TLS cert default",
         "remediation": "HTTP::Tiny before 0.083, a Perl core module since 5.13.9 and available standalone on CPAN, has an insecure default TLS configuration where users must opt in to verify certificates.",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-31486"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40909",
-        "component": "perl-modules-5.36",
-        "severity": "0.0",
-        "description": "[Thread creation while a directory handle is open does a fchdir, affecting other threads (race condition)]",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
       },
       {
         "tool": "Trivy",
@@ -3145,6 +3305,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-4598",
+        "component": "libudev1",
+        "severity": "5.5",
+        "description": "systemd-coredump: race condition that allows a local attacker to crash a SUID program and gain read access to the resulting core dump",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-4598"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2013-4392",
         "component": "libudev1",
         "severity": "2.0",
@@ -3211,6 +3381,16 @@
         "description": "binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const",
         "remediation": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-27943"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-4598",
+        "component": "libudev1",
+        "severity": "5.5",
+        "description": "systemd-coredump: race condition that allows a local attacker to crash a SUID program and gain read access to the resulting core dump",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-4598"
       },
       {
         "tool": "Trivy",
@@ -3955,12 +4135,52 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-22026",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: nfsd: don&#39;t ignore the return code of svc_proc_register()",
+        "remediation": "the nfsd_net construction codepath, so if this happens, return -ENOMEM.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-22026"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-22104",
         "component": "linux-libc-dev",
         "severity": "8.0",
         "description": "kernel: ibmvnic: Use kernel helpers for hex dumps",
         "remediation": "ibmvnic 30000003 env3: 000000000033766e",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22104"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-22113",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: ext4: avoid journaling sb update on error if journal is destroying",
+        "remediation": "called from mballoc and AFAICT it would be always valid to schedule work here.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-22113"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-22121",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: ext4: fix out-of-bound read in ext4_xattr_inode_dec_ref_all()",
+        "remediation": "so that there is no divergent verification.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-22121"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37750",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: smb: client: fix UAF in decryption with multichannel",
+        "remediation": "</TASK>",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37750"
       },
       {
         "tool": "Trivy",
@@ -4311,6 +4531,46 @@
         "description": "kernel: wifi: brcm80211: fmac: Add error handling for brcmf_usb_dl_writeimage()",
         "remediation": "information.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-37990"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37994",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: usb: typec: ucsi: displayport: Fix NULL pointer access",
+        "remediation": "the partner removal.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37994"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37995",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: module: ensure that kobject_put() is safe for module type kobjects",
+        "remediation": "actually required makes 'kobject_put()' safe.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37995"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37997",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: netfilter: ipset: fix region locking in hash types",
+        "remediation": "when a hash type of set is defined with timeouts.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37997"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37998",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: openvswitch: Fix unsafe attribute parsing in output_userspace()",
+        "remediation": "well-formed attributes are processed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37998"
       },
       {
         "tool": "Trivy",
@@ -7765,16 +8025,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22026",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nfsd: don&#39;t ignore the return code of svc_proc_register()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22026"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22028",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7935,16 +8185,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-22113",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ext4: avoid journaling sb update on error if journal is destroying",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22113"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-22115",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7961,16 +8201,6 @@
         "description": "kernel: wifi: cfg80211: init wiphy_work before allocating rfkill fails",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-22119"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-22121",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ext4: fix out-of-bound read in ext4_xattr_inode_dec_ref_all()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-22121"
       },
       {
         "tool": "Trivy",
@@ -8091,16 +8321,6 @@
         "description": "kernel: perf: Fix hang while freeing sigtrap event",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-37747"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-37750",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb: client: fix UAF in decryption with multichannel",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-37750"
       },
       {
         "tool": "Trivy",
@@ -8285,16 +8505,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-37880",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: um: work around sched_yield not yielding in time-travel mode",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-37880"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-37882",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8448,7 +8658,7 @@
         "cve": "CVE-2025-37942",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "In the Linux kernel, the following vulnerability has been resolved:  H ...",
+        "description": "kernel: HID: pidff: Make sure to fetch pool before checking SIMULTANEOUS_MAX",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-37942"
       },
@@ -8458,7 +8668,7 @@
         "cve": "CVE-2025-37945",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "In the Linux kernel, the following vulnerability has been resolved:  n ...",
+        "description": "kernel: net: phy: allow MDIO bus PM ops to start/stop state machine for phylink-controlled PHY",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-37945"
       },
@@ -8531,6 +8741,16 @@
         "description": "In the Linux kernel, the following vulnerability has been resolved:  p ...",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-37991"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-37992",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net_sched: Flush gso_skb list too during -&gt;change()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37992"
       },
       {
         "tool": "Trivy",
@@ -9245,6 +9465,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-37880",
+        "component": "linux-libc-dev",
+        "severity": "2.0",
+        "description": "kernel: um: work around sched_yield not yielding in time-travel mode",
+        "remediation": "sched_yield syscall.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-37880"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-40325",
         "component": "linux-libc-dev",
         "severity": "2.0",
@@ -9261,16 +9491,6 @@
         "description": "[Kernel: Unprivileged user can freeze journald]",
         "remediation": "",
         "reference": "https://security-tracker.debian.org/tracker/TEMP-0000000-F7A20F"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-37992",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "In the Linux kernel, the following vulnerability has been resolved:  n ...",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-37992"
       },
       {
         "tool": "Trivy",
@@ -9525,6 +9745,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40909",
+        "component": "perl-modules-5.36",
+        "severity": "5.5",
+        "description": "perl: Perl threads have a working directory race condition where file operations may target unintended paths",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -9541,16 +9771,6 @@
         "description": "http-tiny: insecure TLS cert default",
         "remediation": "HTTP::Tiny before 0.083, a Perl core module since 5.13.9 and available standalone on CPAN, has an insecure default TLS configuration where users must opt in to verify certificates.",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-31486"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40909",
-        "component": "perl-modules-5.36",
-        "severity": "0.0",
-        "description": "[Thread creation while a directory handle is open does a fchdir, affecting other threads (race condition)]",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
       },
       {
         "tool": "Trivy",
@@ -9565,6 +9785,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40909",
+        "component": "perl-modules-5.36",
+        "severity": "5.5",
+        "description": "perl: Perl threads have a working directory race condition where file operations may target unintended paths",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -9581,16 +9811,6 @@
         "description": "http-tiny: insecure TLS cert default",
         "remediation": "HTTP::Tiny before 0.083, a Perl core module since 5.13.9 and available standalone on CPAN, has an insecure default TLS configuration where users must opt in to verify certificates.",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-31486"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40909",
-        "component": "perl-modules-5.36",
-        "severity": "0.0",
-        "description": "[Thread creation while a directory handle is open does a fchdir, affecting other threads (race condition)]",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
       },
       {
         "tool": "Trivy",
@@ -9605,6 +9825,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40909",
+        "component": "perl-modules-5.36",
+        "severity": "5.5",
+        "description": "perl: Perl threads have a working directory race condition where file operations may target unintended paths",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-4116",
         "component": "perl-modules-5.36",
         "severity": "2.0",
@@ -9621,16 +9851,6 @@
         "description": "http-tiny: insecure TLS cert default",
         "remediation": "HTTP::Tiny before 0.083, a Perl core module since 5.13.9 and available standalone on CPAN, has an insecure default TLS configuration where users must opt in to verify certificates.",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-31486"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40909",
-        "component": "perl-modules-5.36",
-        "severity": "0.0",
-        "description": "[Thread creation while a directory handle is open does a fchdir, affecting other threads (race condition)]",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40909"
       },
       {
         "tool": "Trivy",
@@ -9727,7 +9947,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2025-05-27T07:36:18.122708+00:00",
+    "timestamp": "2025-06-03T07:37:52.389108+00:00",
     "target": "N/A",
     "results": [
       {
@@ -9846,7 +10066,7 @@
         "name": "Application Error Disclosure",
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-        "uri": "http://localhost:4280/README.tr.md",
+        "uri": "http://localhost:4280/README.pt.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -9968,6 +10188,17 @@
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
         "uri": "http://localhost:4280/setup.php",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/sitemap.xml",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
@@ -10165,6 +10396,17 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.id.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.ko.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -10199,6 +10441,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.tr.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.vi.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -10440,6 +10693,17 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.id.md",
+        "evidence": "Access denied for user",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.ko.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -10484,17 +10748,6 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.vi.md",
-        "evidence": "Access denied for user",
-        "solution": "<p>Disable debugging messages before pushing to production.</p>",
-        "cwe": "1295"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Information Disclosure - Debug Error Messages",
-        "risk": "Low (Medium)",
-        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.zh.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -10507,6 +10760,17 @@
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10550,17 +10814,6 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280/favicon.ico",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
@@ -10594,7 +10847,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10605,7 +10858,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10627,17 +10880,6 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/setup.php",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
@@ -10649,7 +10891,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10660,7 +10902,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10946,6 +11188,17 @@
         "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
+        "uri": "http://localhost:4280/about.php",
+        "evidence": "Apache/2.4.62 (Debian)",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
+        "cwe": "497"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+        "risk": "Low (High)",
+        "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/dvwa/css/login.css",
         "evidence": "Apache/2.4.62 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
@@ -10979,7 +11232,7 @@
         "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
-        "uri": "http://localhost:4280/favicon.ico",
+        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
         "evidence": "Apache/2.4.62 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
@@ -11002,17 +11255,6 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/robots.txt",
-        "evidence": "Apache/2.4.62 (Debian)",
-        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
-        "risk": "Low (High)",
-        "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
-        "uri": "http://localhost:4280/setup.php",
         "evidence": "Apache/2.4.62 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
@@ -11321,7 +11563,7 @@
         "risk": "Informational (Medium)",
         "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "57a7c27f40752093ded4eeb73fa62cc7",
+        "evidence": "6ab48c69ec00c62ee07564530d095148",
         "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
         "cwe": "-1"
       },
@@ -11364,28 +11606,6 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
-        "evidence": "",
-        "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable and Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/favicon.ico",
-        "evidence": "",
-        "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable and Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
         "uri": "http://localhost:4280/robots.txt",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
@@ -11409,6 +11629,17 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
         "uri": "http://localhost:4280",
+        "evidence": "no-cache",
+        "solution": "",
+        "cwe": "524"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Storable but Non-Cacheable Content",
+        "risk": "Informational (Medium)",
+        "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
