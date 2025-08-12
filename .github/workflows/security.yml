@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-unified:
-    uses: your-org/your-repo/.github/workflows/unified-security.yml@main
+    uses: DMGoose/DVWA-T/.github/workflows/unified-security.yml@main
     with:
       # 需要 DAST 再开；没 Dockerfile 就别传或保持默认
       enable_dast: false
