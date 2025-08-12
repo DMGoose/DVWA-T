@@ -54,14 +54,9 @@ on:
         type: string
         default: "15m"
       trivy_skip_dirs:
-        description: "换行分隔的目录忽略列表"
+        description: "Comma-separated directories to skip"
         type: string
-        default: |
-          .git
-          node_modules
-          target
-          build
-          dist
+        default: ".git,node_modules,target,build,dist"
       dockerfile_path:
         description: "Dockerfile 路径；为空则不构建镜像"
         type: string
@@ -460,7 +455,7 @@ jobs:
 
       - name: Move report into repo path
         run: |
-          mkdir -p "$(dirname '${{ inputs.merged_report_path }}')"
+          mkdir -p "$(dirname "${{ inputs.merged_report_path }}")"
           mv merged-security-reports.json "${{ inputs.merged_report_path }}"
 
       - name: Commit report to repo
