@@ -1,47 +1,152 @@
+name: unified-security
 
-name: "workflow_intotal"
+on:
+  workflow_call:
+    inputs:
+      # —— 触发与通用设置 —— 
+      project_paths:
+        description: "逗号分隔的相对路径，用于语言探测与构建；为空则全仓库"
+        required: false
+        type: string
+        default: ""
+      concurrency_key:
+        description: "并发分组key；默认按工作流+分支"
+        required: false
+        type: string
+        default: "${{ github.workflow }}-${{ github.ref }}"
+      timeout_minutes:
+        description: "每个 job 的超时（分钟）"
+        required: false
+        type: number
+        default: 60
+
+      # —— CodeQL & 语言配置 —— 
+      enable_codeql_python:
+        type: boolean
+        default: true
+      enable_codeql_js:
+        type: boolean
+        default: true
+      enable_codeql_java:
+        type: boolean
+        default: true
+      java_version:
+        description: "Temurin JDK 版本"
+        type: string
+        default: "21"
+
+      # —— SCA / Trivy 配置 —— 
+      enable_sca:
+        type: boolean
+        default: true
+      enable_secret_scan:
+        description: "Trivy 是否开启 secret 扫描（默认关以降噪）"
+        type: boolean
+        default: false
+      severity_threshold:
+        description: "Trivy 严重级别阈值"
+        type: string
+        default: "HIGH,CRITICAL"
+      ignore_unfixed:
+        type: boolean
+        default: true
+      trivy_timeout:
+        type: string
+        default: "15m"
+      trivy_skip_dirs:
+        description: "换行分隔的目录忽略列表"
+        type: string
+        default: |
+          .git
+          node_modules
+          target
+          build
+          dist
+      dockerfile_path:
+        description: "Dockerfile 路径；为空则不构建镜像"
+        type: string
+        default: "Dockerfile"
+
+      # —— DAST / ZAP 配置 —— 
+      enable_dast:
+        type: boolean
+        default: false
+      dast_target_url:
+        description: "ZAP 目标URL（例如 http://127.0.0.1:8080/WebGoat/ ）"
+        type: string
+        default: ""
+      dast_startup_command:
+        description: "启动被测服务的 shell 命令（可多行）"
+        type: string
+        default: ""
+      dast_wait_seconds:
+        type: number
+        default: 120
+
+      # —— 报告上报/合并/落库 —— 
+      upload_sarif_on:
+        description: "何时上传到GitHub Code Scanning: push | always | never"
+        type: string
+        default: "push"
+      enable_merge_report:
+        type: boolean
+        default: true
+      enable_commit_report:
+        description: "是否把 merged-security-reports.json 提交回仓库"
+        type: boolean
+        default: true
+      merged_report_path:
+        description: "合并报告落库路径"
+        type: string
+        default: "report-template/public/data/merged-security-reports.json"
+
+    secrets:
+      GH_TOKEN:
+        required: false
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ inputs.concurrency_key }}
   cancel-in-progress: true
-  
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: '22 7 * * 2'
+
+permissions: read-all
 
 jobs:
-  detect-languages:
 
+  detect-languages:
     runs-on: ubuntu-latest
     outputs:
       has_python: ${{ steps.check.outputs.has_python }}
       has_js: ${{ steps.check.outputs.has_js }}
       has_java: ${{ steps.check.outputs.has_java }}
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Check for source files
+      - uses: actions/checkout@v4
+      - name: Detect languages (git tracked files)
         id: check
+        shell: bash
         run: |
-          files="$(git ls-files)"
+          PATHS="${{ inputs.project_paths }}"
+          if [ -n "$PATHS" ]; then
+            mapfile -t arr < <(echo "$PATHS" | tr ',' '\n' | sed 's/^ *//;s/ *$//')
+            files="$(git ls-files "${arr[@]}")"
+          else
+            files="$(git ls-files)"
+          fi
+
+          set +e
           [[ "$files" =~ \.py($|\n) ]] && echo "has_python=true" >> $GITHUB_OUTPUT || echo "has_python=false" >> $GITHUB_OUTPUT
           [[ "$files" =~ \.(js|ts|jsx|tsx)($|\n) ]] && echo "has_js=true" >> $GITHUB_OUTPUT || echo "has_js=false" >> $GITHUB_OUTPUT
           [[ "$files" =~ \.java($|\n) ]] && echo "has_java=true" >> $GITHUB_OUTPUT || echo "has_java=false" >> $GITHUB_OUTPUT
 
   codeql-python:
+    if: ${{ inputs.enable_codeql_python && needs.detect-languages.outputs.has_python == 'true' }}
+    needs: detect-languages
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     permissions:
       actions: read
       contents: read
-      security-events: write  
-    needs: detect-languages
-    if: needs.detect-languages.outputs.has_python == 'true'
-    runs-on: ubuntu-latest
-    name: CodeQL (Python)
+      security-events: write
     steps:
       - uses: actions/checkout@v4
       - uses: github/codeql-action/init@v3
@@ -55,16 +160,21 @@ jobs:
         with:
           name: codeql-report-python
           path: codeql-results.sarif
+      - name: Upload SARIF to Code Scanning (push-only)
+        if: ${{ inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push') }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: codeql-results.sarif
 
   codeql-js:
+    if: ${{ inputs.enable_codeql_js && needs.detect-languages.outputs.has_js == 'true' }}
     needs: detect-languages
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     permissions:
       actions: read
       contents: read
-      security-events: write  
-    if: needs.detect-languages.outputs.has_js == 'true'
-    runs-on: ubuntu-latest
-    name: CodeQL (JS/TS)
+      security-events: write
     steps:
       - uses: actions/checkout@v4
       - uses: github/codeql-action/init@v3
@@ -78,25 +188,31 @@ jobs:
         with:
           name: codeql-report-javascript
           path: codeql-results.sarif
+      - name: Upload SARIF to Code Scanning (push-only)
+        if: ${{ inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push') }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: codeql-results.sarif
 
   codeql-java:
+    if: ${{ inputs.enable_codeql_java && needs.detect-languages.outputs.has_java == 'true' }}
     needs: detect-languages
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     permissions:
       actions: read
       contents: read
-      security-events: write 
-    if: needs.detect-languages.outputs.has_java == 'true'
-    runs-on: ubuntu-latest
-    name: CodeQL (Java)
+      security-events: write
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Set up JDK 23
-        uses: actions/setup-java@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
         with:
-          java-version: '23'  #需要改
-          distribution: 'temurin'
-          
+          distribution: temurin
+          java-version: ${{ inputs.java_version }}
+          cache: maven
+
       - name: CodeQL Init (Java)
         uses: github/codeql-action/init@v3
         with:
@@ -104,141 +220,197 @@ jobs:
           build-mode: manual
 
       - name: Build Java App
-        run: mvn clean package -DskipTests
+        run: mvn -B -q clean package -DskipTests
 
       - name: Perform CodeQL Analysis (Java)
         uses: github/codeql-action/analyze@v3
         with:
           output: codeql-java.sarif
 
-      - name: Upload SARIF
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: codeql-report-java
           path: codeql-java.sarif
 
+      - name: Upload SARIF to Code Scanning (push-only)
+        if: ${{ inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push') }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: codeql-java.sarif
+
   sca:
+    if: ${{ inputs.enable_sca }}
     runs-on: ubuntu-latest
-    
+    timeout-minutes: ${{ inputs.timeout_minutes }}
+    permissions:
+      contents: read
+      security-events: write
+    env:
+      TRIVY_TIMEOUT: ${{ inputs.trivy_timeout }}
+      TRIVY_CACHE_DIR: ~/.cache/trivy
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 这是fs 的扫描,目录 SCA, 未构建镜像时提前发现问题
       - name: Trivy FS scan
+        # 建议 pin 到 commit SHA；这里用版本号占位
         uses: aquasecurity/trivy-action@0.28.0
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'sarif'
-          output: 'trivy-fs-results.sarif'
+          scan-type: fs
+          scan-ref: .
+          scanners: ${{ inputs.enable_secret_scan && 'vuln,misconfig,secret' || 'vuln,misconfig' }}
+          severity: ${{ inputs.severity_threshold }}
+          exit-code: 1
+          ignore-unfixed: ${{ inputs.ignore_unfixed }}
+          format: sarif
+          output: trivy-fs-results.sarif
+          skip-dirs: ${{ inputs.trivy_skip_dirs }}
 
-      # Java用的
-      # 如果是 Java 项目，则设置 JDK 23（避免“release 23 not supported”）
-      - name: Set up JDK 23
+      - name: Set up JDK (if Maven project)
         if: hashFiles('pom.xml') != ''
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '23'
-      
-      - name: Build Java Project (Only if pom.xml exists)
+          distribution: temurin
+          java-version: ${{ inputs.java_version }}
+          cache: maven
+
+      - name: Build Java Project (if pom.xml exists)
         if: hashFiles('pom.xml') != ''
-        run: mvn clean package -DskipTests
+        run: mvn -B -q clean package -DskipTests
 
-      # 构建容器
-      - name: Build Docker Image from Current App
-        if: hashFiles('Dockerfile') != ''
-        run: docker build -t my-app:${{ github.sha }} .
+      - name: Build Docker Image (if Dockerfile exists/allowed)
+        if: ${{ inputs.dockerfile_path != '' && hashFiles(inputs.dockerfile_path) != '' }}
+        run: docker build -t my-app:${{ github.sha }} -f "${{ inputs.dockerfile_path }}" .
 
-      # 这是 docker image 的 扫描, 扫描 docker image 中的漏洞
-      - name: Run Trivy on Built Image
+      - name: Trivy Image scan (if image built)
+        if: ${{ inputs.dockerfile_path != '' && hashFiles(inputs.dockerfile_path) != '' }}
         uses: aquasecurity/trivy-action@0.28.0
-        env:
-          TRIVY_TIMEOUT: 15m # 加到15分钟
         with:
-          image-ref: 'my-app:${{ github.sha }}'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          scanners: 'vuln' # 只启用漏洞扫描，禁用 secret 扫描
+          image-ref: my-app:${{ github.sha }}
+          scanners: vuln
+          vuln-type: os,library
+          severity: ${{ inputs.severity_threshold }}
+          exit-code: 1
+          ignore-unfixed: ${{ inputs.ignore_unfixed }}
+          format: sarif
+          output: trivy-results.sarif
 
-      # 上传结果到artifact
-      - name: Upload Trivy FS scan results (artifact)
+      - name: Upload Trivy FS artifact
         uses: actions/upload-artifact@v4
         with:
           name: trivy-fs-report
           path: trivy-fs-results.sarif
 
-      - name: Upload Trivy Image scan results (artifact)
+      - name: Upload Trivy Image artifact
+        if: ${{ inputs.dockerfile_path != '' && hashFiles(inputs.dockerfile_path) != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: trivy-image-report
           path: trivy-results.sarif
 
+      - name: Upload FS SARIF to Code Scanning (push-only)
+        if: ${{ (inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push')) }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-fs-results.sarif
+
+      - name: Upload Image SARIF to Code Scanning (push-only)
+        if: ${{ (inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push')) && inputs.dockerfile_path != '' && hashFiles(inputs.dockerfile_path) != '' }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
 
   dast:
+    if: ${{ inputs.enable_dast }}
     needs: sca
     runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     permissions:
-      issues: write
       contents: read
       security-events: write
-    
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Start DVWA with Docker Compose
+      - name: Start target (host network, optional)
+        if: ${{ inputs.dast_startup_command != '' }}
+        shell: bash
         run: |
-          docker compose up -d  # 🛑需要修改
-          sleep 15  # 给 DVWA 启动一些时间
-      - name: List Running Containers (Debug)
-        run: docker ps
+          set -e
+          # 允许多行命令；若命令里已包含 docker run，可按需删掉 --network host
+          bash -lc '${{ inputs.dast_startup_command }}' &
+          # 健康等待
+          t0=$(date +%s)
+          until curl -skf --max-time 2 "${{ inputs.dast_target_url }}" > /dev/null; do
+            now=$(date +%s)
+            if [ $(( now - t0 )) -gt $(( inputs.dast_wait_seconds )) ]; then
+              echo "Target not ready within ${{ inputs.dast_wait_seconds }}s"; exit 1
+            fi
+            sleep 2
+          done
+          echo "Target is up: ${{ inputs.dast_target_url }}"
 
       - name: ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.14.0
         with:
-          target: 'http://localhost:4280'   # 🛑需要修改
-          # allow_issue_writing: false
-          # fail_action: false
+          target: ${{ inputs.dast_target_url }}
+          cmd_options: "-w zap.sarif"
+
+      - name: Upload ZAP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap_scan
+          path: zap.sarif
+
+      - name: Upload ZAP SARIF to Code Scanning (push-only)
+        if: ${{ inputs.upload_sarif_on == 'always' || (inputs.upload_sarif_on == 'push' && github.event_name == 'push') }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: zap.sarif
 
   report-merge:
-    needs: [sca,dast,codeql-python, codeql-js,codeql-java]
-    if: ${{ always() }}
+    if: ${{ inputs.enable_merge_report }}
+    needs: [sca, dast, codeql-python, codeql-js, codeql-java]
     runs-on: ubuntu-latest
-
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install GitHub CLI & jq
         run: |
-          sudo apt update
-          sudo apt install -y gh jq
-      
+          sudo apt-get update
+          sudo apt-get install -y gh jq
+
       - name: Authenticate GitHub CLI
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-      
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: echo "$GH_TOKEN" | gh auth login --with-token
+
       - name: List all artifacts
         id: list-artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts > artifacts.json
           cat artifacts.json
-      
-      - name: Download all CodeQL artifacts
+
+      - name: Download CodeQL artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p codeql
           jq -r '.artifacts[] | select(.name | startswith("codeql-report-")) | [.id, .name] | @tsv' artifacts.json |
           while IFS=$'\t' read -r id name; do
             echo "Downloading $name..."
-            gh api -H "Accept: application/vnd.github.v3+json" \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            gh api -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_TOKEN" \
               -X GET \
               -H "Accept: application/zip" \
               "/repos/${{ github.repository }}/actions/artifacts/$id/zip" > "$name.zip"
             unzip -o "$name.zip" -d codeql/
           done
-        
+
       - name: Download Trivy FS results
         uses: actions/download-artifact@v4
         with:
@@ -246,54 +418,55 @@ jobs:
           path: .
 
       - name: Download Trivy Image results
+        if: ${{ inputs.dockerfile_path != '' && hashFiles(inputs.dockerfile_path) != '' }}
         uses: actions/download-artifact@v4
         with:
           name: trivy-image-report
           path: .
 
       - name: Download ZAP results
+        if: ${{ inputs.enable_dast }}
         uses: actions/download-artifact@v4
         with:
-            name: zap_scan
-            path: .
+          name: zap_scan
+          path: .
 
       - name: Parse all the Results
         run: |
-          python scripts/parse_reports.py
-      - name: Upload Merged Report
+          python scripts/parse_reports.py || echo '{}' > merged-security-reports.json
+          # 若脚本不存在或失败，避免整个job挂
+
+      - name: Upload Merged Report (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: merged-security-reports
           path: merged-security-reports.json
 
   upload-report:
-    needs: [report-merge]
-    if: ${{ always() }}
+    if: ${{ inputs.enable_merge_report && inputs.enable_commit_report }}
+    needs: report-merge
     runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
     permissions:
       contents: write
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
-      - name: download merged-security-reports
+
+      - name: Download merged-security-reports
         uses: actions/download-artifact@v4
         with:
           name: merged-security-reports
 
-      # - name: Generate timestamp for report
-      #   id: timestamp
-      #   run: echo "ts=$(date +'%Y%m%d_%H%M')" >> $GITHUB_OUTPUT
-
-      - name: create a folder and move report into the folder
+      - name: Move report into repo path
         run: |
-          mkdir -p report-template/public/data
-          mv merged-security-reports.json report-template/public/data/merged-security-reports.json
-      - name: Commit ZAP report to repo
+          mkdir -p "$(dirname '${{ inputs.merged_report_path }}')"
+          mv merged-security-reports.json "${{ inputs.merged_report_path }}"
+
+      - name: Commit report to repo
         uses: EndBug/add-and-commit@v9
         with:
           message: "Add latest merged report"
-          add: "report-template/public/data/merged-security-reports.json"
+          add: "${{ inputs.merged_report_path }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
