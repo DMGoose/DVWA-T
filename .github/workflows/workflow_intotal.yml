@@ -1,6 +1,10 @@
 
 name: "workflow_intotal"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
 on:
   push:
     branches: [ "main" ]
@@ -24,23 +28,10 @@ jobs:
       - name: Check for source files
         id: check
         run: |
-            if find . -name "*.py" | grep -q .; then
-              echo "has_python=true" >> $GITHUB_OUTPUT
-            else
-              echo "has_python=false" >> $GITHUB_OUTPUT
-            fi
-          
-            if find . \( -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" \) | grep -q .; then
-              echo "has_js=true" >> $GITHUB_OUTPUT
-            else
-              echo "has_js=false" >> $GITHUB_OUTPUT
-            fi
-          
-            if find . -name "*.java" | grep -q .; then
-              echo "has_java=true" >> $GITHUB_OUTPUT
-            else
-              echo "has_java=false" >> $GITHUB_OUTPUT
-            fi
+          files="$(git ls-files)"
+          [[ "$files" =~ \.py($|\n) ]] && echo "has_python=true" >> $GITHUB_OUTPUT || echo "has_python=false" >> $GITHUB_OUTPUT
+          [[ "$files" =~ \.(js|ts|jsx|tsx)($|\n) ]] && echo "has_js=true" >> $GITHUB_OUTPUT || echo "has_js=false" >> $GITHUB_OUTPUT
+          [[ "$files" =~ \.java($|\n) ]] && echo "has_java=true" >> $GITHUB_OUTPUT || echo "has_java=false" >> $GITHUB_OUTPUT
 
   codeql-python:
     permissions:
@@ -157,6 +148,7 @@ jobs:
 
       # 构建容器
       - name: Build Docker Image from Current App
+        if: hashFiles('Dockerfile') != ''
         run: docker build -t my-app:${{ github.sha }} .
 
       # 这是 docker image 的 扫描, 扫描 docker image 中的漏洞
@@ -189,6 +181,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      contents: read
+      security-events: write
     
     steps:
       - name: Checkout Repository
@@ -276,6 +270,8 @@ jobs:
     needs: [report-merge]
     if: ${{ always() }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repo
