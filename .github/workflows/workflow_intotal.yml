@@ -1,0 +1,298 @@
+name: "workflow_intotal"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '22 7 * * 2'
+
+jobs:
+  detect-languages:
+
+    runs-on: ubuntu-latest
+    outputs:
+      has_python: ${{ steps.check.outputs.has_python }}
+      has_js: ${{ steps.check.outputs.has_js }}
+      has_java: ${{ steps.check.outputs.has_java }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for source files
+        id: check
+        run: |
+          files="$(git ls-files)"
+          [[ "$files" =~ \.py($|\n) ]] && echo "has_python=true" >> $GITHUB_OUTPUT || echo "has_python=false" >> $GITHUB_OUTPUT
+          [[ "$files" =~ \.(js|ts|jsx|tsx)($|\n) ]] && echo "has_js=true" >> $GITHUB_OUTPUT || echo "has_js=false" >> $GITHUB_OUTPUT
+          [[ "$files" =~ \.java($|\n) ]] && echo "has_java=true" >> $GITHUB_OUTPUT || echo "has_java=false" >> $GITHUB_OUTPUT
+
+  codeql-python:
+    permissions:
+      actions: read
+      contents: read
+      security-events: write  
+    needs: detect-languages
+    if: needs.detect-languages.outputs.has_python == 'true'
+    runs-on: ubuntu-latest
+    name: CodeQL (Python)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: python
+          build-mode: none
+      - uses: github/codeql-action/analyze@v3
+        with:
+          output: codeql-results.sarif
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codeql-report-python
+          path: codeql-results.sarif
+
+  codeql-js:
+    needs: detect-languages
+    permissions:
+      actions: read
+      contents: read
+      security-events: write  
+    if: needs.detect-languages.outputs.has_js == 'true'
+    runs-on: ubuntu-latest
+    name: CodeQL (JS/TS)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+          build-mode: none
+      - uses: github/codeql-action/analyze@v3
+        with:
+          output: codeql-results.sarif
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codeql-report-javascript
+          path: codeql-results.sarif
+
+  codeql-java:
+    needs: detect-languages
+    permissions:
+      actions: read
+      contents: read
+      security-events: write 
+    if: needs.detect-languages.outputs.has_java == 'true'
+    runs-on: ubuntu-latest
+    name: CodeQL (Java)
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up JDK 23
+        uses: actions/setup-java@v3
+        with:
+          java-version: '23'  #需要改
+          distribution: 'temurin'
+          
+      - name: CodeQL Init (Java)
+        uses: github/codeql-action/init@v3
+        with:
+          languages: java
+          build-mode: manual
+
+      - name: Build Java App
+        run: mvn clean package -DskipTests
+
+      - name: Perform CodeQL Analysis (Java)
+        uses: github/codeql-action/analyze@v3
+        with:
+          output: codeql-java.sarif
+
+      - name: Upload SARIF
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-report-java
+          path: codeql-java.sarif
+
+  sca:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 这是fs 的扫描,目录 SCA, 未构建镜像时提前发现问题
+      - name: Trivy FS scan
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-fs-results.sarif'
+
+      # Java用的
+      # 如果是 Java 项目，则设置 JDK 23（避免“release 23 not supported”）
+      - name: Set up JDK 23
+        if: hashFiles('pom.xml') != ''
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '23'
+      
+      - name: Build Java Project (Only if pom.xml exists)
+        if: hashFiles('pom.xml') != ''
+        run: mvn clean package -DskipTests
+
+      # 构建容器
+      - name: Build Docker Image from Current App
+        if: hashFiles('Dockerfile') != ''
+        run: docker build -t my-app:${{ github.sha }} .
+
+      # 这是 docker image 的 扫描, 扫描 docker image 中的漏洞
+      - name: Run Trivy on Built Image
+        uses: aquasecurity/trivy-action@0.28.0
+        env:
+          TRIVY_TIMEOUT: 15m # 加到15分钟
+        with:
+          image-ref: 'my-app:${{ github.sha }}'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          scanners: 'vuln' # 只启用漏洞扫描，禁用 secret 扫描
+
+      # 上传结果到artifact
+      - name: Upload Trivy FS scan results (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-fs-report
+          path: trivy-fs-results.sarif
+
+      - name: Upload Trivy Image scan results (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-image-report
+          path: trivy-results.sarif
+
+
+  dast:
+    needs: sca
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+      security-events: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Start DVWA with Docker Compose
+        run: |
+          docker compose up -d  # 🛑需要修改
+          sleep 15  # 给 DVWA 启动一些时间
+      - name: List Running Containers (Debug)
+        run: docker ps
+
+      - name: ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: 'http://localhost:4280'   # 🛑需要修改
+          # allow_issue_writing: false
+          # fail_action: false
+
+  report-merge:
+    needs: [sca,dast,codeql-python, codeql-js,codeql-java]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install GitHub CLI & jq
+        run: |
+          sudo apt update
+          sudo apt install -y gh jq
+      
+      - name: Authenticate GitHub CLI
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+      
+      - name: List all artifacts
+        id: list-artifacts
+        run: |
+          gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts > artifacts.json
+          cat artifacts.json
+      
+      - name: Download all CodeQL artifacts
+        run: |
+          mkdir -p codeql
+          jq -r '.artifacts[] | select(.name | startswith("codeql-report-")) | [.id, .name] | @tsv' artifacts.json |
+          while IFS=$'\t' read -r id name; do
+            echo "Downloading $name..."
+            gh api -H "Accept: application/vnd.github.v3+json" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -X GET \
+              -H "Accept: application/zip" \
+              "/repos/${{ github.repository }}/actions/artifacts/$id/zip" > "$name.zip"
+            unzip -o "$name.zip" -d codeql/
+          done
+        
+      - name: Download Trivy FS results
+        uses: actions/download-artifact@v4
+        with:
+          name: trivy-fs-report
+          path: .
+
+      - name: Download Trivy Image results
+        uses: actions/download-artifact@v4
+        with:
+          name: trivy-image-report
+          path: .
+
+      - name: Download ZAP results
+        uses: actions/download-artifact@v4
+        with:
+            name: zap_scan
+            path: .
+
+      - name: Parse all the Results
+        run: |
+          python scripts/parse_reports.py
+      - name: Upload Merged Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-security-reports
+          path: merged-security-reports.json
+
+  upload-report:
+    needs: [report-merge]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
+      - name: download merged-security-reports
+        uses: actions/download-artifact@v4
+        with:
+          name: merged-security-reports
+
+      # - name: Generate timestamp for report
+      #   id: timestamp
+      #   run: echo "ts=$(date +'%Y%m%d_%H%M')" >> $GITHUB_OUTPUT
+
+      - name: create a folder and move report into the folder
+        run: |
+          mkdir -p report-template/public/data
+          mv merged-security-reports.json report-template/public/data/merged-security-reports.json
+      - name: Commit ZAP report to repo
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Add latest merged report"
+          add: "report-template/public/data/merged-security-reports.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
