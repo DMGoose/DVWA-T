@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2025-11-25T07:38:34.700206+00:00",
+    "timestamp": "2025-12-02T07:41:51.561341+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2025-11-25T07:38:34.712736+00:00",
+    "timestamp": "2025-12-02T07:41:51.574280+00:00",
     "target": "file:///",
     "results": [
       {
@@ -2775,6 +2775,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-66382",
+        "component": "libexpat1",
+        "severity": "2.0",
+        "description": "libexpat: libexpat: Denial of service via crafted file processing",
+        "remediation": "In libexpat through 2.7.3, a crafted file with an approximate size of 2 MiB can lead to dozens of seconds of processing time.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-66382"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-3389",
         "component": "libgnutls30t64",
         "severity": "2.0",
@@ -3335,20 +3345,30 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2021-4214",
+        "cve": "CVE-2025-64720",
         "component": "libpng16-16t64",
-        "severity": "2.0",
-        "description": "libpng: hardcoded value leads to heap-overflow",
-        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
+        "severity": "8.0",
+        "description": "libpng: LIBPNG buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, an out-of-bounds read vulnerability exists in png_image_read_composite when processing palette images with PNG_FLAG_OPTIMIZE_ALPHA enabled. The palette compositing code in png_init_read_transformations incorrectly applies background compositing during premultiplication, violating the invariant component \u2264 alpha \u00d7 257 required by the simplified PNG API. This issue has been patched in version 1.6.51.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-64720"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-65018",
+        "component": "libpng16-16t64",
+        "severity": "8.0",
+        "description": "libpng: LIBPNG heap buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, there is a heap buffer overflow vulnerability in the libpng simplified API function png_image_finish_read when processing 16-bit interlaced PNGs with 8-bit output format. Attacker-crafted interlaced PNG files cause heap writes beyond allocated buffer bounds. This issue has been patched in version 1.6.51.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-65018"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
         "cve": "CVE-2025-64505",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
+        "severity": "5.5",
+        "description": "LIBPNG is a reference library for use in applications that read, creat ...",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-64505"
       },
@@ -3357,80 +3377,10 @@
         "type": "Image Scan",
         "cve": "CVE-2025-64506",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
+        "severity": "5.5",
+        "description": "libpng: LIBPNG heap buffer over-read",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-64506"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-64720",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-64720"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-65018",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-65018"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2021-4214",
-        "component": "libpng16-16t64",
-        "severity": "2.0",
-        "description": "libpng: hardcoded value leads to heap-overflow",
-        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-64505",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-64505"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-64506",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-64506"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-64720",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-64720"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-65018",
-        "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-65018"
       },
       {
         "tool": "Trivy",
@@ -3445,10 +3395,30 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-64720",
+        "component": "libpng16-16t64",
+        "severity": "8.0",
+        "description": "libpng: LIBPNG buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, an out-of-bounds read vulnerability exists in png_image_read_composite when processing palette images with PNG_FLAG_OPTIMIZE_ALPHA enabled. The palette compositing code in png_init_read_transformations incorrectly applies background compositing during premultiplication, violating the invariant component \u2264 alpha \u00d7 257 required by the simplified PNG API. This issue has been patched in version 1.6.51.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-64720"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-65018",
+        "component": "libpng16-16t64",
+        "severity": "8.0",
+        "description": "libpng: LIBPNG heap buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, there is a heap buffer overflow vulnerability in the libpng simplified API function png_image_finish_read when processing 16-bit interlaced PNGs with 8-bit output format. Attacker-crafted interlaced PNG files cause heap writes beyond allocated buffer bounds. This issue has been patched in version 1.6.51.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-65018"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-64505",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
+        "severity": "5.5",
+        "description": "LIBPNG is a reference library for use in applications that read, creat ...",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-64505"
       },
@@ -3457,19 +3427,29 @@
         "type": "Image Scan",
         "cve": "CVE-2025-64506",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
+        "severity": "5.5",
+        "description": "libpng: LIBPNG heap buffer over-read",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-64506"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2021-4214",
+        "component": "libpng16-16t64",
+        "severity": "2.0",
+        "description": "libpng: hardcoded value leads to heap-overflow",
+        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-64720",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
+        "severity": "8.0",
+        "description": "libpng: LIBPNG buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, an out-of-bounds read vulnerability exists in png_image_read_composite when processing palette images with PNG_FLAG_OPTIMIZE_ALPHA enabled. The palette compositing code in png_init_read_transformations incorrectly applies background compositing during premultiplication, violating the invariant component \u2264 alpha \u00d7 257 required by the simplified PNG API. This issue has been patched in version 1.6.51.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-64720"
       },
       {
@@ -3477,10 +3457,40 @@
         "type": "Image Scan",
         "cve": "CVE-2025-65018",
         "component": "libpng16-16t64",
-        "severity": "0.0",
-        "description": "",
-        "remediation": "",
+        "severity": "8.0",
+        "description": "libpng: LIBPNG heap buffer overflow",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, there is a heap buffer overflow vulnerability in the libpng simplified API function png_image_finish_read when processing 16-bit interlaced PNGs with 8-bit output format. Attacker-crafted interlaced PNG files cause heap writes beyond allocated buffer bounds. This issue has been patched in version 1.6.51.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-65018"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-64505",
+        "component": "libpng16-16t64",
+        "severity": "5.5",
+        "description": "LIBPNG is a reference library for use in applications that read, creat ...",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-64505"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-64506",
+        "component": "libpng16-16t64",
+        "severity": "5.5",
+        "description": "libpng: LIBPNG heap buffer over-read",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-64506"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2021-4214",
+        "component": "libpng16-16t64",
+        "severity": "2.0",
+        "description": "libpng: hardcoded value leads to heap-overflow",
+        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
       },
       {
         "tool": "Trivy",
@@ -4125,12 +4135,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-39677",
+        "cve": "CVE-2025-38584",
         "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net/sched: Fix backlog accounting in qdisc_dequeue_internal",
-        "remediation": "non gso_skb case), so we have unified the code here with other qdiscs.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39677"
+        "severity": "7.8",
+        "description": "kernel: padata: Fix pd UAF once and for all",
+        "remediation": "calling it once the next padata arrives.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-38584"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-38627",
+        "component": "linux-libc-dev",
+        "severity": "7.8",
+        "description": "kernel: f2fs: compress: fix UAF of f2fs_inode_info in f2fs_free_dic",
+        "remediation": "[1] https://lore.kernel.org/all/c36ab955-c8db-4a8b-a9d0-f07b5f426c3f@kernel.org",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-38627"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-38636",
+        "component": "linux-libc-dev",
+        "severity": "7.1",
+        "description": "kernel: rv: Use strings in da monitors tracepoints",
+        "remediation": "reading out of bound memory.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-38636"
       },
       {
         "tool": "Trivy",
@@ -4185,26 +4215,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-40082",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: hfsplus: fix slab-out-of-bounds read in hfsplus_uni2asc()",
-        "remediation": "the ustrlen value is limited to an safe size.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40082"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40149",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: tls: Use __sk_dst_get() and dst_dev_rcu() in get_netdev_for_sock()",
-        "remediation": "bond_sk_get_lower_dev(), which uses RCU.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40149"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-40158",
         "component": "linux-libc-dev",
         "severity": "8.0",
@@ -4241,16 +4251,6 @@
         "description": "kernel: Revert &#34;NFSD: Remove the cap on number of operations per NFSv4 COMPOUND&#34;",
         "remediation": "for now.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-40210"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40212",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: nfsd: fix refcount leak in nfsd_set_fh_dentry()",
-        "remediation": "possible error cases have been detected.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40212"
       },
       {
         "tool": "Trivy",
@@ -4975,16 +4975,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-38584",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: padata: Fix pd UAF once and for all",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38584"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-38591",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5025,32 +5015,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-38627",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: f2fs: compress: fix UAF of f2fs_inode_info in f2fs_free_dic",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38627"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-38636",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: rv: Use strings in da monitors tracepoints",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-38636"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-38678",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: netfilter: nf_tables: reject duplicate device on updates",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-38678"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-39677",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net/sched: Fix backlog accounting in qdisc_dequeue_internal",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-39677"
       },
       {
         "tool": "Trivy",
@@ -5255,6 +5235,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40082",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: hfsplus: fix slab-out-of-bounds read in hfsplus_uni2asc()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40082"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-40086",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5355,6 +5345,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40149",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: tls: Use __sk_dst_get() and dst_dev_rcu() in get_netdev_for_sock()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40149"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-40150",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -5385,12 +5385,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-40213",
+        "cve": "CVE-2025-40212",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: Bluetooth: MGMT: fix crash in set_mesh_sync and set_mesh_complete",
+        "description": "kernel: nfsd: fix refcount leak in nfsd_set_fh_dentry()",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40213"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40212"
       },
       {
         "tool": "Trivy",
@@ -6025,6 +6025,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40213",
+        "component": "linux-libc-dev",
+        "severity": "0.0",
+        "description": "kernel: Bluetooth: MGMT: fix crash in set_mesh_sync and set_mesh_complete",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40213"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
@@ -6367,7 +6377,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2025-11-25T07:38:34.713536+00:00",
+    "timestamp": "2025-12-02T07:41:51.575154+00:00",
     "target": "N/A",
     "results": [
       {
@@ -6443,6 +6453,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.id.md",
+        "evidence": "Can't connect to local",
+        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+        "cwe": "550"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Application Error Disclosure",
+        "risk": "Medium (Medium)",
+        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+        "uri": "http://localhost:4280/README.it.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -6640,17 +6661,6 @@
         "name": "Missing Anti-clickjacking Header",
         "risk": "Medium (Medium)",
         "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
-        "uri": "http://localhost:4280",
-        "evidence": "",
-        "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
-        "cwe": "1021"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Missing Anti-clickjacking Header",
-        "risk": "Medium (Medium)",
-        "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
         "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
@@ -6732,17 +6742,6 @@
         "evidence": "",
         "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
         "cwe": "1021"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Source Code Disclosure - PHP",
-        "risk": "Medium (Medium)",
-        "description": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
-        "uri": "http://localhost:4280/config/config.inc.php.dist",
-        "evidence": "<?php\n\n# If you are having problems connecting to the MySQL database and all of the variables below are correct\n# try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.\n#   Thanks to @digininja for the fix.\n\n# Database management system to use\n$DBMS = getenv('DBMS') ?: 'MySQL';\n#$DBMS = 'PGSQL'; // Currently disabled\n\n# Database variables\n#   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.\n#   Please use a database dedicated to DVWA.\n#\n# If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.\n#   See README.md for more information on this.\n$_DVWA = array();\n$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';\n$_DVWA[ 'db_database' ] = getenv('DB_DATABASE') ?: 'dvwa';\n$_DVWA[ 'db_user' ]     = getenv('DB_USER') ?: 'dvwa';\n$_DVWA[ 'db_password' ] = getenv('DB_PASSWORD') ?: 'p@ssw0rd';\n$_DVWA[ 'db_port']      = getenv('DB_PORT') ?: '3306';\n\n# ReCAPTCHA settings\n#   Used for the 'Insecure CAPTCHA' module\n#   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin\n$_DVWA[ 'recaptcha_public_key' ]  = getenv('RECAPTCHA_PUBLIC_KEY') ?: '';\n$_DVWA[ 'recaptcha_private_key' ] = getenv('RECAPTCHA_PRIVATE_KEY') ?: '';\n\n# Default security level\n#   Default value for the security level with each session.\n#   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.\n$_DVWA[ 'default_security_level' ] = getenv('DEFAULT_SECURITY_LEVEL') ?: 'impossible';\n\n# Default locale\n#   Default locale for the help page shown with each session.\n#   The default is 'en'. You may wish to set this to either 'en' or 'zh'.\n$_DVWA[ 'default_locale' ] = getenv('DEFAULT_LOCALE') ?: 'en';\n\n# Disable authentication\n#   Some tools don't like working with authentication and passing cookies around\n#   so this setting lets you turn off authentication.\n$_DVWA[ 'disable_authentication' ] = getenv('DISABLE_AUTHENTICATION') ?: false;\n\ndefine ('MYSQL', 'mysql');\ndefine ('SQLITE', 'sqlite');\n\n# SQLi DB Backend\n#   Use this to switch the backend database used in the SQLi and Blind SQLi labs.\n#   This does not affect the backend for any other services, just these two labs.\n#   If you do not understand what this means, do not change it.\n$_DVWA['SQLI_DB'] = getenv('SQLI_DB') ?: MYSQL;\n#$_DVWA['SQLI_DB'] = SQLITE;\n#$_DVWA['SQLITE_DB'] = 'sqli.db';\n\n?>",
-        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
-        "cwe": "540"
       },
       {
         "tool": "OWASP ZAP",
@@ -6960,17 +6959,6 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/etc/php/x.x/fpm/php.ini",
-        "evidence": "Apache/2.4.65",
-        "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "In Page Banner Information Leak",
-        "risk": "Low (High)",
-        "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
-        "uri": "http://localhost:4280/Install-DVWA.sh",
         "evidence": "Apache/2.4.65",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
@@ -7201,6 +7189,17 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/about.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280/dvwa/css/login.css",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
@@ -7224,17 +7223,6 @@
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280/dvwa/images/login_logo.png",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -7278,18 +7266,7 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -7311,7 +7288,73 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/about.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280/login.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/setup.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/about.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/login.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -7400,6 +7443,17 @@
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
         "uri": "http://localhost:4280/instructions.php?doc=PDF",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Permissions Policy Header Not Set",
+        "risk": "Low (Medium)",
+        "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+        "uri": "http://localhost:4280/instructions.php?doc=readme",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -7531,18 +7585,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/login.php",
-        "evidence": "X-Powered-By: PHP/8.4.14",
-        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
-        "risk": "Low (Medium)",
-        "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/instructions.php?doc=readme",
         "evidence": "X-Powered-By: PHP/8.4.14",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -7565,6 +7608,17 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/setup.php",
+        "evidence": "X-Powered-By: PHP/8.4.14",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
+        "cwe": "497"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+        "risk": "Low (Medium)",
+        "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "X-Powered-By: PHP/8.4.14",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -7630,17 +7684,6 @@
         "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
-        "evidence": "Apache/2.4.65 (Debian)",
-        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
-        "cwe": "497"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
-        "risk": "Low (High)",
-        "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/favicon.ico",
         "evidence": "Apache/2.4.65 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
@@ -7664,6 +7707,17 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/robots.txt",
+        "evidence": "Apache/2.4.65 (Debian)",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
+        "cwe": "497"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+        "risk": "Low (High)",
+        "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "Apache/2.4.65 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
@@ -7751,7 +7805,7 @@
         "name": "X-Content-Type-Options Header Missing",
         "risk": "Low (Medium)",
         "description": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
-        "uri": "http://localhost:4280/dvwa/images/theme-light-dark.png",
+        "uri": "http://localhost:4280/dvwa/images/spanner.png",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
         "cwe": "693"
@@ -8015,17 +8069,6 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
-        "evidence": "",
-        "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable and Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
         "uri": "http://localhost:4280/favicon.ico",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
@@ -8060,6 +8103,17 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
         "uri": "http://localhost:4280",
+        "evidence": "no-cache",
+        "solution": "",
+        "cwe": "524"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Storable but Non-Cacheable Content",
+        "risk": "Informational (Medium)",
+        "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
