@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2025-12-30T07:42:07.238093+00:00",
+    "timestamp": "2026-01-06T07:46:12.607974+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2025-12-30T07:42:07.260375+00:00",
+    "timestamp": "2026-01-06T07:46:12.630203+00:00",
     "target": "file:///",
     "results": [
       {
@@ -818,7 +818,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -828,7 +828,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -838,7 +838,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -868,7 +868,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -1208,7 +1208,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -1218,7 +1218,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -1228,7 +1228,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -1258,7 +1258,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -1598,7 +1598,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -1608,7 +1608,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -1618,7 +1618,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -1648,7 +1648,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -2118,7 +2118,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -2128,7 +2128,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -2138,7 +2138,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -2168,7 +2168,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -2808,7 +2808,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -2818,7 +2818,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -2828,7 +2828,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -2858,7 +2858,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -3198,7 +3198,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -3208,7 +3208,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -3218,7 +3218,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -3248,7 +3248,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -3648,7 +3648,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -3658,7 +3658,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -3668,7 +3668,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -3698,7 +3698,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -4298,7 +4298,7 @@
         "cve": "CVE-2025-66861",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_unqualified_name in file cp-dema ...",
+        "description": "binutils: out-of-bounds read in d_unqualified_name() in cp-demangle.c",
         "remediation": "An issue was discovered in function d_unqualified_name in file cp-demangle.c in BinUtils 2.26 allowing attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66861"
       },
@@ -4308,7 +4308,7 @@
         "cve": "CVE-2025-66862",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "A buffer overflow vulnerability in function gnu_special in file cplus- ...",
+        "description": "binutils: heap-based buffer over-read in gnu_special() in cplus-dem.c",
         "remediation": "A buffer overflow vulnerability in function gnu_special in file cplus-dem.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66862"
       },
@@ -4318,7 +4318,7 @@
         "cve": "CVE-2025-66863",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_discriminator in file cp-demangl ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_discriminator in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66863"
       },
@@ -4348,7 +4348,7 @@
         "cve": "CVE-2025-66866",
         "component": "libsframe1",
         "severity": "2.0",
-        "description": "An issue was discovered in function d_abi_tags in file cp-demangle.c i ...",
+        "description": "binutils: BinUtils: Denial of Service via crafted PE file",
         "remediation": "An issue was discovered in function d_abi_tags in file cp-demangle.c in BinUtils 2.26 allows attackers to cause a denial of service via crafted PE file.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-66866"
       },
@@ -4401,6 +4401,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69277",
+        "component": "libsodium23",
+        "severity": "5.5",
+        "description": "libsodium: libsodium: Improper validation of elliptic curve points could lead to data integrity or information disclosure.",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69277"
       },
       {
         "tool": "Trivy",
@@ -4698,7 +4708,7 @@
         "cve": "CVE-2025-38248",
         "component": "linux-libc-dev",
         "severity": "7.8",
-        "description": "kernel: bridge: mcast: Fix use-after-free during router port configuration",
+        "description": "kernel: Linux kernel:A use-after-free in bridge multicast in br_multicast_port_ctx_init",
         "remediation": "---truncated---",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-38248"
       },
@@ -4761,16 +4771,6 @@
         "description": "kernel: wifi: mt76: mt7915: fix list corruption after hardware restart",
         "remediation": "not added again before they are ready.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-39862"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-39905",
-        "component": "linux-libc-dev",
-        "severity": "7.0",
-        "description": "kernel: net: phylink: add lock for serializing concurrent pl-&gt;phydev writes with resolver",
-        "remediation": "preferred.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39905"
       },
       {
         "tool": "Trivy",
@@ -4841,16 +4841,6 @@
         "description": "kernel: net: use dst_dev_rcu() in sk_setup_caps()",
         "remediation": "ip4_dst_hoplimit() can use dst_dev_net_rcu().",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-40170"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40210",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: Revert &#34;NFSD: Remove the cap on number of operations per NFSv4 COMPOUND&#34;",
-        "remediation": "for now.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40210"
       },
       {
         "tool": "Trivy",
@@ -5091,16 +5081,6 @@
         "description": "kernel: Linux kernel: Out-of-bounds write in fbdev can lead to privilege escalation, information disclosure, or denial of service.",
         "remediation": "width but cnt reflects the original larger count, causing out-of-bounds writes.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-40304"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-40305",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: 9p/trans_fd: p9_fd_request: kick rx thread if EPOLLIN",
-        "remediation": "to use p9_poll_mux() instead of only checking for EPOLLOUT.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40305"
       },
       {
         "tool": "Trivy",
@@ -5435,16 +5415,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68353",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net: vxlan: prevent NULL deref in vxlan_xmit_one",
-        "remediation": "and are strongly related, bundle the fixes in a single commit.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68353"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68360",
         "component": "linux-libc-dev",
         "severity": "8.0",
@@ -5485,16 +5455,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68379",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: RDMA/rxe: Fix null deref on srq-&gt;rq.queue after resize failure",
-        "remediation": "entry_SYSCALL_64_after_hwframe+0x76/0x7e",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68379"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68380",
         "component": "linux-libc-dev",
         "severity": "8.0",
@@ -5531,6 +5491,16 @@
         "description": "kernel: scsi: qla2xxx: Clear cmds after chip reset",
         "remediation": "host reset handling\" at __qla2x00_abort_all_cmds.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68745"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68764",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: NFS: Automounted filesystems should inherit ro,noexec,nodev,sync flags",
+        "remediation": "user-set superblock mount options, such as the \"ro\" flag.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68764"
       },
       {
         "tool": "Trivy",
@@ -5988,7 +5958,7 @@
         "cve": "CVE-2025-38140",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: dm: limit swapping tables for devices with zone write plugs",
+        "description": "kernel: Linux kernel: Local denial of service in device mapper",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-38140"
       },
@@ -6078,7 +6048,7 @@
         "cve": "CVE-2025-38311",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: iavf: get rid of the crit lock",
+        "description": "kernel: Linux kernel (iavf): Denial of Service due to a locking issue",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-38311"
       },
@@ -6165,16 +6135,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-39745",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in rcutorture due to incorrect preempt_count handling",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39745"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-39762",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6251,6 +6211,16 @@
         "description": "kernel: net/mlx5: HWS, Fix memory leak in hws_action_get_shared_stc_nic error flow",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-39834"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-39872",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: hsr: hold rcu and dev lock for hsr_get_port_ndev",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-39872"
       },
       {
         "tool": "Trivy",
@@ -6925,16 +6895,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-40336",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/gpusvm: fix hmm_pfn_to_map_order() usage",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40336"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-40337",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7335,16 +7295,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68203",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amdgpu: fix lock warning in amdgpu_userq_fence_driver_process",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68203"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68204",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7461,16 +7411,6 @@
         "description": "kernel: drm/radeon: delete radeon_fence_process in is_signaled, no deadlock",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68223"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68224",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: scsi: core: Fix a regression triggered by scsi_host_busy()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68224"
       },
       {
         "tool": "Trivy",
@@ -7735,16 +7675,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68281",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ASoC: SDCA: bug fix while parsing mipi-sdca-control-cn-list",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68281"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68282",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7905,16 +7835,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68309",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: PCI/AER: Fix NULL pointer access by aer_info",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68309"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68310",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8035,6 +7955,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68327",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: usb: renesas_usbhs: Fix synchronous external abort on unbind",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68327"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68328",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: firmware: stratix10-svc: fix bug in saving controller data",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68328"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68329",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8045,12 +7985,52 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68330",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: iio: accel: bmc150: Fix irq assumption regression",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68330"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68332",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: comedi: c6xdigio: Fix invalid PNP driver unregistration",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68332"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68333",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: sched_ext: Fix possible deadlock in the deferred_irq_workfn()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68333"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68334",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: platform/x86/amd/pmc: Add support for Van Gogh SoC",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68334"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68335",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: comedi: pcl818: fix null-ptr-deref in pcl818_ai_cancel()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68335"
       },
       {
         "tool": "Trivy",
@@ -8075,12 +8055,42 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68338",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: dsa: microchip: Don&#39;t free uninitialized ksz_irq",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68338"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68339",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: atm/fore200e: Fix possible data race in fore200e_open()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68339"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68341",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: veth: reduce XDP no_direct return section to fix race",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68341"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68344",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ALSA: wavefront: Fix integer overflow in sample size validation",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68344"
       },
       {
         "tool": "Trivy",
@@ -8111,6 +8121,36 @@
         "description": "kernel: block: fix memory leak in __blkdev_issue_zero_pages",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68348"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68351",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: exfat: fix refcount leak in exfat_find",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68351"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68352",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: spi: ch341: fix out-of-bounds memory access in ch341_transfer_one",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68352"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68353",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: Kernel: Denial of Service via NULL pointer dereference in VXLAN module",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68353"
       },
       {
         "tool": "Trivy",
@@ -8185,6 +8225,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68365",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: fs/ntfs3: Initialize allocated memory before use",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68365"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68366",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8235,12 +8285,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68376",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: coresight: ETR: Fix ETR buffer use-after-free issue",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68376"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68378",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: bpf: Fix stackmap overflow check in __bpf_get_stackid()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68378"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68379",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: Linux kernel: Denial of Service in RDMA subsystem via repeated SRQ modification",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68379"
       },
       {
         "tool": "Trivy",
@@ -8265,6 +8335,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68727",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ntfs3: Fix uninit buffer allocated by __getname()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68727"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68728",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ntfs3: fix uninit memory after failed mi_read in mi_format_new",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68728"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68732",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -8275,12 +8365,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68733",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: smack: fix bug: unprivileged task can create labels",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68733"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68734",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: isdn: mISDN: hfcsusb: fix memory leak in hfcsusb_probe()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68734"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68735",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: drm/panthor: Prevent potential UAF in group creation",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68735"
       },
       {
         "tool": "Trivy",
@@ -8345,12 +8455,92 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68747",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: drm/panthor: Fix UAF on kernel BO VA nodes",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68747"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68748",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: drm/panthor: Fix UAF race between device unplug and FW event processing",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68748"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68749",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: accel/ivpu: Fix race condition when unbinding BOs",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68749"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68751",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: s390/fpu: Fix false-positive kmsan report in fpu_vstl()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68751"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68753",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ALSA: firewire-motu: add bounds check in put_user loop for DSP events",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68753"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68756",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: block: Use RCU in blk_mq_[un]quiesce_tagset() instead of set-&gt;tag_list_lock",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68756"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68757",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: drm/vgem-fence: Fix potential deadlock on release",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68757"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68758",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: backlight: led-bl: Add devlink to supplier LEDs",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68758"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68766",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: irqchip/mchp-eic: Fix error code in mchp_eic_domain_alloc()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68766"
       },
       {
         "tool": "Trivy",
@@ -9005,192 +9195,42 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68327",
+        "cve": "CVE-2025-68755",
         "component": "linux-libc-dev",
         "severity": "0.0",
-        "description": "kernel: usb: renesas_usbhs: Fix synchronous external abort on unbind",
+        "description": "kernel: staging: most: remove broken i2c driver",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68327"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68755"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68328",
+        "cve": "CVE-2025-68759",
         "component": "linux-libc-dev",
         "severity": "0.0",
-        "description": "kernel: firmware: stratix10-svc: fix bug in saving controller data",
+        "description": "kernel: wifi: rtl818x: Fix potential memory leaks in rtl8180_init_rx_ring()",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68328"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68759"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68330",
+        "cve": "CVE-2025-68763",
         "component": "linux-libc-dev",
         "severity": "0.0",
-        "description": "kernel: iio: accel: bmc150: Fix irq assumption regression",
+        "description": "kernel: crypto: starfive - Correctly handle return of sg_nents_for_len",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68330"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68763"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68332",
+        "cve": "CVE-2025-68765",
         "component": "linux-libc-dev",
         "severity": "0.0",
-        "description": "kernel: comedi: c6xdigio: Fix invalid PNP driver unregistration",
+        "description": "kernel: mt76: mt7615: Fix memory leak in mt7615_mcu_wtbl_sta_add()",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68332"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68333",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: sched_ext: Fix possible deadlock in the deferred_irq_workfn()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68333"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68335",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: comedi: pcl818: fix null-ptr-deref in pcl818_ai_cancel()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68335"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68338",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: net: dsa: microchip: Don&#39;t free uninitialized ksz_irq",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68338"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68339",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: atm/fore200e: Fix possible data race in fore200e_open()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68339"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68344",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: ALSA: wavefront: Fix integer overflow in sample size validation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68344"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68351",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: exfat: fix refcount leak in exfat_find",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68351"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68352",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: spi: ch341: fix out-of-bounds memory access in ch341_transfer_one",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68352"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68365",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: fs/ntfs3: Initialize allocated memory before use",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68365"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68376",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: coresight: ETR: Fix ETR buffer use-after-free issue",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68376"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68727",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: ntfs3: Fix uninit buffer allocated by __getname()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68727"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68728",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: ntfs3: fix uninit memory after failed mi_read in mi_format_new",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68728"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68733",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: smack: fix bug: unprivileged task can create labels",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68733"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68735",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: drm/panthor: Prevent potential UAF in group creation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68735"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68747",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: drm/panthor: Fix UAF on kernel BO VA nodes",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68747"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68748",
-        "component": "linux-libc-dev",
-        "severity": "0.0",
-        "description": "kernel: drm/panthor: Fix UAF race between device unplug and FW event processing",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68748"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68765"
       },
       {
         "tool": "Trivy",
@@ -9567,7 +9607,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2025-12-30T07:42:07.261286+00:00",
+    "timestamp": "2026-01-06T07:46:12.631183+00:00",
     "target": "N/A",
     "results": [
       {
@@ -9719,17 +9759,6 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/about.php",
-        "evidence": "",
-        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Content Security Policy (CSP) Header Not Set",
-        "risk": "Medium (High)",
-        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
         "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
@@ -9749,13 +9778,24 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
-        "name": "Missing Anti-clickjacking Header",
-        "risk": "Medium (Medium)",
-        "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
-        "uri": "http://localhost:4280",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/sitemap.xml",
         "evidence": "",
-        "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
-        "cwe": "1021"
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/var/www/html/config/config.inc.php",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
       },
       {
         "tool": "OWASP ZAP",
@@ -9800,6 +9840,17 @@
         "evidence": "",
         "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
         "cwe": "1021"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - PHP",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
+        "uri": "http://localhost:4280/config/config.inc.php.dist",
+        "evidence": "<?php\n\n# If you are having problems connecting to the MySQL database and all of the variables below are correct\n# try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.\n#   Thanks to @digininja for the fix.\n\n# Database management system to use\n$DBMS = getenv('DBMS') ?: 'MySQL';\n#$DBMS = 'PGSQL'; // Currently disabled\n\n# Database variables\n#   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.\n#   Please use a database dedicated to DVWA.\n#\n# If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.\n#   See README.md for more information on this.\n$_DVWA = array();\n$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';\n$_DVWA[ 'db_database' ] = getenv('DB_DATABASE') ?: 'dvwa';\n$_DVWA[ 'db_user' ]     = getenv('DB_USER') ?: 'dvwa';\n$_DVWA[ 'db_password' ] = getenv('DB_PASSWORD') ?: 'p@ssw0rd';\n$_DVWA[ 'db_port']      = getenv('DB_PORT') ?: '3306';\n\n# ReCAPTCHA settings\n#   Used for the 'Insecure CAPTCHA' module\n#   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin\n$_DVWA[ 'recaptcha_public_key' ]  = getenv('RECAPTCHA_PUBLIC_KEY') ?: '';\n$_DVWA[ 'recaptcha_private_key' ] = getenv('RECAPTCHA_PRIVATE_KEY') ?: '';\n\n# Default security level\n#   Default value for the security level with each session.\n#   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.\n$_DVWA[ 'default_security_level' ] = getenv('DEFAULT_SECURITY_LEVEL') ?: 'impossible';\n\n# Default locale\n#   Default locale for the help page shown with each session.\n#   The default is 'en'. You may wish to set this to either 'en' or 'zh'.\n$_DVWA[ 'default_locale' ] = getenv('DEFAULT_LOCALE') ?: 'en';\n\n# Disable authentication\n#   Some tools don't like working with authentication and passing cookies around\n#   so this setting lets you turn off authentication.\n$_DVWA[ 'disable_authentication' ] = getenv('DISABLE_AUTHENTICATION') ?: false;\n\ndefine ('MYSQL', 'mysql');\ndefine ('SQLITE', 'sqlite');\n\n# SQLi DB Backend\n#   Use this to switch the backend database used in the SQLi and Blind SQLi labs.\n#   This does not affect the backend for any other services, just these two labs.\n#   If you do not understand what this means, do not change it.\n$_DVWA['SQLI_DB'] = getenv('SQLI_DB') ?: MYSQL;\n#$_DVWA['SQLI_DB'] = SQLITE;\n#$_DVWA['SQLITE_DB'] = 'sqli.db';\n\n?>",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
       },
       {
         "tool": "OWASP ZAP",
@@ -9896,6 +9947,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.tr.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.vi.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -10027,17 +10089,6 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.es.md",
-        "evidence": "Access denied for user",
-        "solution": "<p>Disable debugging messages before pushing to production.</p>",
-        "cwe": "1295"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Information Disclosure - Debug Error Messages",
-        "risk": "Low (Medium)",
-        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.fa.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -10106,6 +10157,17 @@
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.tr.md",
         "evidence": "for user 'notdvwa'@'lo",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
       },
@@ -10214,17 +10276,6 @@
         "name": "Insufficient Site Isolation Against Spectre Vulnerability",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/about.php",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
@@ -10237,17 +10288,6 @@
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
         "uri": "http://localhost:4280",
-        "evidence": "",
-        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Insufficient Site Isolation Against Spectre Vulnerability",
-        "risk": "Low (Medium)",
-        "description": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
-        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
         "cwe": "693"
@@ -10280,7 +10320,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/about.php",
+        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -10666,28 +10706,6 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
         "uri": "http://localhost:4280",
-        "evidence": "no-cache",
-        "solution": "",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable but Non-Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/about.php",
-        "evidence": "no-cache",
-        "solution": "",
-        "cwe": "524"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Storable but Non-Cacheable Content",
-        "risk": "Informational (Medium)",
-        "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/login.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
