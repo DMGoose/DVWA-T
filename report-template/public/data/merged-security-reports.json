@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2026-01-20T07:47:47.426245+00:00",
+    "timestamp": "2026-01-27T07:48:09.503169+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2026-01-20T07:47:47.445265+00:00",
+    "timestamp": "2026-01-27T07:48:09.523776+00:00",
     "target": "file:///",
     "results": [
       {
@@ -2135,6 +2135,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-15281",
+        "component": "libc6-dev",
+        "severity": "5.5",
+        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-0915",
         "component": "libc6-dev",
         "severity": "5.5",
@@ -2225,6 +2235,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-15281",
+        "component": "libc6-dev",
+        "severity": "5.5",
+        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-0915",
         "component": "libc6-dev",
         "severity": "5.5",
@@ -2315,6 +2335,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-15281",
+        "component": "libc6-dev",
+        "severity": "5.5",
+        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-0915",
         "component": "libc6-dev",
         "severity": "5.5",
@@ -2401,6 +2431,16 @@
         "description": "glibc: Integer overflow in memalign leads to heap corruption",
         "remediation": "Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-0861"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-15281",
+        "component": "libc6-dev",
+        "severity": "5.5",
+        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
       },
       {
         "tool": "Trivy",
@@ -3425,6 +3465,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-24515",
+        "component": "libexpat1",
+        "severity": "0.0",
+        "description": "In libexpat before 2.7.4, XML_ExternalEntityParserCreate does not copy ...",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-24515"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2011-3389",
         "component": "libgnutls30t64",
         "severity": "2.0",
@@ -4067,9 +4117,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22695",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.1",
         "description": "libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.51 to 1.6.53, there is a heap buffer over-read in the libpng simplified API function png_image_finish_read when processing interlaced 16-bit PNGs with 8-bit output format and non-minimal row stride. This is a regression introduced by the fix for CVE-2025-65018. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22695"
       },
       {
@@ -4077,9 +4127,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22801",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.8",
         "description": "libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.26 to 1.6.53, there is an integer truncation in the libpng simplified write API functions png_write_image_16bit and png_write_image_8bit causes heap buffer over-read when the caller provides a negative row stride (for bottom-up image layouts) or a stride exceeding 65535 bytes. The bug was introduced in libpng 1.6.26 (October 2016) by casts added to silence compiler warnings on 16-bit systems. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22801"
       },
       {
@@ -4097,9 +4147,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22695",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.1",
         "description": "libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.51 to 1.6.53, there is a heap buffer over-read in the libpng simplified API function png_image_finish_read when processing interlaced 16-bit PNGs with 8-bit output format and non-minimal row stride. This is a regression introduced by the fix for CVE-2025-65018. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22695"
       },
       {
@@ -4107,9 +4157,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22801",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.8",
         "description": "libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.26 to 1.6.53, there is an integer truncation in the libpng simplified write API functions png_write_image_16bit and png_write_image_8bit causes heap buffer over-read when the caller provides a negative row stride (for bottom-up image layouts) or a stride exceeding 65535 bytes. The bug was introduced in libpng 1.6.26 (October 2016) by casts added to silence compiler warnings on 16-bit systems. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22801"
       },
       {
@@ -4127,9 +4177,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22695",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.1",
         "description": "libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.51 to 1.6.53, there is a heap buffer over-read in the libpng simplified API function png_image_finish_read when processing interlaced 16-bit PNGs with 8-bit output format and non-minimal row stride. This is a regression introduced by the fix for CVE-2025-65018. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22695"
       },
       {
@@ -4137,9 +4187,9 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22801",
         "component": "libpng16-16t64",
-        "severity": "5.5",
+        "severity": "7.8",
         "description": "libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API",
-        "remediation": "",
+        "remediation": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.26 to 1.6.53, there is an integer truncation in the libpng simplified write API functions png_write_image_16bit and png_write_image_8bit causes heap buffer over-read when the caller provides a negative row stride (for bottom-up image layouts) or a stride exceeding 65535 bytes. The bug was introduced in libpng 1.6.26 (October 2016) by casts added to silence compiler warnings on 16-bit systems. This vulnerability is fixed in 1.6.54.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22801"
       },
       {
@@ -5005,42 +5055,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-40217",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: pidfs: validate extensible ioctls",
-        "remediation": "Validate extensible ioctls stricter than we do now.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40217"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68209",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: mlx5: Fix default values in create CQ",
-        "remediation": "completion function and arming the CQ per their needs.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68209"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-68730",
         "component": "linux-libc-dev",
         "severity": "8.0",
         "description": "kernel: accel/ivpu: Fix page fault in ivpu_bo_unbind_all_bos_from_context()",
         "remediation": "causing a deleted BO to be left on the list.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68730"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68770",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: bnxt_en: Fix XDP_TX path",
-        "remediation": "called __bnxt_xmit_xdp().",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68770"
       },
       {
         "tool": "Trivy",
@@ -5081,66 +5101,6 @@
         "description": "kernel: svcrdma: use rc_pageoff for memcpy byte offset",
         "remediation": "Found by ZeroPath (https://zeropath.com)",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68811"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68815",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net/sched: ets: Remove drr class from the active list if it changes to strict",
-        "remediation": "[1] https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/tree/net/sched/sch_ets.c?id=ce052b9402e461a9aded599f5b47e76bc727f7de#n663",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68815"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-68819",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: media: dvb-usb: dtv5100: fix out-of-bounds in dtv5100_i2c_msg()",
-        "remediation": "Therefore, we need to add proper range checking to prevent this vuln.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68819"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71064",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net: hns3: using the num_tqps in the vf driver to apply for resources",
-        "remediation": "and that all elements are properly initialized.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71064"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71066",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net/sched: ets: Always remove class from active list before deleting in ets_qdisc_change",
-        "remediation": "---truncated---",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71066"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71068",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: svcrdma: bound check rq_pages index in inline path",
-        "remediation": "before the first use and after advancing to a new page.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71068"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71077",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: tpm: Cap the number of PCR banks",
-        "remediation": "from external I/O cause on only limited harm.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71077"
       },
       {
         "tool": "Trivy",
@@ -5205,52 +5165,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71098",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: ip6_gre: make ip6gre_header() robust",
-        "remediation": "mld_ifc_work+0x83e/0xd60 net/ipv6/mcast.c:2693",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71098"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71100",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: wifi: rtlwifi: 8192cu: fix tid out of range in rtl92cu_tx_fill_desc()",
-        "remediation": "index 10 is out of range for type 'rtl_tid_data [9]'",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71100"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71112",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net: hns3: add VLAN id validation before using",
-        "remediation": "the range of VLAN_N_VID.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71112"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-71116",
         "component": "linux-libc-dev",
         "severity": "8.0",
         "description": "kernel: libceph: make decode_pool() more resilient against corrupted osdmaps",
         "remediation": "or skipped.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71116"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71126",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: mptcp: avoid deadlock on fallback while reinjecting",
-        "remediation": "could potentially send packets and hit the double-lock.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71126"
       },
       {
         "tool": "Trivy",
@@ -5265,22 +5185,142 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71134",
+        "cve": "CVE-2025-71156",
         "component": "linux-libc-dev",
         "severity": "8.0",
-        "description": "kernel: mm/page_alloc: change all pageblocks migrate type on coalescing",
-        "remediation": "---truncated---",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71134"
+        "description": "kernel: gve: defer interrupt enabling until NAPI registration",
+        "remediation": "readiness of NAPI context.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71156"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71137",
+        "cve": "CVE-2025-71157",
         "component": "linux-libc-dev",
         "severity": "8.0",
-        "description": "kernel: octeontx2-pf: fix &#34;UBSAN: shift-out-of-bounds error&#34;",
-        "remediation": "ring sizes via ethtool -G.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71137"
+        "description": "kernel: RDMA/core: always drop device refcount in ib_del_sub_device_and_put()",
+        "remediation": "we need to drop that reference before returning -EOPNOTSUPP error.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71157"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22984",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: libceph: prevent potential out-of-bounds reads in handle_auth_done()",
+        "remediation": "[ idryomov: changelog ]",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22984"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22986",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: gpiolib: fix race condition for gdev-&gt;srcu",
+        "remediation": "[Bartosz: fixed a build issue, removed stray newline]",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22986"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22990",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: libceph: replace overzealous BUG_ON in osdmap_apply_incremental()",
+        "remediation": "BUG.  Instead, just declare the incremental osdmap to be invalid.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22990"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22991",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: libceph: make free_choose_arg_map() resilient to partial allocation",
+        "remediation": "iterating.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22991"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22992",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: libceph: return the handler error from mon_handle_auth_done()",
+        "remediation": "lead to a NULL pointer dereference inside of prepare_auth_signature().",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22992"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22996",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: net/mlx5e: Don&#39;t store mlx5e_priv in mlx5e_dev devlink priv",
+        "remediation": "genl_family_rcv_msg_doit+0xe8/0x140",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22996"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22998",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: nvme-tcp: fix NULL pointer dereferences in nvmet_tcp_build_pdu_iovec",
+        "remediation": "- WRITE commands: both allocated",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22998"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23000",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: net/mlx5e: Fix crash on profile change rollback failure",
+        "remediation": "RIP: 0033:0x7fdfb8495047",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23000"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23001",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: macvlan: fix possible UAF in macvlan_forward_source()",
+        "remediation": "https: //lore.kernel.org/netdev/695fb1e8.050a0220.1c677c.039f.GAE@google.com/T/#u",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23001"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23003",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: ip6_tunnel: use skb_vlan_inet_prepare() in __ip6_tnl_rcv()",
+        "remediation": "Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/25/2025",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23003"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23010",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: ipv6: Fix use-after-free in inet6_addr_del()",
+        "remediation": "---truncated---",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23010"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23011",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: ipv4: ip_gre: make ipgre_header() robust",
+        "remediation": "ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23011"
       },
       {
         "tool": "Trivy",
@@ -5935,16 +5975,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-39822",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: io_uring/kbuf: fix signedness in this_len calculation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-39822"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-39830",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6175,6 +6205,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-40217",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: pidfs: validate extensible ioctls",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-40217"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-40247",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6291,6 +6331,16 @@
         "description": "kernel: netfilter: nft_ct: add seqadj extension for natted connections",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68206"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68209",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: mlx5: Fix default values in create CQ",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68209"
       },
       {
         "tool": "Trivy",
@@ -6571,6 +6621,16 @@
         "description": "kernel: f2fs: fix return value of f2fs_recover_fsync_data()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68769"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68770",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: bnxt_en: Fix XDP_TX path",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68770"
       },
       {
         "tool": "Trivy",
@@ -6905,6 +6965,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-68815",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net/sched: ets: Remove drr class from the active list if it changes to strict",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68815"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-68816",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6931,6 +7001,16 @@
         "description": "kernel: scsi: Revert &#34;scsi: qla2xxx: Perform lockless command completion in abort path&#34;",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68818"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-68819",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: media: dvb-usb: dtv5100: fix out-of-bounds in dtv5100_i2c_msg()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-68819"
       },
       {
         "tool": "Trivy",
@@ -6975,6 +7055,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71064",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: hns3: using the num_tqps in the vf driver to apply for resources",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71064"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-71065",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6985,12 +7075,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71066",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net/sched: ets: Always remove class from active list before deleting in ets_qdisc_change",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71066"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-71067",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: ntfs: set dummy blocksize to read boot_block when mounting",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71067"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71068",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: svcrdma: bound check rq_pages index in inline path",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71068"
       },
       {
         "tool": "Trivy",
@@ -7061,6 +7171,16 @@
         "description": "kernel: drm/xe/oa: Limit num_syncs to prevent oversized allocations",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71076"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71077",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: tpm: Cap the number of PCR banks",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71077"
       },
       {
         "tool": "Trivy",
@@ -7185,12 +7305,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71098",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ip6_gre: make ip6gre_header() robust",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71098"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-71099",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: drm/xe/oa: Fix potential UAF in xe_oa_add_config_ioctl()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71099"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71100",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: wifi: rtlwifi: 8192cu: fix tid out of range in rtl92cu_tx_fill_desc()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71100"
       },
       {
         "tool": "Trivy",
@@ -7271,6 +7411,16 @@
         "description": "kernel: hwmon: (w83791d) Convert macros to functions to avoid TOCTOU",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71111"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71112",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: hns3: add VLAN id validation before using",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71112"
       },
       {
         "tool": "Trivy",
@@ -7375,6 +7525,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71126",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: Linux kernel: Deadlock due to MPTCP packet reinjection during fallback",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71126"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-71127",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7435,6 +7595,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71137",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: octeontx2-pf: fix &#34;UBSAN: shift-out-of-bounds error&#34;",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71137"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-71138",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7471,6 +7641,286 @@
         "description": "kernel: clk: samsung: exynos-clkout: Assign .num before accessing .hws",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71143"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71146",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: netfilter: nf_conncount: fix leaked ct in error paths",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71146"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71147",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: KEYS: trusted: Fix a memory leak in tpm2_load_cmd",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71147"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71148",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net/handshake: restore destructor on submit failure",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71148"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71149",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: io_uring/poll: correctly handle io_poll_add() return value on update",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71149"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71150",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ksmbd: Fix refcount leak when invalid session is found on session lookup",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71150"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71151",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: cifs: Fix memory and information leak in smb3_reconfigure()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71151"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71152",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: dsa: properly keep track of conduit reference",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71152"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71153",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: ksmbd: Fix memory leak in get_file_all_info()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71153"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71154",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: usb: rtl8150: fix memory leak on usb_submit_urb() failure",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71154"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71160",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: netfilter: nf_tables: avoid chain re-validation if possible",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71160"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71161",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: dm-verity: disable recursive forward error correction",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71161"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22976",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: Linux kernel: Denial of Service in sch_qfq due to NULL pointer dereference",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22976"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22977",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: sock: fix hardened usercopy panic in sock_recv_errqueue",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22977"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22978",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: wifi: avoid kernel-infoleak from struct iw_point",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22978"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22979",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: fix memory leak in skb_segment_list for GRO packets",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22979"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22980",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: nfsd: provide locking for v4_end_grace",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22980"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22981",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: idpf: detach and close netdevs while handling a reset",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22981"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22985",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: idpf: Fix RSS LUT NULL pointer crash on early ethtool operations",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22985"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22989",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: nfsd: check that server is running in unlock_filesystem",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22989"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22993",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: idpf: Fix RSS LUT NULL ptr issue after soft reset",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22993"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22994",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: bpf: Fix reference count leak in bpf_prog_test_run_xdp()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22994"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22997",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: can: j1939: j1939_xtp_rx_rts_session_active(): deactivate session upon receiving the second rts",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22997"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22999",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net/sched: sch_qfq: do not free existing class in qfq_change_class()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22999"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23002",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: lib/buildid: use __kernel_read() for sleepable context",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23002"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23004",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: dst: fix races in rt6_uncached_list_del() and rt_del_uncached_list()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23004"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23005",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: x86/fpu: Clear XSTATE_BV[i] in guest XSAVE state whenever XFD[i]=1",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23005"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23007",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: block: zero non-PI portion of auto integrity buffer",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23007"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23013",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: net: octeon_ep_vf: fix free_irq dev_id mismatch in IRQ rollback",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23013"
       },
       {
         "tool": "Trivy",
@@ -8105,6 +8555,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71134",
+        "component": "linux-libc-dev",
+        "severity": "2.0",
+        "description": "kernel: mm/page_alloc: change all pageblocks migrate type on coalescing",
+        "remediation": "---truncated---",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71134"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "TEMP-0000000-F7A20F",
         "component": "linux-libc-dev",
         "severity": "2.0",
@@ -8121,6 +8581,46 @@
         "description": "kernel: mptcp: ensure context reset on disconnect()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71144"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71162",
+        "component": "linux-libc-dev",
+        "severity": "0.0",
+        "description": "kernel: dmaengine: tegra-adma: Fix use-after-free",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71162"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-71163",
+        "component": "linux-libc-dev",
+        "severity": "0.0",
+        "description": "kernel: dmaengine: idxd: fix device leaks on compat bind and unbind",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71163"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-22982",
+        "component": "linux-libc-dev",
+        "severity": "0.0",
+        "description": "kernel: net: mscc: ocelot: Fix crash when adding interface under a lag",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-22982"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23006",
+        "component": "linux-libc-dev",
+        "severity": "0.0",
+        "description": "kernel: ASoC: tlv320adcx140: fix null pointer",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23006"
       },
       {
         "tool": "Trivy",
@@ -8497,7 +8997,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2026-01-20T07:47:47.446082+00:00",
+    "timestamp": "2026-01-27T07:48:09.524646+00:00",
     "target": "N/A",
     "results": [
       {
@@ -8561,6 +9061,17 @@
         "name": "Application Error Disclosure",
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+        "uri": "http://localhost:4280/README.it.md",
+        "evidence": "Can't connect to local",
+        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+        "cwe": "550"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Application Error Disclosure",
+        "risk": "Medium (Medium)",
+        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.pl.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
@@ -8573,17 +9084,6 @@
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.pt.md",
-        "evidence": "Can't connect to local",
-        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-        "cwe": "550"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Application Error Disclosure",
-        "risk": "Medium (Medium)",
-        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-        "uri": "http://localhost:4280/README.tr.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -8649,6 +9149,17 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/about.php",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
         "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
@@ -8671,21 +9182,10 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/var/www/html/config/config.inc.php",
+        "uri": "http://localhost:4280/sitemap.xml",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Missing Anti-clickjacking Header",
-        "risk": "Medium (Medium)",
-        "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
-        "uri": "http://localhost:4280",
-        "evidence": "",
-        "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
-        "cwe": "1021"
       },
       {
         "tool": "OWASP ZAP",
@@ -8792,6 +9292,17 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.it.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.ko.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -8825,7 +9336,7 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
-        "uri": "http://localhost:4280/README.tr.md",
+        "uri": "http://localhost:4280/README.vi.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -8892,7 +9403,7 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/compose.yml",
-        "evidence": "Apache/2.4.65",
+        "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
       },
@@ -8903,7 +9414,7 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/config/config.inc.php.",
-        "evidence": "Apache/2.4.65",
+        "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
       },
@@ -8914,7 +9425,7 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/etc/php/x.x/fpm/php.ini",
-        "evidence": "Apache/2.4.65",
+        "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
       },
@@ -8925,7 +9436,7 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/sitemap.xml",
-        "evidence": "Apache/2.4.65",
+        "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
       },
@@ -8936,7 +9447,7 @@
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
         "uri": "http://localhost:4280/var/www/html/config/config.inc.php",
-        "evidence": "Apache/2.4.65",
+        "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
       },
@@ -9001,6 +9512,17 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.it.md",
+        "evidence": "Access denied for user",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.ko.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -9034,8 +9556,8 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.tr.md",
-        "evidence": "for user 'notdvwa'@'lo",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
       },
@@ -9255,7 +9777,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280",
-        "evidence": "X-Powered-By: PHP/8.5.1",
+        "evidence": "X-Powered-By: PHP/8.5.2",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -9266,7 +9788,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/",
-        "evidence": "X-Powered-By: PHP/8.5.1",
+        "evidence": "X-Powered-By: PHP/8.5.2",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -9277,7 +9799,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "X-Powered-By: PHP/8.5.1",
+        "evidence": "X-Powered-By: PHP/8.5.2",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -9288,7 +9810,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/setup.php",
-        "evidence": "X-Powered-By: PHP/8.5.1",
+        "evidence": "X-Powered-By: PHP/8.5.2",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -9299,7 +9821,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "X-Powered-By: PHP/8.5.1",
+        "evidence": "X-Powered-By: PHP/8.5.2",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -9310,7 +9832,7 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280",
-        "evidence": "Apache/2.4.65 (Debian)",
+        "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
       },
@@ -9321,7 +9843,7 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/",
-        "evidence": "Apache/2.4.65 (Debian)",
+        "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
       },
@@ -9332,7 +9854,7 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/dvwa/css/login.css",
-        "evidence": "Apache/2.4.65 (Debian)",
+        "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
       },
@@ -9343,7 +9865,7 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/robots.txt",
-        "evidence": "Apache/2.4.65 (Debian)",
+        "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
       },
@@ -9354,7 +9876,7 @@
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
         "uri": "http://localhost:4280/sitemap.xml",
-        "evidence": "Apache/2.4.65 (Debian)",
+        "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
       },
@@ -9551,7 +10073,7 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/css/main.css",
+        "uri": "http://localhost:4280/dvwa/images/login_logo.png",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
         "cwe": "524"
@@ -9562,7 +10084,7 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/images/login_logo.png",
+        "uri": "http://localhost:4280/favicon.ico",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
         "cwe": "524"
