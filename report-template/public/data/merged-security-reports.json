@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2026-02-24T08:05:47.228090+00:00",
+    "timestamp": "2026-03-03T07:59:50.593608+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2026-02-24T08:05:47.244192+00:00",
+    "timestamp": "2026-03-03T07:59:50.608947+00:00",
     "target": "file:///",
     "results": [
       {
@@ -609,7 +609,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -619,7 +619,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -999,7 +999,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -1009,7 +1009,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -1389,7 +1389,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -1399,7 +1399,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -1541,6 +1541,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
@@ -1969,7 +1979,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -1979,7 +1989,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -2125,6 +2135,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-0861",
         "component": "libc6-dev",
         "severity": "8.0",
@@ -2779,7 +2799,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -2789,7 +2809,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -3169,7 +3189,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -3179,7 +3199,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -3485,16 +3505,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14831",
-        "component": "libgnutls30t64",
-        "severity": "5.5",
-        "description": "gnutls: GnuTLS: Denial of Service via excessive resource consumption during certificate verification",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14831"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2011-3389",
         "component": "libgnutls30t64",
         "severity": "2.0",
@@ -3759,7 +3769,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -3769,7 +3779,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -4045,6 +4055,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2015-3276",
         "component": "libldap2",
         "severity": "2.0",
@@ -4111,6 +4131,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
@@ -4419,7 +4449,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils prdbg.c tg_tag_type return value",
-        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be exploited.",
+        "remediation": "A security flaw has been discovered in GNU Binutils 2.45. Impacted is the function tg_tag_type of the file prdbg.c. Performing a manipulation results in unchecked return value. The attack needs to be approached locally. The exploit has been released to the public and may be used for attacks.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11839"
       },
       {
@@ -4429,7 +4459,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils out-of-bounds read",
-        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be exploited. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
+        "remediation": "A weakness has been identified in GNU Binutils 2.45. The affected element is the function vfinfo of the file ldmisc.c. Executing a manipulation can lead to out-of-bounds read. The attack can only be executed locally. The exploit has been made available to the public and could be used for attacks. This patch is called 16357. It is best practice to apply a patch to resolve this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-11840"
       },
       {
@@ -4575,6 +4605,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7709",
         "component": "libsqlite3-0",
         "severity": "5.5",
@@ -4711,6 +4751,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
@@ -5005,12 +5055,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71202",
+        "cve": "CVE-2025-71152",
         "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: Linux kernel: Memory Corruption and Kernel Crashes via IOMMU SVA coherency issue",
-        "remediation": "table pages.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71202"
+        "severity": "7.8",
+        "description": "kernel: net: dsa: properly keep track of conduit reference",
+        "remediation": "---truncated---",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71152"
       },
       {
         "tool": "Trivy",
@@ -5021,26 +5071,6 @@
         "description": "kernel: Linux kernel: Denial of Service via unsafe requeue in rxrpc_recvmsg",
         "remediation": "queue, so fix that also.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23066"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23111",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: Kernel: Privilege escalation or denial of service in nf_tables via inverted element activity check",
-        "remediation": "skip active elements, process inactive ones.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23111"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23112",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: nvmet-tcp: add bounds checks in nvmet_tcp_build_pdu_iovec",
-        "remediation": "entries, and sg->length/offset before building the bvec.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23112"
       },
       {
         "tool": "Trivy",
@@ -5061,46 +5091,6 @@
         "description": "kernel: Linux kernel: Use-after-free in bonding module can cause system crash or arbitrary code execution",
         "remediation": "[  605.603731]  bond_start_xmit+0x623/0xc20 [bonding]",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23171"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23191",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: ALSA: aloop: Fix racy access at PCM trigger",
-        "remediation": "leading to UAF.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23191"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23193",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: scsi: target: iscsi: Fix use-after-free in iscsit_dec_session_usage_count()",
-        "remediation": "waiter is allowed to proceed with deallocation.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23193"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23204",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: net/sched: cls_u32: use skb_header_pointer_careful()",
-        "remediation": "net/sched/cls_u32.c:221",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23204"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23209",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: macvlan: fix error recovery in macvlan_common_newlink()",
-        "remediation": "Many thanks to valis for following up on this issue.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23209"
       },
       {
         "tool": "Trivy",
@@ -5825,16 +5815,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-40082",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: hfsplus: fix slab-out-of-bounds read in hfsplus_uni2asc()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-40082"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-40086",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6108,7 +6088,7 @@
         "cve": "CVE-2025-68368",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: md: init bioset in mddev_init",
+        "description": "kernel: Kernel: Denial of Service in md driver via uninitialized bioset",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68368"
       },
@@ -6195,16 +6175,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-68823",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in ublk due to deadlock when reading partition table",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-68823"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-71074",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6235,16 +6205,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71152",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: net: dsa: properly keep track of conduit reference",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71152"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-71161",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6265,22 +6225,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71203",
+        "cve": "CVE-2025-71202",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: riscv: Sanitize syscall table indexing under speculation",
+        "description": "kernel: Linux kernel: Memory Corruption and Kernel Crashes via IOMMU SVA coherency issue",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71203"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71204",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb/server: fix refcount leak in parse_durable_handle_context()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71204"
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71202"
       },
       {
         "tool": "Trivy",
@@ -6291,126 +6241,6 @@
         "description": "kernel: dmaengine: mmp_pdma: Fix race condition in mmp_pdma_residue()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71221"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71222",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in wlcore due to insufficient skb headroom",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71222"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71225",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: md: suspend array while updating raid_disks via sysfs",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71225"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71226",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: iwlwifi: Implement settime64 as stub for MVM/MLD PTP",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71226"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71228",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: LoongArch: Set correct protection_map[] for VM_NONE/VM_SHARED",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71228"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71229",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: rtw88: Fix alignment fault in rtw_core_enable_beacon()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71229"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71231",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service due to out-of-bounds index in IAA crypto module",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71231"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71232",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: scsi: qla2xxx: Free sp in error path to fix system crash",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71232"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71233",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service via NULL pointer dereference in PCI endpoint configfs during asynchronous sub-group creation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71233"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71234",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: wifi: rtl8xxxu: fix slab-out-of-bounds in rtl8xxxu_sta_add",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71234"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71235",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: scsi: qla2xxx: Delay module unload while fabric scan in progress",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71235"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71236",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel qla2xxx driver: Denial of Service via NULL pointer dereference during fabric async scan cleanup",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71236"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71237",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nilfs2: Fix potential block overflow that cause system hang",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71237"
       },
       {
         "tool": "Trivy",
@@ -6437,7 +6267,7 @@
         "type": "Image Scan",
         "cve": "CVE-2026-22986",
         "component": "linux-libc-dev",
-        "severity": "5.5",
+        "severity": "4.7",
         "description": "kernel: Linux kernel: Denial of Service due to a race condition in gpiolib",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-22986"
@@ -6555,176 +6385,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23169",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in MPTCP due to a race condition",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23169"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23176",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: platform/x86: toshiba_haps: Fix memory leaks in add/remove routines",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23176"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23177",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mm, shmem: prevent infinite loop on truncate race",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23177"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23178",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: HID: i2c-hid: fix potential buffer overflow in i2c_hid_get_report()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23178"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23179",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: nvmet-tcp: fixup hang in nvmet_tcp_listen_data_ready()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23179"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23180",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel (dpaa2-switch): Out-of-bounds read in IRQ handler due to improper if_id validation",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23180"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23182",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: spi: tegra: Fix a memory leak in tegra_slink_probe()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23182"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23187",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: pmdomain: imx8m-blk-ctrl: fix out-of-range access of bc-&gt;domains",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23187"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23188",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in r8152 USB network adapter driver",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23188"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23189",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ceph: fix NULL pointer dereference in ceph_mds_auth_match()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23189"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23198",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: KVM: Don&#39;t clobber irqfd routing type when deassigning irqfd",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23198"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23199",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: procfs: avoid fetching build ID while holding VMA lock",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23199"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23200",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ipv6: Fix ECMP sibling count mismatch when clearing RTF_ADDRCONF",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23200"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23201",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ceph: fix oops due to invalid pointer for kfree() in parse_longname()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23201"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23202",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: spi: tegra210-quad: Protect curr_xfer in tegra_qspi_combined_seq_xfer",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23202"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23205",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb/client: fix memory leak in smb2_open_file()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23205"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23206",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: dpaa2-switch: prevent ZERO_SIZE_PTR dereference when num_ifs is zero",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23206"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2026-23207",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6745,46 +6405,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23213",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: drm/amd/pm: Disable MMIO access during SMU Mode 1 reset",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23213"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23214",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: btrfs: reject new transactions if the fs is fully read-only",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23214"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23215",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: x86/vmware: Fix hypercall clobbers",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23215"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23216",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: scsi: target: iscsi: Fix use-after-free in iscsit_dec_conn_usage_count()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23216"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2026-23217",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -6795,62 +6415,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23219",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mm/slab: Add alloc_tagging_slab_free_hook for memcg_alloc_abort_single",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23219"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23220",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: fix infinite loop caused by next_smb2_rcv_hdr_off reset in error paths",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23220"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2026-23221",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: bus: fsl-mc: fix use-after-free in driver_override_show()",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23221"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23222",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: crypto: omap - Allocate OMAP_CRYPTO_FORCE_COPY scatterlists correctly",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23222"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23223",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: xfs: fix UAF in xchk_btree_check_block_owner",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23223"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23224",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel erofs: Denial of Service via Use-After-Free in file-backed directio mounts",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23224"
       },
       {
         "tool": "Trivy",
@@ -6871,36 +6441,6 @@
         "description": "kernel: drm/exynos: vidi: use ctx-&gt;lock to protect struct vidi_context member variables related to memory alloc/free",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23227"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23228",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: smb: server: fix leak of active_num_conn in ksmbd_tcp_new_connection()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23228"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23229",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Kernel: Denial of Service in virtio-crypto due to missing spinlock protection",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23229"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23230",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: Linux kernel: Denial of Service in SMB client due to race condition",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23230"
       },
       {
         "tool": "Trivy",
@@ -7515,52 +7055,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-71220",
-        "component": "linux-libc-dev",
-        "severity": "2.0",
-        "description": "kernel: smb/server: call ksmbd_session_rpc_close() on error path in create_smb2_pipe()",
-        "remediation": "When ksmbd_iov_pin_rsp() fails, we should call ksmbd_session_rpc_close().",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71220"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71223",
-        "component": "linux-libc-dev",
-        "severity": "2.0",
-        "description": "kernel: smb/server: fix refcount leak in smb2_open()",
-        "remediation": "must be released.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71223"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71224",
-        "component": "linux-libc-dev",
-        "severity": "2.0",
-        "description": "kernel: wifi: mac80211: ocb: skip rx_no_sta when interface is not joined",
-        "remediation": "joined to avoid warnings in the RX path.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71224"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2025-71227",
         "component": "linux-libc-dev",
         "severity": "2.0",
         "description": "kernel: wifi: mac80211: don&#39;t WARN for connections on invalid channels",
         "remediation": "error message.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71227"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23190",
-        "component": "linux-libc-dev",
-        "severity": "2.0",
-        "description": "kernel: ASoC: amd: fix memory leak in acp3x pdm dma ops",
-        "remediation": "ASoC: amd: fix memory leak in acp3x pdm dma ops",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23190"
       },
       {
         "tool": "Trivy",
@@ -7591,6 +7091,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
@@ -7661,6 +7171,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
@@ -7955,6 +7475,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-3184",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-27171",
         "component": "zlib1g-dev",
         "severity": "5.5",
@@ -7977,7 +7507,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2026-02-24T08:05:47.245007+00:00",
+    "timestamp": "2026-03-03T07:59:50.609782+00:00",
     "target": "N/A",
     "results": [
       {
@@ -8031,17 +7561,6 @@
         "risk": "Medium (Medium)",
         "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
         "uri": "http://localhost:4280/README.id.md",
-        "evidence": "Can't connect to local",
-        "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-        "cwe": "550"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Application Error Disclosure",
-        "risk": "Medium (Medium)",
-        "description": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-        "uri": "http://localhost:4280/README.it.md",
         "evidence": "Can't connect to local",
         "solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
         "cwe": "550"
@@ -8170,6 +7689,17 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/sitemap.xml",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
         "name": "Missing Anti-clickjacking Header",
         "risk": "Medium (Medium)",
         "description": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
@@ -8225,17 +7755,6 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
-        "name": "Source Code Disclosure - PHP",
-        "risk": "Medium (Medium)",
-        "description": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
-        "uri": "http://localhost:4280/config/config.inc.php.dist",
-        "evidence": "<?php\n\n# If you are having problems connecting to the MySQL database and all of the variables below are correct\n# try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.\n#   Thanks to @digininja for the fix.\n\n# Database management system to use\n$DBMS = getenv('DBMS') ?: 'MySQL';\n#$DBMS = 'PGSQL'; // Currently disabled\n\n# Database variables\n#   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.\n#   Please use a database dedicated to DVWA.\n#\n# If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.\n#   See README.md for more information on this.\n$_DVWA = array();\n$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';\n$_DVWA[ 'db_database' ] = getenv('DB_DATABASE') ?: 'dvwa';\n$_DVWA[ 'db_user' ]     = getenv('DB_USER') ?: 'dvwa';\n$_DVWA[ 'db_password' ] = getenv('DB_PASSWORD') ?: 'p@ssw0rd';\n$_DVWA[ 'db_port']      = getenv('DB_PORT') ?: '3306';\n\n# ReCAPTCHA settings\n#   Used for the 'Insecure CAPTCHA' module\n#   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin\n$_DVWA[ 'recaptcha_public_key' ]  = getenv('RECAPTCHA_PUBLIC_KEY') ?: '';\n$_DVWA[ 'recaptcha_private_key' ] = getenv('RECAPTCHA_PRIVATE_KEY') ?: '';\n\n# Default security level\n#   Default value for the security level with each session.\n#   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.\n$_DVWA[ 'default_security_level' ] = getenv('DEFAULT_SECURITY_LEVEL') ?: 'impossible';\n\n# Default locale\n#   Default locale for the help page shown with each session.\n#   The default is 'en'. You may wish to set this to either 'en' or 'zh'.\n$_DVWA[ 'default_locale' ] = getenv('DEFAULT_LOCALE') ?: 'en';\n\n# Disable authentication\n#   Some tools don't like working with authentication and passing cookies around\n#   so this setting lets you turn off authentication.\n$_DVWA[ 'disable_authentication' ] = getenv('DISABLE_AUTHENTICATION') ?: false;\n\ndefine ('MYSQL', 'mysql');\ndefine ('SQLITE', 'sqlite');\n\n# SQLi DB Backend\n#   Use this to switch the backend database used in the SQLi and Blind SQLi labs.\n#   This does not affect the backend for any other services, just these two labs.\n#   If you do not understand what this means, do not change it.\n$_DVWA['SQLI_DB'] = getenv('SQLI_DB') ?: MYSQL;\n#$_DVWA['SQLI_DB'] = SQLITE;\n#$_DVWA['SQLITE_DB'] = 'sqli.db';\n\n?>",
-        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
-        "cwe": "540"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
@@ -8251,6 +7770,17 @@
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.es.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.fa.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
         "cwe": "540"
@@ -8327,6 +7857,17 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.zh.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -8390,6 +7931,17 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
+        "name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
+        "uri": "http://localhost:4280/setup.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
         "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
@@ -8405,6 +7957,17 @@
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
         "uri": "http://localhost:4280/login.php",
+        "evidence": "",
+        "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
+        "risk": "Low (Medium)",
+        "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
         "cwe": "693"
@@ -8503,7 +8066,7 @@
         "name": "In Page Banner Information Leak",
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
-        "uri": "http://localhost:4280/etc/php/x.x/fpm/php.ini",
+        "uri": "http://localhost:4280/etc/php/x.x/apache2/php.ini.",
         "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
@@ -8558,7 +8121,7 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.fr.md",
+        "uri": "http://localhost:4280/README.fa.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
@@ -8569,7 +8132,7 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.id.md",
+        "uri": "http://localhost:4280/README.fr.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
@@ -8679,7 +8242,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/dvwa/js/dvwaPage.js",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -8724,7 +8287,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280",
-        "evidence": "X-Powered-By: PHP/8.5.2",
+        "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -8735,7 +8298,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/",
-        "evidence": "X-Powered-By: PHP/8.5.2",
+        "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -8746,7 +8309,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "X-Powered-By: PHP/8.5.2",
+        "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -8757,7 +8320,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/setup.php",
-        "evidence": "X-Powered-By: PHP/8.5.2",
+        "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -8768,7 +8331,7 @@
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
         "uri": "http://localhost:4280/login.php",
-        "evidence": "X-Powered-By: PHP/8.5.2",
+        "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
       },
@@ -8900,7 +8463,7 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
         "uri": "http://localhost:4280/setup.php",
-        "evidence": "db",
+        "evidence": "<!-- Create db button -->",
         "solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
         "cwe": "615"
       },
@@ -8987,17 +8550,6 @@
         "name": "Session Management Response Identified",
         "risk": "Informational (Medium)",
         "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
-        "uri": "http://localhost:4280",
-        "evidence": "security",
-        "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-        "cwe": "-1"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Session Management Response Identified",
-        "risk": "Informational (Medium)",
-        "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
         "uri": "http://localhost:4280/login.php",
         "evidence": "PHPSESSID",
         "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
@@ -9076,6 +8628,17 @@
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
         "uri": "http://localhost:4280/login.php",
+        "evidence": "no-cache",
+        "solution": "",
+        "cwe": "524"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Storable but Non-Cacheable Content",
+        "risk": "Informational (Medium)",
+        "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
