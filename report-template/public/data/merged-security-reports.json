@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2026-03-03T07:59:50.593608+00:00",
+    "timestamp": "2026-03-10T08:00:15.978498+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2026-03-03T07:59:50.608947+00:00",
+    "timestamp": "2026-03-10T08:00:15.993079+00:00",
     "target": "file:///",
     "results": [
       {
@@ -715,6 +715,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -741,6 +811,26 @@
         "description": "binutils: Binutils DWARF Section Handler Memory Leak",
         "remediation": "A vulnerability was found in GNU Binutils 2.44 and classified as problematic. This issue affects the function process_debug_info of the file binutils/dwarf.c of the component DWARF Section Handler. The manipulation leads to memory leak. Attacking locally is a requirement. The identifier of the patch is e51fdff7d2e538c0e5accdd65649ac68e6e0ddd4. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-8225"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -1105,6 +1195,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -1131,6 +1291,26 @@
         "description": "binutils: Binutils DWARF Section Handler Memory Leak",
         "remediation": "A vulnerability was found in GNU Binutils 2.44 and classified as problematic. This issue affects the function process_debug_info of the file binutils/dwarf.c of the component DWARF Section Handler. The manipulation leads to memory leak. Attacking locally is a requirement. The identifier of the patch is e51fdff7d2e538c0e5accdd65649ac68e6e0ddd4. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-8225"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -1495,6 +1675,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -1525,12 +1775,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -1541,6 +1801,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -1641,6 +1911,26 @@
         "description": "When doing SSH-based transfers using either SCP or SFTP, and asked to  ...",
         "remediation": "a locally running SSH agent.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-15224"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2219",
+        "component": "libdpkg-perl",
+        "severity": "0.0",
+        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2219",
+        "component": "libdpkg-perl",
+        "severity": "0.0",
+        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
       },
       {
         "tool": "Trivy",
@@ -2085,6 +2375,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -2115,12 +2475,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -2131,6 +2501,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -2905,6 +3285,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -2931,6 +3381,26 @@
         "description": "binutils: Binutils DWARF Section Handler Memory Leak",
         "remediation": "A vulnerability was found in GNU Binutils 2.44 and classified as problematic. This issue affects the function process_debug_info of the file binutils/dwarf.c of the component DWARF Section Handler. The manipulation leads to memory leak. Attacking locally is a requirement. The identifier of the patch is e51fdff7d2e538c0e5accdd65649ac68e6e0ddd4. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-8225"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -3295,6 +3765,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -3325,6 +3865,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-13034",
         "component": "libcurl4t64",
         "severity": "5.5",
@@ -3461,6 +4021,16 @@
         "description": "When doing SSH-based transfers using either SCP or SFTP, and asked to  ...",
         "remediation": "a locally running SSH agent.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-15224"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2219",
+        "component": "libdpkg-perl",
+        "severity": "0.0",
+        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
       },
       {
         "tool": "Trivy",
@@ -3501,6 +4071,26 @@
         "description": "libexpat: libexpat null pointer dereference",
         "remediation": "In libexpat before 2.7.4, XML_ExternalEntityParserCreate does not copy unknown encoding handler user data.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-24515"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23865",
+        "component": "libfreetype6",
+        "severity": "5.5",
+        "description": "Freetype: Freetype: Information disclosure or denial of service via specially crafted font files",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23865"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23865",
+        "component": "libfreetype6",
+        "severity": "5.5",
+        "description": "Freetype: Freetype: Information disclosure or denial of service via specially crafted font files",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23865"
       },
       {
         "tool": "Trivy",
@@ -3875,6 +4465,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -3901,6 +4561,26 @@
         "description": "binutils: Binutils DWARF Section Handler Memory Leak",
         "remediation": "A vulnerability was found in GNU Binutils 2.44 and classified as problematic. This issue affects the function process_debug_info of the file binutils/dwarf.c of the component DWARF Section Handler. The manipulation leads to memory leak. Attacking locally is a requirement. The identifier of the patch is e51fdff7d2e538c0e5accdd65649ac68e6e0ddd4. It is recommended to apply a patch to fix this issue.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-8225"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -4035,22 +4715,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -4115,22 +4795,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -4175,12 +4855,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2021-4214",
+        "cve": "CVE-2026-3713",
         "component": "libpng16-16t64",
         "severity": "2.0",
-        "description": "libpng: hardcoded value leads to heap-overflow",
-        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
+        "description": "libpng: libpng: Heap-based buffer overflow in pnm2png allows information disclosure and denial of service",
+        "remediation": "A flaw has been found in pnggroup libpng up to 1.6.55. Affected by this vulnerability is the function do_pnm2png of the file contrib/pngminus/pnm2png.c of the component pnm2png. This manipulation of the argument width/height causes heap-based buffer overflow. The attack is restricted to local execution. The exploit has been published and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3713"
       },
       {
         "tool": "Trivy",
@@ -4191,6 +4871,36 @@
         "description": "libpng: hardcoded value leads to heap-overflow",
         "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3713",
+        "component": "libpng16-16t64",
+        "severity": "2.0",
+        "description": "libpng: libpng: Heap-based buffer overflow in pnm2png allows information disclosure and denial of service",
+        "remediation": "A flaw has been found in pnggroup libpng up to 1.6.55. Affected by this vulnerability is the function do_pnm2png of the file contrib/pngminus/pnm2png.c of the component pnm2png. This manipulation of the argument width/height causes heap-based buffer overflow. The attack is restricted to local execution. The exploit has been published and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3713"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2021-4214",
+        "component": "libpng16-16t64",
+        "severity": "2.0",
+        "description": "libpng: hardcoded value leads to heap-overflow",
+        "remediation": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2021-4214"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3713",
+        "component": "libpng16-16t64",
+        "severity": "2.0",
+        "description": "libpng: libpng: Heap-based buffer overflow in pnm2png allows information disclosure and denial of service",
+        "remediation": "A flaw has been found in pnggroup libpng up to 1.6.55. Affected by this vulnerability is the function do_pnm2png of the file contrib/pngminus/pnm2png.c of the component pnm2png. This manipulation of the argument width/height causes heap-based buffer overflow. The attack is restricted to local execution. The exploit has been published and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3713"
       },
       {
         "tool": "Trivy",
@@ -4555,6 +5265,76 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69644",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted binary with malformed DWARF debug information",
+        "remediation": "An issue was discovered in Binutils before 2.46. The objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed debug information. A logic flaw in the handling of DWARF location list headers can cause objdump to enter an unbounded loop and produce endless output until manually interrupted. This issue affects versions prior to the upstream fix and allows a local attacker to cause excessive resource consumption by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69644"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69645",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils objdump: Denial of Service via crafted DWARF debug information",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug information. A logic error in the handling of DWARF compilation units can result in an invalid offset_size value being used inside byte_get_little_endian, leading to an abort (SIGABRT). The issue was observed in binutils 2.44. A local attacker can trigger the crash by supplying a malicious input file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69645"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69646",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via malformed DWARF debug_rnglists data",
+        "remediation": "Binutils objdump contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF debug_rnglists data. A logic error in the handling of the debug_rnglists header can cause objdump to repeatedly print the same warning message and fail to terminate, resulting in an unbounded logging loop until the process is interrupted. The issue was observed in binutils 2.44. A local attacker can exploit this vulnerability by supplying a malicious input file, leading to excessive CPU and I/O usage and preventing completion of the objdump analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69646"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69649",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: NULL pointer dereference in readelf via crafted ELF binary with malformed header fields",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a null pointer dereference vulnerability when processing a crafted ELF binary with malformed header fields. During relocation processing, an invalid or null section pointer may be passed into display_relocations(), resulting in a segmentation fault (SIGSEGV) and abrupt termination. No evidence of memory corruption beyond the null pointer dereference, nor any possibility of code execution, was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69649"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69650",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: double free in readelf via crafted ELF binary with malformed relocation data",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a double free vulnerability when processing a crafted ELF binary with malformed relocation data. During GOT relocation handling, dump_relocations may return early without initializing the all_relocations array. As a result, process_got_section_contents() may pass an uninitialized r_symbol pointer to free(), leading to a double free and terminating the program with SIGABRT. No evidence of exploitable memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69650"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69651",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: Binutils: Denial of Service via crafted ELF binary processing",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an invalid pointer free when processing a crafted ELF binary with malformed relocation or symbol data. If dump_relocations returns early due to parsing errors, the internal all_relocations array may remain partially uninitialized. Later, process_got_section_contents() may attempt to free an invalid r_symbol pointer, triggering memory corruption checks in glibc and causing the program to terminate with SIGABRT. No evidence of further memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69651"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69652",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: abort in readelf via crafted ELF binary with malformed DWARF abbrev or debug information",
+        "remediation": "GNU Binutils thru 2.46 readelf contains a vulnerability that leads to an abort (SIGABRT) when processing a crafted ELF binary with malformed DWARF abbrev or debug information. Due to incomplete state cleanup in process_debug_info(), an invalid debug_info_p state may propagate into DWARF attribute parsing routines. When certain malformed attributes result in an unexpected data length of zero, byte_get_little_endian() triggers a fatal abort. No evidence of memory corruption or code execution was observed; the impact is limited to denial of service.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69652"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-7545",
         "component": "libsframe1",
         "severity": "2.0",
@@ -4585,12 +5365,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
+        "cve": "CVE-2026-3441",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3442",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
+        "remediation": "No description is available for this CVE.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
         "tool": "Trivy",
@@ -4601,6 +5391,16 @@
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -4735,22 +5535,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -5065,6 +5865,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-71238",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: Linux kernel (qla2xxx): Double free vulnerability leads to denial of service and potential privilege escalation.",
+        "remediation": "free. Validate before calling bsg_done().",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-71238"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-23066",
         "component": "linux-libc-dev",
         "severity": "8.0",
@@ -5101,6 +5911,26 @@
         "description": "kernel: Linux kernel: Denial of Service in ice driver due to race condition during VSI rebuild",
         "remediation": "[  121.393432]  </TASK>",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23210"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23226",
+        "component": "linux-libc-dev",
+        "severity": "7.8",
+        "description": "kernel: ksmbd: add chann_lock to protect ksmbd_chann_list xarray",
+        "remediation": "all xa_load/xa_store/xa_erase accesses.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23226"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23231",
+        "component": "linux-libc-dev",
+        "severity": "8.0",
+        "description": "kernel: kernel: Privilege escalation or denial of service via use-after-free in nf_tables_addchain()",
+        "remediation": "evaluation -- have finished before the chain is freed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23231"
       },
       {
         "tool": "Trivy",
@@ -5211,6 +6041,16 @@
         "description": "kernel: Marvin vulnerability side-channel leakage in the RSA decryption operation",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2023-6240"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2024-14027",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: xattr: switch to CLASS(fd)",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2024-14027"
       },
       {
         "tool": "Trivy",
@@ -6425,22 +7265,72 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23226",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: ksmbd: add chann_lock to protect ksmbd_chann_list xarray",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23226"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2026-23227",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: drm/exynos: vidi: use ctx-&gt;lock to protect struct vidi_context member variables related to memory alloc/free",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23227"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23233",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: f2fs: fix to avoid mapping wrong physical block for swapfile",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23233"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23234",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: f2fs: fix to avoid UAF in f2fs_write_end_io()",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23234"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23235",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: f2fs: fix out-of-bounds access in sysfs attribute read/write",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23235"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23236",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: fbdev: smscufx: properly copy ioctl memory to kernelspace",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23236"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23237",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: platform/x86: classmate-laptop: Add missing NULL pointer checks",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23237"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-23238",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: romfs: check sb_set_blocksize() return value",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23238"
       },
       {
         "tool": "Trivy",
@@ -7075,22 +7965,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -7155,22 +8045,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -7455,22 +8345,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-14104",
-        "component": "util-linux",
-        "severity": "5.5",
-        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2022-0563",
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
         "remediation": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
         "reference": "https://avd.aquasec.com/nvd/cve-2022-0563"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-14104",
+        "component": "util-linux",
+        "severity": "2.0",
+        "description": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+        "remediation": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-14104"
       },
       {
         "tool": "Trivy",
@@ -7507,7 +8397,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2026-03-03T07:59:50.609782+00:00",
+    "timestamp": "2026-03-10T08:00:15.994011+00:00",
     "target": "N/A",
     "results": [
       {
@@ -7670,7 +8560,7 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/instructions.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
@@ -7681,7 +8571,7 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
@@ -7751,6 +8641,17 @@
         "evidence": "",
         "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
         "cwe": "1021"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - PHP",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
+        "uri": "http://localhost:4280/config/config.inc.php.dist",
+        "evidence": "<?php\n\n# If you are having problems connecting to the MySQL database and all of the variables below are correct\n# try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.\n#   Thanks to @digininja for the fix.\n\n# Database management system to use\n$DBMS = getenv('DBMS') ?: 'MySQL';\n#$DBMS = 'PGSQL'; // Currently disabled\n\n# Database variables\n#   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.\n#   Please use a database dedicated to DVWA.\n#\n# If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.\n#   See README.md for more information on this.\n$_DVWA = array();\n$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';\n$_DVWA[ 'db_database' ] = getenv('DB_DATABASE') ?: 'dvwa';\n$_DVWA[ 'db_user' ]     = getenv('DB_USER') ?: 'dvwa';\n$_DVWA[ 'db_password' ] = getenv('DB_PASSWORD') ?: 'p@ssw0rd';\n$_DVWA[ 'db_port']      = getenv('DB_PORT') ?: '3306';\n\n# ReCAPTCHA settings\n#   Used for the 'Insecure CAPTCHA' module\n#   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin\n$_DVWA[ 'recaptcha_public_key' ]  = getenv('RECAPTCHA_PUBLIC_KEY') ?: '';\n$_DVWA[ 'recaptcha_private_key' ] = getenv('RECAPTCHA_PRIVATE_KEY') ?: '';\n\n# Default security level\n#   Default value for the security level with each session.\n#   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.\n$_DVWA[ 'default_security_level' ] = getenv('DEFAULT_SECURITY_LEVEL') ?: 'impossible';\n\n# Default locale\n#   Default locale for the help page shown with each session.\n#   The default is 'en'. You may wish to set this to either 'en' or 'zh'.\n$_DVWA[ 'default_locale' ] = getenv('DEFAULT_LOCALE') ?: 'en';\n\n# Disable authentication\n#   Some tools don't like working with authentication and passing cookies around\n#   so this setting lets you turn off authentication.\n$_DVWA[ 'disable_authentication' ] = getenv('DISABLE_AUTHENTICATION') ?: false;\n\ndefine ('MYSQL', 'mysql');\ndefine ('SQLITE', 'sqlite');\n\n# SQLi DB Backend\n#   Use this to switch the backend database used in the SQLi and Blind SQLi labs.\n#   This does not affect the backend for any other services, just these two labs.\n#   If you do not understand what this means, do not change it.\n$_DVWA['SQLI_DB'] = getenv('SQLI_DB') ?: MYSQL;\n#$_DVWA['SQLI_DB'] = SQLITE;\n#$_DVWA['SQLITE_DB'] = 'sqli.db';\n\n?>",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
       },
       {
         "tool": "OWASP ZAP",
@@ -7857,17 +8758,6 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
-        "uri": "http://localhost:4280/README.vi.md",
-        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
-        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
-        "cwe": "540"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Source Code Disclosure - SQL",
-        "risk": "Medium (Medium)",
-        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.zh.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -7923,7 +8813,7 @@
         "name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
         "cwe": "693"
@@ -7934,7 +8824,7 @@
         "name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
         "cwe": "693"
@@ -7956,7 +8846,7 @@
         "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
         "cwe": "693"
@@ -7967,7 +8857,7 @@
         "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
         "cwe": "693"
@@ -8066,7 +8956,7 @@
         "name": "In Page Banner Information Leak",
         "risk": "Low (High)",
         "description": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
-        "uri": "http://localhost:4280/etc/php/x.x/apache2/php.ini.",
+        "uri": "http://localhost:4280/etc/php/x.x/fpm/php.ini",
         "evidence": "Apache/2.4.66",
         "solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
         "cwe": "497"
@@ -8143,6 +9033,17 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.id.md",
+        "evidence": "Access denied for user",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.ko.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -8178,17 +9079,6 @@
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.tr.md",
         "evidence": "for user 'notdvwa'@'lo",
-        "solution": "<p>Disable debugging messages before pushing to production.</p>",
-        "cwe": "1295"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Information Disclosure - Debug Error Messages",
-        "risk": "Low (Medium)",
-        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
-        "uri": "http://localhost:4280/README.vi.md",
-        "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
         "cwe": "1295"
       },
@@ -8253,7 +9143,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/dvwa/js/add_event_listeners.js",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -8264,7 +9154,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -8308,7 +9198,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -8319,7 +9209,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -8363,7 +9253,7 @@
         "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
-        "uri": "http://localhost:4280/dvwa/css/login.css",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
@@ -8495,7 +9385,7 @@
         "name": "Modern Web Application",
         "risk": "Informational (Medium)",
         "description": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
-        "uri": "http://localhost:4280/instructions.php?doc=PDF",
+        "uri": "http://localhost:4280/instructions.php?doc=changelog",
         "evidence": "<a href=\"#\" onclick=\"javascript:toggleTheme();\" class=\"theme-icon\" title=\"Toggle theme between light and dark.\">\n                    <img src=\"dvwa/images/theme-light-dark.png\" alt=\"Damn Vulnerable Web Application\" />\n                </a>",
         "solution": "<p>This is an informational alert and so no changes are required.</p>",
         "cwe": "-1"
@@ -8543,6 +9433,28 @@
         "evidence": "no-store",
         "solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
         "cwe": "524"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Session Management Response Identified",
+        "risk": "Informational (Medium)",
+        "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
+        "uri": "http://localhost:4280",
+        "evidence": "security",
+        "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+        "cwe": "-1"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Session Management Response Identified",
+        "risk": "Informational (Medium)",
+        "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
+        "uri": "http://localhost:4280/login.php",
+        "evidence": "PHPSESSID",
+        "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+        "cwe": "-1"
       },
       {
         "tool": "OWASP ZAP",
@@ -8627,7 +9539,7 @@
         "name": "Storable but Non-Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/about.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
@@ -8638,7 +9550,7 @@
         "name": "Storable but Non-Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/setup.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
