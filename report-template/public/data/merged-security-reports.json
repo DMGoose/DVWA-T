@@ -2,14 +2,14 @@
   {
     "tool": "Trivy",
     "type": "File Scan",
-    "timestamp": "2026-03-10T08:00:15.978498+00:00",
+    "timestamp": "2026-03-17T08:07:16.735922+00:00",
     "target": "file:///home/runner/work/DVWA-T/DVWA-T/",
     "results": []
   },
   {
     "tool": "Trivy",
     "type": "Image Scan",
-    "timestamp": "2026-03-10T08:00:15.993079+00:00",
+    "timestamp": "2026-03-17T08:07:16.753540+00:00",
     "target": "file:///",
     "results": [
       {
@@ -745,6 +745,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -819,7 +839,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -829,7 +849,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -1225,6 +1245,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -1299,7 +1339,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -1309,7 +1349,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -1705,6 +1745,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -1779,7 +1839,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -1789,7 +1849,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -1819,7 +1879,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -1851,6 +1911,46 @@
         "description": "When using `CURLOPT_PINNEDPUBLICKEY` option with libcurl or `--pinnedp ...",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-13034"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-1965",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-1965"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3783",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3783"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3784",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3784"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3805",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3805"
       },
       {
         "tool": "Trivy",
@@ -1911,26 +2011,6 @@
         "description": "When doing SSH-based transfers using either SCP or SFTP, and asked to  ...",
         "remediation": "a locally running SSH agent.",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-15224"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-2219",
-        "component": "libdpkg-perl",
-        "severity": "0.0",
-        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-2219",
-        "component": "libdpkg-perl",
-        "severity": "0.0",
-        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
       },
       {
         "tool": "Trivy",
@@ -2405,6 +2485,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -2479,7 +2579,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -2489,7 +2589,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -2519,38 +2619,78 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-0861",
+        "cve": "CVE-2010-4756",
         "component": "libc6-dev",
-        "severity": "8.0",
-        "description": "glibc: Integer overflow in memalign leads to heap corruption",
-        "remediation": "Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0861"
+        "severity": "2.0",
+        "description": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+        "remediation": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2010-4756"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-15281",
+        "cve": "CVE-2018-20796",
         "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
+        "severity": "2.0",
+        "description": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+        "remediation": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2018-20796"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-0915",
+        "cve": "CVE-2019-1010022",
         "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: glibc: Information disclosure via zero-valued network query",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0915"
+        "severity": "2.0",
+        "description": "glibc: stack guard protection bypass",
+        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010022"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2019-1010023",
+        "component": "libc6-dev",
+        "severity": "2.0",
+        "description": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+        "remediation": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010023"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2019-1010024",
+        "component": "libc6-dev",
+        "severity": "2.0",
+        "description": "glibc: ASLR bypass using cache of thread stack and heap",
+        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010024"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2019-1010025",
+        "component": "libc6-dev",
+        "severity": "2.0",
+        "description": "glibc: information disclosure of heap addresses of pthread_created thread",
+        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010025"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2019-9192",
+        "component": "libc6-dev",
+        "severity": "2.0",
+        "description": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+        "remediation": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
+        "reference": "https://avd.aquasec.com/nvd/cve-2019-9192"
       },
       {
         "tool": "Trivy",
@@ -2625,36 +2765,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-0861",
-        "component": "libc6-dev",
-        "severity": "8.0",
-        "description": "glibc: Integer overflow in memalign leads to heap corruption",
-        "remediation": "Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0861"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-15281",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-0915",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: glibc: Information disclosure via zero-valued network query",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0915"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2010-4756",
         "component": "libc6-dev",
         "severity": "2.0",
@@ -2721,136 +2831,6 @@
         "description": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
         "remediation": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
         "reference": "https://avd.aquasec.com/nvd/cve-2019-9192"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-0861",
-        "component": "libc6-dev",
-        "severity": "8.0",
-        "description": "glibc: Integer overflow in memalign leads to heap corruption",
-        "remediation": "Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0861"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-15281",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-0915",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: glibc: Information disclosure via zero-valued network query",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0915"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2010-4756",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
-        "remediation": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2010-4756"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2018-20796",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
-        "remediation": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2018-20796"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2019-1010022",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: stack guard protection bypass",
-        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010022"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2019-1010023",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
-        "remediation": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010023"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2019-1010024",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: ASLR bypass using cache of thread stack and heap",
-        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010024"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2019-1010025",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: information disclosure of heap addresses of pthread_created thread",
-        "remediation": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2019-1010025"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2019-9192",
-        "component": "libc6-dev",
-        "severity": "2.0",
-        "description": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
-        "remediation": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
-        "reference": "https://avd.aquasec.com/nvd/cve-2019-9192"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-0861",
-        "component": "libc6-dev",
-        "severity": "8.0",
-        "description": "glibc: Integer overflow in memalign leads to heap corruption",
-        "remediation": "Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0861"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-15281",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-15281"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-0915",
-        "component": "libc6-dev",
-        "severity": "5.5",
-        "description": "glibc: glibc: Information disclosure via zero-valued network query",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-0915"
       },
       {
         "tool": "Trivy",
@@ -3315,6 +3295,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -3389,7 +3389,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -3399,7 +3399,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -3795,6 +3795,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -3869,7 +3889,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -3879,7 +3899,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -3895,6 +3915,46 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-1965",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-1965"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3783",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3783"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3784",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3784"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3805",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3805"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-10966",
         "component": "libcurl4t64",
         "severity": "2.0",
@@ -3965,6 +4025,46 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-1965",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-1965"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3783",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3783"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3784",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3784"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-3805",
+        "component": "libcurl4t64",
+        "severity": "5.5",
+        "description": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3805"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-10966",
         "component": "libcurl4t64",
         "severity": "2.0",
@@ -4025,12 +4125,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-2219",
-        "component": "libdpkg-perl",
-        "severity": "0.0",
-        "description": "It was discovered that dpkg-deb (a component of dpkg, the Debian packa ...",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-2219"
+        "cve": "CVE-2026-25210",
+        "component": "libexpat1",
+        "severity": "7.8",
+        "description": "libexpat: libexpat: Information disclosure and data integrity issues due to integer overflow in buffer reallocation",
+        "remediation": "In libexpat before 2.7.4, the doContent function does not properly determine the buffer size bufSize because there is no integer overflow check for tag buffer reallocation.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-25210"
       },
       {
         "tool": "Trivy",
@@ -4055,12 +4155,32 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-25210",
+        "cve": "CVE-2026-32776",
         "component": "libexpat1",
         "severity": "5.5",
-        "description": "libexpat: libexpat: Information disclosure and data integrity issues due to integer overflow in buffer reallocation",
+        "description": "libexpat: libexpat: Denial of Service due to NULL pointer dereference",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-25210"
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-32776"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-32777",
+        "component": "libexpat1",
+        "severity": "5.5",
+        "description": "libexpat: libexpat: Denial of Service via infinite loop in DTD content parsing",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-32777"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-32778",
+        "component": "libexpat1",
+        "severity": "5.5",
+        "description": "libexpat: libexpat: Denial of Service via NULL pointer dereference after out-of-memory condition",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-32778"
       },
       {
         "tool": "Trivy",
@@ -4495,6 +4615,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -4569,7 +4709,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -4579,7 +4719,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -4739,7 +4879,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -4819,7 +4959,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -5295,6 +5435,26 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2025-69647",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF loclists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF loclists data. A logic flaw in the DWARF parsing code can cause readelf to repeatedly print the same table output without making forward progress, resulting in an unbounded output loop that never terminates unless externally interrupted. A local attacker can trigger this behavior by supplying a malicious input file, causing excessive CPU and I/O usage and preventing readelf from completing its analysis.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69647"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-69648",
+        "component": "libsframe1",
+        "severity": "2.0",
+        "description": "binutils: infinite loop in readelf via crafted binary with malformed DWARF .debug_rnglists data",
+        "remediation": "GNU Binutils thru 2.45.1 readelf contains a denial-of-service vulnerability when processing a crafted binary with malformed DWARF .debug_rnglists data. A logic flaw in the DWARF parsing path causes readelf to repeatedly print the same warning message without making forward progress, resulting in a non-terminating output loop that requires manual interruption. No evidence of memory corruption or code execution was observed.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-69648"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2025-69649",
         "component": "libsframe1",
         "severity": "2.0",
@@ -5369,7 +5529,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure via specially crafted XCOFF object file",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This heap-based buffer overflow vulnerability, specifically an out-of-bounds read in the bfd linker, allows an attacker to gain access to sensitive information. By convincing a user to process a specially crafted XCOFF object file, an attacker can trigger this flaw, potentially leading to information disclosure or an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3441"
       },
       {
@@ -5379,7 +5539,7 @@
         "component": "libsframe1",
         "severity": "2.0",
         "description": "binutils: GNU Binutils: Information disclosure or denial of service via out-of-bounds read in bfd linker",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in GNU Binutils. This vulnerability, a heap-based buffer overflow, specifically an out-of-bounds read, exists in the bfd linker component. An attacker could exploit this by convincing a user to process a specially crafted malicious XCOFF object file. Successful exploitation may lead to the disclosure of sensitive information or cause the application to crash, resulting in an application level denial of service.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3442"
       },
       {
@@ -5409,18 +5569,8 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-7709",
-        "component": "libsqlite3-0",
-        "severity": "5.5",
-        "description": "An integer overflow exists in the  FTS5 https://sqlite.org/fts5.html e ...",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-7709"
       },
       {
         "tool": "Trivy",
@@ -5431,6 +5581,36 @@
         "description": "sqlite: crafted SQL query allows a malicious user to obtain sensitive information",
         "remediation": "A Memory Leak vulnerability exists in SQLite Project SQLite3 3.35.1 and 3.37.0 via maliciously crafted SQL Queries (made via editing the Database File), it is possible to query a record, and leak subsequent bytes of memory that extend beyond the record, which could let a malicious user obtain sensitive information. NOTE: The developer disputes this as a vulnerability stating that If you give SQLite a corrupted database file and submit a query against the database, it might read parts of the database that you did not intend or expect.",
         "reference": "https://avd.aquasec.com/nvd/cve-2021-45346"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2025-70873",
+        "component": "libsqlite3-0",
+        "severity": "2.0",
+        "description": "sqlite: SQLite: Information Disclosure via Crafted ZIP File",
+        "remediation": "An information disclosure issue in the zipfileInflate function in the zipfile extension in SQLite v3.51.1 and earlier allows attackers to obtain heap memory via supplying a crafted ZIP file.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2025-70873"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2673",
+        "component": "openssl-provider-legacy",
+        "severity": "2.0",
+        "description": "openssl: OpenSSL TLS 1.3 server may choose unexpected key agreement group",
+        "remediation": "OpenSSL 3.4, 3.3, 3.0, 1.0.2 and 1.1.1 are not affected by this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2673"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-4105",
+        "component": "libudev1",
+        "severity": "5.5",
+        "description": "systemd: systemd: Privilege escalation via improper access control in RegisterMachine D-Bus method",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-4105"
       },
       {
         "tool": "Trivy",
@@ -5495,6 +5675,16 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-4105",
+        "component": "libudev1",
+        "severity": "5.5",
+        "description": "systemd: systemd: Privilege escalation via improper access control in RegisterMachine D-Bus method",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-4105"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2013-4392",
         "component": "libudev1",
         "severity": "2.0",
@@ -5559,7 +5749,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -5861,26 +6051,6 @@
         "description": "kernel: net: dsa: properly keep track of conduit reference",
         "remediation": "---truncated---",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-71152"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-71238",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: Linux kernel (qla2xxx): Double free vulnerability leads to denial of service and potential privilege escalation.",
-        "remediation": "free. Validate before calling bsg_done().",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-71238"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23066",
-        "component": "linux-libc-dev",
-        "severity": "8.0",
-        "description": "kernel: Linux kernel: Denial of Service via unsafe requeue in rxrpc_recvmsg",
-        "remediation": "queue, so fix that also.",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23066"
       },
       {
         "tool": "Trivy",
@@ -6848,7 +7018,7 @@
         "cve": "CVE-2025-68251",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: erofs: avoid infinite loops due to corrupted subpage compact indexes",
+        "description": "kernel: Linux kernel (erofs): Denial of Service via corrupted subpage compact indexes",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68251"
       },
@@ -6888,7 +7058,7 @@
         "cve": "CVE-2025-68334",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: platform/x86/amd/pmc: Add support for Van Gogh SoC",
+        "description": "kernel: Linux kernel: Denial of Service due to missing power management handler for AMD Van Gogh SoC",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2025-68334"
       },
@@ -7155,22 +7325,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
+        "cve": "CVE-2026-23066",
+        "component": "linux-libc-dev",
+        "severity": "5.5",
+        "description": "kernel: Linux kernel: Denial of Service via unsafe requeue in rxrpc_recvmsg",
+        "remediation": "",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23066"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
         "cve": "CVE-2026-23070",
         "component": "linux-libc-dev",
         "severity": "5.5",
         "description": "kernel: Octeontx2-af: Add proper checks for fwdata",
         "remediation": "",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-23070"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23100",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: mm/hugetlb: fix hugetlb_pmd_shared()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23100"
       },
       {
         "tool": "Trivy",
@@ -7255,16 +7425,6 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23221",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: bus: fsl-mc: fix use-after-free in driver_override_show()",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23221"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
         "cve": "CVE-2026-23227",
         "component": "linux-libc-dev",
         "severity": "5.5",
@@ -7275,62 +7435,22 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23233",
+        "cve": "CVE-2026-23239",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: f2fs: fix to avoid mapping wrong physical block for swapfile",
+        "description": "kernel: Kernel: Race condition in espintcp can lead to denial of service",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23233"
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23239"
       },
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2026-23234",
+        "cve": "CVE-2026-23240",
         "component": "linux-libc-dev",
         "severity": "5.5",
-        "description": "kernel: f2fs: fix to avoid UAF in f2fs_write_end_io()",
+        "description": "kernel: Linux kernel: Denial of service due to a race condition in the TLS subsystem",
         "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23234"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23235",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: f2fs: fix out-of-bounds access in sysfs attribute read/write",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23235"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23236",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: fbdev: smscufx: properly copy ioctl memory to kernelspace",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23236"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23237",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: platform/x86: classmate-laptop: Add missing NULL pointer checks",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23237"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2026-23238",
-        "component": "linux-libc-dev",
-        "severity": "5.5",
-        "description": "kernel: romfs: check sb_set_blocksize() return value",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2026-23238"
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-23240"
       },
       {
         "tool": "Trivy",
@@ -7989,7 +8109,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -8069,7 +8189,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -8095,22 +8215,12 @@
       {
         "tool": "Trivy",
         "type": "Image Scan",
-        "cve": "CVE-2025-61984",
+        "cve": "CVE-2026-3497",
         "component": "openssh-client",
-        "severity": "5.5",
-        "description": "openssh: OpenSSH: Control characters in usernames can lead to code execution via ProxyCommand",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-61984"
-      },
-      {
-        "tool": "Trivy",
-        "type": "Image Scan",
-        "cve": "CVE-2025-61985",
-        "component": "openssh-client",
-        "severity": "5.5",
-        "description": "openssh: OpenSSH: Null character in ssh:// URI can lead to code execution via ProxyCommand",
-        "remediation": "",
-        "reference": "https://avd.aquasec.com/nvd/cve-2025-61985"
+        "severity": "8.0",
+        "description": "openssh: OpenSSH GSSAPI: Information disclosure or denial of service due to uninitialized variables",
+        "remediation": "Vulnerability in the OpenSSH GSSAPI delta included in various Linux distributions. This vulnerability affects the GSSAPI patches added by various Linux distributions and does not affect the OpenSSH upstream project itself. The usage of sshpkt_disconnect() on an error, which does not terminate the process, allows an attacker to send an unexpected GSSAPI message type during the GSSAPI key exchange to the server, which will call the underlying function and continue the execution of the program without setting the related connection variables. As the variables are not initialized to NULL the code later accesses those uninitialized variables, accessing random memory, which could lead to undefined behavior. The recommended workaround is to use ssh_packet_disconnect() instead, which does terminate the process. The impact of the vulnerability depends heavily on the compiler flag hardening configuration.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-3497"
       },
       {
         "tool": "Trivy",
@@ -8191,6 +8301,26 @@
         "description": "openssh: scp allows command injection when using backtick characters in the destination argument",
         "remediation": "scp in OpenSSH through 8.3p1 allows command injection in the scp.c toremote function, as demonstrated by backtick characters in the destination argument. NOTE: the vendor reportedly has stated that they intentionally omit validation of \"anomalous argument transfers\" because that could \"stand a great chance of breaking existing workflows.\"",
         "reference": "https://avd.aquasec.com/nvd/cve-2020-15778"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2673",
+        "component": "openssl-provider-legacy",
+        "severity": "2.0",
+        "description": "openssl: OpenSSL TLS 1.3 server may choose unexpected key agreement group",
+        "remediation": "OpenSSL 3.4, 3.3, 3.0, 1.0.2 and 1.1.1 are not affected by this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2673"
+      },
+      {
+        "tool": "Trivy",
+        "type": "Image Scan",
+        "cve": "CVE-2026-2673",
+        "component": "openssl-provider-legacy",
+        "severity": "2.0",
+        "description": "openssl: OpenSSL TLS 1.3 server may choose unexpected key agreement group",
+        "remediation": "OpenSSL 3.4, 3.3, 3.0, 1.0.2 and 1.1.1 are not affected by this issue.",
+        "reference": "https://avd.aquasec.com/nvd/cve-2026-2673"
       },
       {
         "tool": "Trivy",
@@ -8369,7 +8499,7 @@
         "component": "util-linux",
         "severity": "2.0",
         "description": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
-        "remediation": "No description is available for this CVE.",
+        "remediation": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
         "reference": "https://avd.aquasec.com/nvd/cve-2026-3184"
       },
       {
@@ -8397,7 +8527,7 @@
   {
     "tool": "OWASP ZAP",
     "type": "DAST",
-    "timestamp": "2026-03-10T08:00:15.994011+00:00",
+    "timestamp": "2026-03-17T08:07:16.754687+00:00",
     "target": "N/A",
     "results": [
       {
@@ -8549,17 +8679,6 @@
         "name": "Content Security Policy (CSP) Header Not Set",
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-        "uri": "http://localhost:4280/about.php",
-        "evidence": "",
-        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
-        "cwe": "693"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Content Security Policy (CSP) Header Not Set",
-        "risk": "Medium (High)",
-        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
         "uri": "http://localhost:4280/instructions.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
@@ -8572,6 +8691,17 @@
         "risk": "Medium (High)",
         "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
         "uri": "http://localhost:4280/login.php",
+        "evidence": "",
+        "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+        "cwe": "693"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium (High)",
+        "description": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
         "cwe": "693"
@@ -8641,17 +8771,6 @@
         "evidence": "",
         "solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
         "cwe": "1021"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
-        "name": "Source Code Disclosure - PHP",
-        "risk": "Medium (Medium)",
-        "description": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
-        "uri": "http://localhost:4280/config/config.inc.php.dist",
-        "evidence": "<?php\n\n# If you are having problems connecting to the MySQL database and all of the variables below are correct\n# try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.\n#   Thanks to @digininja for the fix.\n\n# Database management system to use\n$DBMS = getenv('DBMS') ?: 'MySQL';\n#$DBMS = 'PGSQL'; // Currently disabled\n\n# Database variables\n#   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.\n#   Please use a database dedicated to DVWA.\n#\n# If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.\n#   See README.md for more information on this.\n$_DVWA = array();\n$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';\n$_DVWA[ 'db_database' ] = getenv('DB_DATABASE') ?: 'dvwa';\n$_DVWA[ 'db_user' ]     = getenv('DB_USER') ?: 'dvwa';\n$_DVWA[ 'db_password' ] = getenv('DB_PASSWORD') ?: 'p@ssw0rd';\n$_DVWA[ 'db_port']      = getenv('DB_PORT') ?: '3306';\n\n# ReCAPTCHA settings\n#   Used for the 'Insecure CAPTCHA' module\n#   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin\n$_DVWA[ 'recaptcha_public_key' ]  = getenv('RECAPTCHA_PUBLIC_KEY') ?: '';\n$_DVWA[ 'recaptcha_private_key' ] = getenv('RECAPTCHA_PRIVATE_KEY') ?: '';\n\n# Default security level\n#   Default value for the security level with each session.\n#   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.\n$_DVWA[ 'default_security_level' ] = getenv('DEFAULT_SECURITY_LEVEL') ?: 'impossible';\n\n# Default locale\n#   Default locale for the help page shown with each session.\n#   The default is 'en'. You may wish to set this to either 'en' or 'zh'.\n$_DVWA[ 'default_locale' ] = getenv('DEFAULT_LOCALE') ?: 'en';\n\n# Disable authentication\n#   Some tools don't like working with authentication and passing cookies around\n#   so this setting lets you turn off authentication.\n$_DVWA[ 'disable_authentication' ] = getenv('DISABLE_AUTHENTICATION') ?: false;\n\ndefine ('MYSQL', 'mysql');\ndefine ('SQLITE', 'sqlite');\n\n# SQLi DB Backend\n#   Use this to switch the backend database used in the SQLi and Blind SQLi labs.\n#   This does not affect the backend for any other services, just these two labs.\n#   If you do not understand what this means, do not change it.\n$_DVWA['SQLI_DB'] = getenv('SQLI_DB') ?: MYSQL;\n#$_DVWA['SQLI_DB'] = SQLITE;\n#$_DVWA['SQLITE_DB'] = 'sqli.db';\n\n?>",
-        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
-        "cwe": "540"
       },
       {
         "tool": "OWASP ZAP",
@@ -8758,6 +8877,17 @@
         "name": "Source Code Disclosure - SQL",
         "risk": "Medium (Medium)",
         "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
+        "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+        "cwe": "540"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Source Code Disclosure - SQL",
+        "risk": "Medium (Medium)",
+        "description": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
         "uri": "http://localhost:4280/README.zh.md",
         "evidence": "select Host,User, plugin from mysql.user where mysql.user.User ",
         "solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
@@ -8813,7 +8943,7 @@
         "name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
-        "uri": "http://localhost:4280/about.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
         "cwe": "693"
@@ -8824,7 +8954,7 @@
         "name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
         "cwe": "693"
@@ -8846,7 +8976,7 @@
         "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
-        "uri": "http://localhost:4280/about.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
         "cwe": "693"
@@ -8857,7 +8987,7 @@
         "name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
         "risk": "Low (Medium)",
         "description": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
         "cwe": "693"
@@ -9088,6 +9218,17 @@
         "name": "Information Disclosure - Debug Error Messages",
         "risk": "Low (Medium)",
         "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+        "uri": "http://localhost:4280/README.vi.md",
+        "evidence": "Access denied for user",
+        "solution": "<p>Disable debugging messages before pushing to production.</p>",
+        "cwe": "1295"
+      },
+      {
+        "tool": "OWASP ZAP",
+        "type": "DAST",
+        "name": "Information Disclosure - Debug Error Messages",
+        "risk": "Low (Medium)",
+        "description": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
         "uri": "http://localhost:4280/README.zh.md",
         "evidence": "Access denied for user",
         "solution": "<p>Disable debugging messages before pushing to production.</p>",
@@ -9143,7 +9284,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/dvwa/js/add_event_listeners.js",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -9154,7 +9295,7 @@
         "name": "Permissions Policy Header Not Set",
         "risk": "Low (Medium)",
         "description": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
         "cwe": "693"
@@ -9198,7 +9339,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/about.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -9209,7 +9350,7 @@
         "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
         "risk": "Low (Medium)",
         "description": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "X-Powered-By: PHP/8.5.3",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
         "cwe": "497"
@@ -9253,7 +9394,7 @@
         "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
         "risk": "Low (High)",
         "description": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/dvwa/css/login.css",
         "evidence": "Apache/2.4.66 (Debian)",
         "solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
         "cwe": "497"
@@ -9385,7 +9526,7 @@
         "name": "Modern Web Application",
         "risk": "Informational (Medium)",
         "description": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
-        "uri": "http://localhost:4280/instructions.php?doc=changelog",
+        "uri": "http://localhost:4280/instructions.php?doc=PDF",
         "evidence": "<a href=\"#\" onclick=\"javascript:toggleTheme();\" class=\"theme-icon\" title=\"Toggle theme between light and dark.\">\n                    <img src=\"dvwa/images/theme-light-dark.png\" alt=\"Damn Vulnerable Web Application\" />\n                </a>",
         "solution": "<p>This is an informational alert and so no changes are required.</p>",
         "cwe": "-1"
@@ -9459,17 +9600,6 @@
       {
         "tool": "OWASP ZAP",
         "type": "DAST",
-        "name": "Session Management Response Identified",
-        "risk": "Informational (Medium)",
-        "description": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
-        "uri": "http://localhost:4280/login.php",
-        "evidence": "PHPSESSID",
-        "solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-        "cwe": "-1"
-      },
-      {
-        "tool": "OWASP ZAP",
-        "type": "DAST",
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
@@ -9484,7 +9614,7 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/css/main.css",
+        "uri": "http://localhost:4280/dvwa/images/login_logo.png",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
         "cwe": "524"
@@ -9495,7 +9625,7 @@
         "name": "Storable and Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
-        "uri": "http://localhost:4280/dvwa/images/login_logo.png",
+        "uri": "http://localhost:4280/favicon.ico",
         "evidence": "",
         "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
         "cwe": "524"
@@ -9539,7 +9669,7 @@
         "name": "Storable but Non-Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/about.php",
+        "uri": "http://localhost:4280/login.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
@@ -9550,7 +9680,7 @@
         "name": "Storable but Non-Cacheable Content",
         "risk": "Informational (Medium)",
         "description": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
-        "uri": "http://localhost:4280/login.php",
+        "uri": "http://localhost:4280/setup.php",
         "evidence": "no-cache",
         "solution": "",
         "cwe": "524"
